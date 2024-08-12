@@ -273,7 +273,7 @@ namespace Puma.Infrastructure.Repository.KspuDB.OEBSService
                 httpclient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 httpclient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-                HttpResponseMessage responseMessage = await httpclient.PostAsync(string.Format("{0}{1}", EC_API_URL, "/AgreementLookup/389"), content);
+                HttpResponseMessage responseMessage = await httpclient.PostAsync(string.Format("{0}{1}", EC_API_URL, "/T50803_AgreementLookup_PUMA_To_OeBS/T50803_AgreementLookup_PUMA_To_OeBS_Rest_PS"), content);
                 responseMessage.EnsureSuccessStatusCode();
 
                 if (responseMessage != null)

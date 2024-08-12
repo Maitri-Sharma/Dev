@@ -375,7 +375,7 @@ namespace DataAccessAPI.Controllers
                     httpclient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
 
-                HttpResponseMessage responseMessage = await httpclient.PostAsync(string.Format("{0}{1}", EC_API_URL, "/FindCustomer/380"), content);
+                HttpResponseMessage responseMessage = await httpclient.PostAsync(string.Format("{0}{1}", EC_API_URL, "/T50802_FindCustomerFromPUMA_To_OeBS/T50802_FindCustomerFromPUMA_To_OEBS_RS"), content);
                 responseMessage.EnsureSuccessStatusCode();
 
                 if (responseMessage != null)
