@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalglist">
+<sql>
+
+
+
+
+CREATE TABLE kspu_db."utvalglist" (utvalglistid numeric(38) NOT NULL,
+	utvalglistname varchar(50) NOT NULL,
+	parentutvalglistid numeric(38),
+	antall numeric(38),
+	ordretype varchar(1),
+	ordrereferanse varchar(30),
+	ordrestatus varchar(1),
+	kundenummer varchar(30),
+	innleveringsdato timestamp,
+	logo varchar(50),
+	avtalenummer bigint,
+	isbasis smallint,
+	basedon numeric(38),
+	wasbasedon numeric(38),
+	vekt integer,
+	distribusjonsdato timestamp,
+	distribusjonstype char(1),
+	allowdouble smallint,
+	thickness double precision,
+	PRIMARY KEY (utvalglistid)
+) ;
+CREATE INDEX utvalglistname ON kspu_db.utvalglist (utvalglistname);
+CREATE INDEX utvalglist_pulid ON kspu_db.utvalglist (parentutvalglistid);
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

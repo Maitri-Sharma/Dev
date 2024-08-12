@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-input_boksanlegg_for_qa">
+<sql>
+
+
+
+CREATE TABLE kspu_db."input_boksanlegg_for_qa" (reol_id varchar(10) NOT NULL,
+	enhnrruteansv varchar(6) NOT NULL,
+	reolnr varchar(4) NOT NULL,
+	boksanlnr numeric(38) NOT NULL,
+	aktornrhent varchar(11) NOT NULL,
+	navnvirksomhet varchar(255) NOT NULL,
+	navngate varchar(255),
+	husnr integer NOT NULL,
+	bokst varchar(255),
+	postnr varchar(4) NOT NULL,
+	postadresse varchar(255) NOT NULL,
+	orgtype numeric(38) NOT NULL,
+	adrnrgab numeric(38) NOT NULL,
+	x decimal(38,8),
+	y decimal(38,8)
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

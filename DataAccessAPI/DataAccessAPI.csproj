@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>596ee95f-2837-4582-8f5c-26fe8c139d6e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="HandleRequest\Handler\GjenskapUtvalg\**" />
+    <Content Remove="HandleRequest\Handler\GjenskapUtvalg\**" />
+    <EmbeddedResource Remove="HandleRequest\Handler\GjenskapUtvalg\**" />
+    <None Remove="HandleRequest\Handler\GjenskapUtvalg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ECPumaHelper\EMail.cs" />
+    <Compile Remove="ECPumaHelper\EventHubHelper.cs" />
+    <Compile Remove="ECPumaHelper\ExceptionHandling.cs" />
+    <Compile Remove="ECPumaHelper\FileLogging.cs" />
+    <Compile Remove="ECPumaHelper\MQ.cs" />
+    <Compile Remove="ECPumaHelper\PoisonErrorHandler.cs" />
+    <Compile Remove="ECPumaHelper\UtvalgImpl.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Helper\RestCapacity.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="4.0.2" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.4" />
+    <PackageReference Include="Hangfire" Version="1.7.28" />
+    <PackageReference Include="Hangfire.Console" Version="1.4.2" />
+    <PackageReference Include="Hangfire.PostgreSql.Npgsql5" Version="1.9.5" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+	  <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
+	  <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Puma.Exception\Puma.Exception.csproj" />
+    <ProjectReference Include="..\Puma.Infrastructure\Puma.Infrastructure.csproj" />
+    <ProjectReference Include="..\Puma.Shared\Puma.Shared.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

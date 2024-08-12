@@ -1,0 +1,26 @@
+{
+    "name": "UtvalgToExcel",
+    "engine": "handlebars",
+    "recipe": "xlsx",
+    "timeout": 600000,
+    "data": {
+        "shortid": "kczloDJUb"
+    },
+    "shortid": "LRukJaBgc7",
+    "htmlToXlsx": {
+        "htmlEngine": "chrome"
+    },
+    "creationDate": {
+        "$$date": 1640256154915
+    },
+    "modificationDate": {
+        "$$date": 1683098161798
+    },
+    "_id": "uXE006A9IQJ8J9AZ",
+    "$entitySet": "templates",
+    "scripts": [
+        {
+            "shortid": "OKuYOzO"
+        }
+    ]
+}

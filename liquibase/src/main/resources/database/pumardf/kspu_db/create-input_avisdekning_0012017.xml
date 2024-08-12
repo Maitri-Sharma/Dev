@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-input_avisdekning_0012017">
+<sql>
+
+
+CREATE TABLE kspu_db."input_avisdekning_0012017" (objectid numeric(38) NOT NULL,
+	kommuneid varchar(4),
+	kommune varchar(255),
+	utgave varchar(255),
+	eksemplar decimal(38,8),
+	prosent decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r4967_sde_rowid_uk ON kspu_db.input_avisdekning_0012017 (objectid);
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

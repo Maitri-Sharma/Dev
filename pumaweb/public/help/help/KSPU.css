@@ -1,0 +1,248 @@
+﻿ body { 
+          font-family:Arial, helvetica, Verdana, sans-serif; 
+          margin:0px; 
+          padding:0px; 
+          background:#e4e1cc epeat-y center; 
+          text-align:center; 
+          color:#000000;  }
+body.wide { 
+           background:none;  }
+form { 
+      margin:0px; 
+      padding:0px;  }
+div { 
+     margin:0px; 
+     padding:0px;  }
+h1 { 
+    margin:0px; 
+    padding:0px; 
+    font-size:150%; 
+    font-weight:normal; 
+    color:#FF3300;  }
+h2 { 
+    margin:0px; 
+    padding:0px; 
+    font-size:120%; 
+    font-weight:normal; 
+    color:#FF3300;  }
+h3 { 
+    margin:0px; 
+    padding:0px; 
+    font-size:100%; 
+    font-weight:bold;  }
+h4 { 
+    margin:0px; 
+    padding:0px; 
+    color:#FF3300; 
+    font-size:100%; 
+    font-weight:normal;  }
+p { 
+   margin:0px; 
+   padding:0px; 
+   padding:0px 0px 10px 0px;  }
+LI.kadov-h1 { 
+             font-size:150%; 
+             font-weight:normal; 
+             color:#FF3300;  }
+LI.kadov-h2 { 
+             font-size:120%; 
+             font-weight:normal; 
+             color:#FF3300;  }
+LI.kadov-h3 { 
+             font-size:100%; 
+             font-weight:bold;  }
+LI.kadov-h4 { 
+             color:#FF3300; 
+             font-size:100%; 
+             font-weight:normal;  }
+LI.kadov-p {  }
+img { 
+     border-color:#000000;  }
+img.noborder { 
+              border:none;  }
+a { 
+   font-size:100%; 
+   color:#696649; 
+   x-text-underline:off; 
+   x-text-overline:off; 
+   x-text-line-through:off; 
+   text-decoration:none none none;  }
+a:visited { 
+           color:#A5A288;  }
+a:active { 
+          color:#FF3300; 
+          x-text-underline:off; 
+          x-text-overline:off; 
+          x-text-line-through:off; 
+          text-decoration:none none none;  }
+a:hover { 
+         color:#FF3300; 
+         x-text-underline:off; 
+         x-text-overline:off; 
+         x-text-line-through:off; 
+         text-decoration:none none none;  }
+a.listing { 
+           x-text-underline:off; 
+           x-text-overline:off; 
+           x-text-line-through:off; 
+           text-decoration:none none none;  }
+a.listing:hover { 
+                 color:#FF3300; 
+                 x-text-underline:off; 
+                 x-text-overline:off; 
+                 x-text-line-through:off; 
+                 text-decoration:none none none;  }
+h2.newspress { 
+              font-size:120%; 
+              font-weight:bold; 
+              color:#000000;  }
+LI.kadov-h2-Cnewspress { 
+                        font-size:120%; 
+                        font-weight:bold; 
+                        color:#000000;  }
+h3.notbold { 
+            font-size:100%;  }
+LI.kadov-h3-Cnotbold { 
+                      font-size:100%;  }
+select { 
+        font-size:100%;  }
+span {  }
+#logotop { 
+          height:91px; 
+          background:epeat-x;  }
+LI.kadov-Ilogotop {  }
+#pagetop { 
+          margin:0px auto; 
+          width:914px; 
+          text-align:left; 
+          background:o-repeat right top;  }
+LI.kadov-Ipagetop { 
+                   text-align:left;  }
+#page { 
+       margin:0px auto; 
+       padding:0px 0px 10px 0px; 
+       width:966px; 
+       text-align:left;  }
+LI.kadov-Ipage { 
+                text-align:left;  }
+#pagewide { 
+           margin:20px; 
+           padding:0px 0px 10px 0px; 
+           width:918px; 
+           text-align:left;  }
+LI.kadov-Ipagewide { 
+                    text-align:left;  }
+#copyright { 
+            clear:both; 
+            margin:0px auto; 
+            padding:2px 0px 0px 0px; 
+            width:866px; 
+            text-align:left; 
+            font:9px tahoma verdana arial helvetica sans-serif; 
+            color:#D5D1B9; 
+            border-top:1px solid #D5D1B9;  }
+LI.kadov-Icopyright { 
+                     text-align:left; 
+                     font:9px tahoma verdana arial helvetica sans-serif; 
+                     color:#D5D1B9;  }
+.bodytext { 
+           font-size:75%;  }
+LI.kadov-Cbodytext { 
+                    font-size:75%;  }
+.fast { 
+       font-size:12px; 
+       font-weight:normal;  }
+LI.kadov-Cfast { 
+                font-size:12px; 
+                font-weight:normal;  }
+#whitebox { 
+           border-right-width:1px; 
+           border-right-style:solid; 
+           border-right-color:#D5D1B9; 
+           padding-right:13px; 
+           border-left-width:1px; 
+           border-left-style:solid; 
+           border-left-color:#D5D1B9; 
+           padding-left:13px;  }
+LI.kadov-Iwhitebox {  }
+.KSPU\005fpage { 
+                background-color:#ffffff; 
+                font-size:12px; 
+                font-weight:normal;  }
+LI.kadov-CKSPU\005fpage { 
+                         font-size:12px; 
+                         font-weight:normal;  }
+.divHeaderText { 
+                font-family:Arial; 
+                font-size:16px; 
+                font-weight:normal; 
+                color:#000000; 
+                text-align:left;  }
+LI.kadov-CdivHeaderText { 
+                         font-family:Arial; 
+                         font-size:16px; 
+                         font-weight:normal; 
+                         color:#000000; 
+                         text-align:left;  }
+.divLabelText { 
+               font-family:Arial; 
+               font-size:12px; 
+               font-weight:bold; 
+               color:#000000; 
+               text-align:left;  }
+LI.kadov-CdivLabelText { 
+                        font-family:Arial; 
+                        font-size:12px; 
+                        font-weight:bold; 
+                        color:#000000; 
+                        text-align:left;  }
+.divValueText { 
+               font-family:Arial; 
+               font-size:12px; 
+               font-weight:normal; 
+               color:#000000; 
+               text-align:left;  }
+LI.kadov-CdivValueText { 
+                        font-family:Arial; 
+                        font-size:12px; 
+                        font-weight:normal; 
+                        color:#000000; 
+                        text-align:left;  }
+.divStepText { 
+              font-family:Arial; 
+              font-size:16px; 
+              font-weight:normal; 
+              color:#ff0000; 
+              text-align:left;  }
+LI.kadov-CdivStepText { 
+                       font-family:Arial; 
+                       font-size:16px; 
+                       font-weight:normal; 
+                       color:#ff0000; 
+                       text-align:left;  }
+.divErrorText { 
+               font-family:Arial; 
+               font-size:12px; 
+               font-weight:normal; 
+               color:#ff0000; 
+               text-align:left;  }
+LI.kadov-CdivErrorText { 
+                        font-family:Arial; 
+                        font-size:12px; 
+                        font-weight:normal; 
+                        color:#ff0000; 
+                        text-align:left;  }
+.divErrorHeading { 
+                  font-family:Arial; 
+                  font-size:16px; 
+                  font-weight:bolder; 
+                  color:#ff0000; 
+                  text-align:left;  }
+LI.kadov-CdivErrorHeading { 
+                           font-family:Arial; 
+                           font-size:16px; 
+                           font-weight:bolder; 
+                           color:#ff0000; 
+                           text-align:left;  }
+SPAN.Italic { 
+             font-style:normal;  }

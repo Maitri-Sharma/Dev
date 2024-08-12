@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create_tmpr_f7a15a54_5f7a_4">
+<sql>
+
+CREATE TABLE kspu_app."tmpr_f7a15a54_5f7a_4" (
+	reol_id varchar(10)
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

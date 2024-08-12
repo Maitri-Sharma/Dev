@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create_sde_logfile_data">
+<sql>
+
+
+CREATE TABLE kspu_app."sde_logfile_data" (
+	logfile_data_id numeric(38) NOT NULL,
+	sde_row_id numeric(38) NOT NULL
+) ;
+
+CREATE INDEX sde_logfile_data_idx1 ON kspu_app."sde_logfile_data" (logfile_data_id, sde_row_id);
+CREATE INDEX sde_logfile_data_idx2 ON kspu_app."sde_logfile_data" (sde_row_id);
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

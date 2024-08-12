@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-foreign-key">
+<sql>
+
+ALTER TABLE kspu_db.utvalg ADD CONSTRAINT utvalg_fk1 FOREIGN KEY (utvalglistid) REFERENCES kspu_db.utvalglist(utvalglistid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgcriteria ADD CONSTRAINT utvalgcriteria_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgdistrict ADD CONSTRAINT utvalgdistrict_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgkommune ADD CONSTRAINT utvalgkommune_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalglist ADD CONSTRAINT utvalglist_fk1 FOREIGN KEY (parentutvalglistid) REFERENCES kspu_db.utvalglist(utvalglistid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalglistmodification ADD CONSTRAINT utvalglistid_fk FOREIGN KEY (utvalglistid) REFERENCES kspu_db.utvalglist(utvalglistid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgmodification ADD CONSTRAINT utvalgmodification_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgoldreol ADD CONSTRAINT utvalgoldreol_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgpostalzone ADD CONSTRAINT utvalgpostalzone_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgreceiver ADD CONSTRAINT utvalgreceiver_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE kspu_db.utvalgreol ADD CONSTRAINT utvalgreol_fk1 FOREIGN KEY (utvalgid) REFERENCES kspu_db.utvalg(utvalgid) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

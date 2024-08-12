@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-input_segmenter_19012018">
+<sql>
+
+
+
+CREATE TABLE kspu_db."input_segmenter_19012018" (gkrets_id varchar(10) NOT NULL,
+	segment varchar(2) NOT NULL
+) ;
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

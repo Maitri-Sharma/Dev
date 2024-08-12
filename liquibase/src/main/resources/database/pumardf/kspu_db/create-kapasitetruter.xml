@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-kapasitetruter">
+<sql>
+
+
+CREATE TABLE kspu_db."kapasitetruter" (dato timestamp NOT NULL,
+	reolnr numeric(38) NOT NULL,
+	restvekt integer NOT NULL,
+	restantall integer NOT NULL,
+	mottakertype varchar(30),
+	restthickness double precision,
+	PRIMARY KEY (dato,reolnr)
+) ;
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

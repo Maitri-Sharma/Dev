@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalgmodification">
+<sql>
+
+
+CREATE TABLE kspu_db."utvalgmodification" (utvalgmodificationid numeric(38) NOT NULL,
+	utvalgid numeric(38) NOT NULL,
+	modificationdate timestamp NOT NULL,
+	userid varchar(50) NOT NULL,
+	info varchar(250),
+	PRIMARY KEY (utvalgmodificationid)
+) ;
+CREATE INDEX utvalgmod_fk ON kspu_db.utvalgmodification (utvalgid);
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

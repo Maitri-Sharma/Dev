@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalg_recre_run_1811">
+<sql>
+
+
+
+CREATE TABLE kspu_db."utvalg_recre_run_1811" (utvalgid numeric(38) NOT NULL,
+	lockedtime timestamp,
+	processid bigint NOT NULL
+) ;
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

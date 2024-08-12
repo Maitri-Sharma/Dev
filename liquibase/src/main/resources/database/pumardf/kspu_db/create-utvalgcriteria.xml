@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalgcriteria">
+<sql>
+
+
+CREATE TABLE kspu_db."utvalgcriteria" (criteriaid numeric(38) NOT NULL,
+	utvalgid numeric(38) NOT NULL,
+	criteria varchar(4000),
+	criteriatype numeric(38) NOT NULL,
+	PRIMARY KEY (criteriaid)
+) ;
+CREATE INDEX utvalgcriteria_uid ON kspu_db.utvalgcriteria (utvalgid);
+
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

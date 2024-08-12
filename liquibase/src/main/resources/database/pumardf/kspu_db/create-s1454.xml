@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-s1454">
+<sql>
+
+CREATE TABLE kspu_db."s1454" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1454_ix1 ON kspu_db.s1454 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1454_ix2 ON kspu_db.s1454 (sp_fid);
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

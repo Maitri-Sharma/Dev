@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:drm="urn:posten.no/eC4/DRM_Extract_PRSPlan">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <drm:DRMExportRequest>
+      <Origin>
+        <TimeStamp>?</TimeStamp>
+      </Origin>
+      <Request>
+        <Fradato>?</Fradato>
+      </Request>
+    </drm:DRMExportRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
+

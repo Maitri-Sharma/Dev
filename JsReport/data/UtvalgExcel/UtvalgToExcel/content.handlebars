@@ -1,0 +1,1294 @@
+{{#xlsxReplace "xl/styles.xml"}} {#asset style.xml}} {{/xlsxReplace}}
+
+ {{#xlsxReplace  "xl/worksheets/sheet1.xml" }}
+        <worksheet
+    xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <dimension ref="A1"/>
+        <sheetViews>
+            <sheetView workbookViewId="0"/>
+        </sheetViews>
+        <sheetFormatPr defaultRowHeight="13.5"/>
+        <cols>
+            <col min="1" max="1" width="25" />
+            <col min="2" max="2" width="25" />
+            <col min="3" max="3" width="25" />
+            <col min="4" max="4" width="18" />
+            <col min="5" max="5" width="25" />
+            <col min="6" max="6" width="18" />
+            <col min="7" max="7" width="18" />
+            <col min="8" max="8" width="18" />
+        </cols>
+        <sheetData />
+        <phoneticPr fontId="1" type="noConversion"/>
+        <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>
+        <pageSetup paperSize="9" orientation="portrait" horizontalDpi="200" verticalDpi="200"/>
+    </worksheet>
+    {{/xlsxReplace}}
+    
+   
+{{#xlsxMerge "xl/workbook.xml" "workbook.sheets[0].sheet[0]"}}
+   <sheet name="Report"/>
+{{/xlsxMerge}} 
+
+ 
+{{#if (checkDistrDate distrDate)}} 
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    {{rowCounter}}
+    <row>
+          
+          <c t="inlineStr"></c>  
+         <c t="inlineStr" s="0"><is><t>F‎ø‎rste dag i distribusjonsintervall‎:</t></is></c>
+         
+          <c t="inlineStr"></c> 
+           <c t="inlineStr"><is><t>{{distrDate}}</t></is></c>       
+    </row>
+{{/xlsxAdd}}
+{{#if isMapwithData}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    
+                    <row r= "{{getRowIndex}}">
+                        <c  t="inlineStr" s="21">
+                            <is>
+                              <t> Grønn: </t>
+                            </is>
+                        </c> 
+                         <c t="inlineStr" s="2">
+                            <is>
+                              <t> Distribueres innen 1. distribusjonsdag kl 20:00.</t>
+                            </is>
+                        </c> 
+                         <c  t="inlineStr" s="20">
+                            <is>
+                              <t> Oransje:</t>
+                            </is>
+                        </c> 
+                         <c  t="inlineStr" s="2">
+                            <is>
+                              <t> Distribueres innen 2. distribusjonsdag kl 17:00.</t>
+                            </is>
+                        </c> 
+                       
+                    </row>
+                {{/xlsxAdd}}
+  {{/if}}
+{{rowCounter}}
+{{/if}}
+ 
+{{#if isMapwithData}}
+
+    {{#if (checkDistrDate distrDate)}} 
+        {{#xlsxAddImage "logo" "sheet1.xml" 6 0 7 3}}
+        {#asset /UtvalgExcel/logoe.png @encoding=base64}
+        {{/xlsxAddImage}}
+    {{else}}
+        {{#xlsxAddImage "logo" "sheet1.xml" 4 0 5 3}}
+        {#asset /UtvalgExcel/logoe.png @encoding=base64}
+        {{/xlsxAddImage}}
+    {{/if}}
+    
+    {{rowCounter 3}}
+
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    {{rowCounter}}
+    <row r= "{{getRowIndex}}">
+        <c t="inlineStr" s="3"><is><t>Liste/utvalg</t></is></c> 
+        <c t="inlineStr" s="3"><is><t>Forhandlerpåtrykk</t></is></c>
+        <c t="inlineStr" s="3"><is><t>Sone 0</t></is></c>
+        <c t="inlineStr" s="3"><is><t>Sone 1</t></is></c>
+        <c t="inlineStr" s="3"><is><t>Sone 2</t></is></c>
+        <c t="inlineStr" s="3"><is><t>Totalt</t></is></c>
+        {{#if (checkDistrDate distrDate)}} 
+        <c t="inlineStr" s="3"><is><t>Dag 1</t></is></c>
+        <c t="inlineStr" s="3"><is><t>Dag 2</t></is></c>
+        {{/if}}
+    </row>
+    {{/xlsxAdd}}
+
+    
+
+    {{#if islist}}
+    {{#if reportName}}
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row> 
+                <c t="inlineStr" s="15"><is><t>{{reportName}}</t></is></c> 
+                <c t="inlineStr" s="2"><is><t>{{logo}}</t></is></c> 
+                <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                {{#if (checkDistrDate distrDate)}} 
+                <c t="n" s="14" ><v>{{dag1}}</v></c>
+                <c t="n" s="14" ><v>{{dag2}}</v></c>
+                {{/if}}        
+            </row>
+        {{/xlsxAdd}}  
+    {{/if}}
+        {{!-- {{#each listArray}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr" s="2"><is><t>{{name}}</t></is></c>         
+                    <c t="inlineStr" s="2"><is><t>{{logo}}</t></is></c>         
+                    <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                    <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                    {{#if (checkDistrDate ../distrDate)}} 
+                        <c t="n" s="14" ><v>{{dag1}}</v></c>
+                        <c t="n" s="14" ><v>{{dag2}}</v></c>
+                    {{/if}}
+                </row>
+            {{/xlsxAdd}}        
+        {{/each}} --}}
+
+        {{rowCounter}}
+        
+        {{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.mergeCells"}}
+            <mergeCells>
+                {{{mergeCells ../distrDate}}}
+            </mergeCells>
+        {{/xlsxReplace}}
+
+        {{!-- {{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.mergeCells"}}
+    <mergeCells>
+        <mergeCell ref="A{{getRowIndex}}:H{{getRowIndex}}"/>
+    </mergeCells>
+{{/xlsxReplace}} --}}
+
+        {{#each listArray}}
+        {{#if (CheckListName ../reportName name)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row> 
+                <c t="inlineStr" s="15"><is><t>{{name}}</t></is></c> 
+                <c t="inlineStr" s="2"><is><t>{{logo}}</t></is></c> 
+                <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                {{#if (checkDistrDate distrDate)}} 
+                <c t="n" s="14" ><v>{{dag1}}</v></c>
+                <c t="n" s="14" ><v>{{dag2}}</v></c>
+               . {{/if}}        
+            </row>
+        {{/xlsxAdd}} 
+         {{/if}}
+        {{/each}}
+        {{#each listArray}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+             <row r= "{{getRowIndex}}">
+                <c t="inlineStr" s="15"><is><t>{{name}}</t></is></c> 
+                <c t="inlineStr" s="15"><is><t>{{logo}}</t></is></c>         
+            </row>
+            {{/xlsxAdd}}
+            
+            {{!-- {{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.mergeCells"}}
+                <mergeCells>
+                {{{mergeCells ../distrDate}}}
+                </mergeCells>
+            {{/xlsxReplace}} --}}
+
+             {{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.mergeCells"}}
+                    <mergeCells>
+                        <mergeCell ref="C{{getRowIndex}}:H{{getRowIndex}}"/>
+                    </mergeCells>
+                {{/xlsxReplace}}
+
+            {{#each items}}
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    <row> 
+                        <c t="inlineStr" s="2"><is><t>{{name}}</t></is></c>         
+                        <c t="inlineStr" s="2"><is><t>{{forhandlerpartyk}}</t></is></c>         
+                        <c t="n" s="14" ><v>{{zone0}}</v></c>
+                        <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                        <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                        <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                        {{#if (checkDistrDate ../../distrDate)}} 
+                        <c t="n" s="14" ><v>{{dag1}}</v></c>
+                        <c t="n" s="14" ><v>{{dag2}}</v></c>
+                        {{/if}} 
+                    </row>
+                {{/xlsxAdd}}                
+            {{/each}}
+        {{/each}}  
+
+        {{#each listArray}}
+            {{#each items}} 
+            
+             {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+             {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+             {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+           
+             {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+           
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                
+               
+
+                <row r= "{{getRowIndex}}">
+                    <c t="inlineStr" s="22">
+                        <is>
+                            <t>{{name}}</t>
+                        </is>
+                    </c>  
+                     {{#if showHousehold}}
+                    <c t="inlineStr" s="9"><is><t>Husholdninger totalt:</t></is></c>
+                    <c t="n" s="14" ><v>{{HouseHolds}}</v></c>
+                    {{/if}} 
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="9"><is><t>Virksomheter totalt:</t></is></c>
+                    <c t="n" s="14" ><v>{{Business}}</v></c>
+                    {{/if}}        
+                </row>
+            {{/xlsxAdd}} 
+
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+
+ 
+            {{#xlsxAddImage (getMapID) "sheet1.xml" 0 (getRowIndex) 3 (getMapLastRowIndex)}}
+                {{imagedata}}
+            {{/xlsxAddImage}} 
+
+                 {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                    <row r= "{{getRowIndex}}">
+                        <c t="inlineStr"></c>
+                </row>
+                {{/xlsxAdd}}                
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+                {{/xlsxAdd}}
+                
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c> 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH sone 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 2</t></is></c>
+                    {{/if}}
+                    {{#if (checkDistrDate ../../distrDate)}} 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Dag 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Dag 2</t></is></c>
+                    {{/if}}
+                    {{/if}}
+                    
+                </row>
+                {{/xlsxAdd}}    
+
+{{#if (checkRuteLevel ../../level ../../distrDate)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>   
+                <c t="inlineStr"><is><t>Antallsopplysninger for utvalget‎:‎</t></is></c>                 
+                    {{#if showHousehold}}
+                    <c t="n" s="19" ><v>{{totalH0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalV0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV2}}</v></c>
+                    {{/if}}                
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    {{#if showHousehold}}
+                    <c t="n"  s="19" ><v>{{totalHD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalHD2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    {{/if}}               
+                    {{/if}}  
+            </row>
+            {{/xlsxAdd}}
+            {{/if}}
+
+                {{#each Reoler}}
+                        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                        <row>
+                            <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c> 
+                            {{#if ../showHousehold}}     
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                            {{/if}}
+                            {{#if ../showBusiness}} 
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                            {{/if}}                
+                            {{#if (checkDistrDate ../../../distrDate)}} 
+                            {{#if ../showHousehold}}
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                            {{/if}} 
+                            {{#if ../showBusiness}} 
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                            {{/if}}               
+                            {{/if}}
+                        </row>
+                        {{/xlsxAdd}}
+                        {{#if (checkFlykeLevel ../../../uptoLevel)}}
+                            {{#if children}}
+                                {{#each children}}
+                                    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                    {{rowCounter}}
+                                    <row>
+                                        <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                        {{#if ../../showHousehold}}
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                        {{/if}}                
+                                        {{#if (checkDistrDate ../../../../distrDate)}} 
+                                        {{#if ../../showHousehold}}
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                        {{/if}}               
+                                        {{/if}}
+                                    </row>
+                                    {{/xlsxAdd}}
+                                    {{#if (checkKommuneLevel ../../../../uptoLevel)}}
+                                        {{#if children}}
+                                            {{#each children}}
+                                                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                {{rowCounter}}
+                                                <row>
+                                                    <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c> 
+                                                    {{#if ../../../showHousehold}}                 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                    {{/if}}
+                                                    {{#if ../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                    {{/if}}                
+                                                    {{#if (checkDistrDate ../../../../../distrDate)}}
+                                                    {{#if ../../../showHousehold}}  
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                    {{/if}}
+                                                    {{#if ../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                    {{/if}}               
+                                                    {{/if}}
+                                                </row>
+                                                {{/xlsxAdd}} 
+                                                {{#if (checkTeamLevel ../../../../../uptoLevel)}} 
+                                                    {{#if children}}
+                                                        {{#each children}}
+                                                            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                            {{rowCounter}}
+                                                            <row>
+                                                                <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                                 {{/if}}
+                                                                {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                                {{/if}}                
+                                                                {{#if (checkDistrDate ../../../../../../distrDate)}} 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                                {{/if}}               
+                                                                {{/if}}
+                                                            </row>
+                                                            {{/xlsxAdd}}        
+                                                        {{/each}}
+                                                    {{/if}}
+                                                {{/if}}
+                                            {{/each}} 
+                                        {{/if}}
+                                    {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}  
+            {{/each}}
+        {{/each}}
+
+    {{else}}
+
+        {{#each items}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr" s="2"><is><t>{{name}}</t></is></c>         
+                    <c t="inlineStr" s="2"><is><t>{{forhandlerpartyk}}</t></is></c>         
+                    <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                    <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    <c t="n" s="14" ><v>{{dag1}}</v></c>
+                    <c t="n" s="14" ><v>{{dag2}}</v></c>
+                    {{/if}}
+                </row>
+            {{/xlsxAdd}}                
+        {{/each}}
+
+        {{#each items}} 
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    {{rowCounter}}
+                    
+                    <row r= "{{getRowIndex}}">
+                        <c t="inlineStr" s="22">
+                            <is>
+                                <t>{{name}}</t>
+                            </is>
+                        </c>  
+                        {{#if showHousehold}}
+                        <c t="inlineStr" s="9"><is><t>Husholdninger totalt:</t></is></c>
+                        <c t="n" s="14" ><v>{{HouseHolds}}</v></c>
+                        {{/if}} 
+                        {{#if showBusiness}} 
+                        <c t="inlineStr" s="9"><is><t>Virksomheter totalt:</t></is></c>
+                        <c t="n" s="14" ><v>{{Business}}</v></c>
+                        {{/if}}        
+                    </row>
+                {{/xlsxAdd}}
+                
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr"></c>
+                </row>
+            {{/xlsxAdd}}
+
+            
+
+            {{#xlsxAddImage (getMapID) "sheet1.xml" 0 (getRowIndex) 3 (getMapLastRowIndex)}}
+                {{imagedata}}
+            {{/xlsxAddImage}} 
+                    
+           {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                    <row r= "{{getRowIndex}}">
+                        <c t="inlineStr"></c>
+                </row>
+                {{/xlsxAdd}} 
+
+             {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>
+                <c t="inlineStr"></c> 
+                {{#if showHousehold}} 
+                <c t="inlineStr" s="3"><is><t>HH Sone 0</t></is></c>
+                <c t="inlineStr" s="3"><is><t>HH Sone 1</t></is></c>
+                <c t="inlineStr" s="3"><is><t>HH sone 2</t></is></c>
+                {{/if}}
+                {{#if showBusiness}} 
+                <c t="inlineStr" s="3"><is><t>VH Sone 0</t></is></c>
+                <c t="inlineStr" s="3"><is><t>VH Sone 1</t></is></c>
+                <c t="inlineStr" s="3"><is><t>VH Sone 2</t></is></c>
+                {{/if}}
+                {{#if (checkDistrDate ../distrDate)}} 
+                {{#if showHousehold}}
+                <c t="inlineStr" s="3"><is><t>HH Dag 1</t></is></c>
+                <c t="inlineStr" s="3"><is><t>HH Dag 2</t></is></c>
+                {{/if}}
+                {{#if showBusiness}} 
+                <c t="inlineStr" s="3"><is><t>VH Dag 1</t></is></c>
+                <c t="inlineStr" s="3"><is><t>VH Dag 2</t></is></c>
+                {{/if}}
+                {{/if}}
+                
+            </row>
+
+             
+            {{/xlsxAdd}}
+        
+{{#if (checkRuteLevel ../level ../distrDate)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>   
+                <c t="inlineStr"><is><t>Antallsopplysninger for utvalget‎:‎</t></is></c>                 
+                    {{#if showHousehold}}
+                    <c t="n" s="19" ><v>{{totalH0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalV0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV2}}</v></c>
+                    {{/if}}                
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    {{#if showHousehold}}
+                    <c t="n"  s="19" ><v>{{totalHD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalHD2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    {{/if}}               
+                    {{/if}}  
+            </row>
+            {{/xlsxAdd}}
+            {{/if}}
+
+ {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>   
+                     
+            </row>
+            {{/xlsxAdd}}
+
+            {{#each Reoler}}
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>
+                    <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                    {{#if ../showHousehold}}
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                    {{/if}}
+                    {{#if ../showBusiness}} 
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                    {{/if}}                
+                    {{#if (checkDistrDate ../../distrDate)}} 
+                    {{#if ../showHousehold}}
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                    {{/if}}
+                    {{#if ../showBusiness}} 
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                    {{/if}}               
+                    {{/if}}
+                </row>
+                {{/xlsxAdd}}
+                {{#if (checkFlykeLevel ../../uptoLevel)}}
+                    {{#if children}}
+                        {{#each children}}
+                            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                            {{rowCounter}}
+                            <row>
+                                <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                {{#if ../../showHousehold}}
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                {{/if}}
+                                {{#if ../../showBusiness}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                {{/if}}                
+                                {{#if (checkDistrDate ../../../distrDate)}} 
+                                {{#if ../../showHousehold}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                {{/if}} 
+                                {{#if ../../showBusiness}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                {{/if}}               
+                                {{/if}}
+                            </row>
+                            {{/xlsxAdd}}
+                            {{#if (checkKommuneLevel ../../../uptoLevel)}}
+                                {{#if children}}
+                                    {{#each children}}
+                                        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                        {{rowCounter}}
+                                        <row>
+                                            <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                            {{#if ../../../showHousehold}}
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                            {{/if}} 
+                                            {{#if ../../../showBusiness}} 
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                            {{/if}}                
+                                            {{#if (checkDistrDate ../../../../distrDate)}} 
+                                            {{#if ../../../showHousehold}} 
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                            {{/if}} 
+                                            {{#if ../../../showBusiness}} 
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                            {{/if}}               
+                                            {{/if}}
+                                        </row>
+                                        {{/xlsxAdd}} 
+                                        {{#if (checkTeamLevel ../../../../uptoLevel)}} 
+                                            {{#if children}}
+                                                {{#each children}}
+                                                    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                        {{rowCounter}}
+                                                        <row>
+                                                            <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                                            {{#if ../../../../showHousehold}}
+                                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                            {{/if}}
+                                                            {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                            {{/if}}                
+                                                            {{#if (checkDistrDate ../../../../../distrDate)}} 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                                {{/if}}               
+                                                            {{/if}}
+                                                        </row>
+                                                    {{/xlsxAdd}}        
+                                                {{/each}}
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/each}} 
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                {{/if}}
+            {{/each}}  
+        {{/each}}
+
+    {{/if}}
+
+{{else}}
+
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+        {{rowCounter}}
+        <row>
+            <c t="inlineStr" s="3"><is><t>Liste/utvalg</t></is></c> 
+            <c t="inlineStr" s="3"><is><t>Forhandlerpåtrykk</t></is></c>
+            <c t="inlineStr" s="3"><is><t>Sone 0</t></is></c>
+            <c t="inlineStr" s="3"><is><t>Sone 1</t></is></c>
+            <c t="inlineStr" s="3"><is><t>Sone 2</t></is></c>
+            <c t="inlineStr" s="3"><is><t>Totalt</t></is></c>
+            {{#if (checkDistrDate distrDate)}} 
+            <c t="inlineStr" s="3"><is><t>Dag 1</t></is></c>
+            <c t="inlineStr" s="3"><is><t>Dag 2</t></is></c>
+            {{/if}}
+        </row>
+    {{/xlsxAdd}}
+
+    {{#if reportName}}
+     {{#if islist}}
+     
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row> 
+                 <c t="inlineStr" s="15"><is><t>{{reportName}}</t></is></c> 
+                 <c t="inlineStr" s="2"><is><t>{{logo}}</t></is></c> 
+                 <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                 <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                 <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                 <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                 {{#if (checkDistrDate distrDate)}} 
+                 <c t="n" s="14" ><v>{{dag1}}</v></c>
+                 <c t="n" s="14" ><v>{{dag2}}</v></c>
+                 {{/if}}        
+            </row>
+        {{/xlsxAdd}}  
+        {{/if}}
+    {{/if}}
+
+    {{#if islist}}
+        {{#each listArray}}
+        {{#if (CheckListName ../reportName name)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row> 
+                   <c t="inlineStr" s="2"><is><t>{{name}}</t></is></c>         
+                    <c t="inlineStr" s="2"><is><t>{{logo}}</t></is></c>         
+                    <c t="n" s="14" ><v>{{zone0}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                    <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                    <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                    {{#if (checkDistrDate ../distrDate)}} 
+                        <c t="n" s="14" ><v>{{dag1}}</v></c>
+                        <c t="n" s="14" ><v>{{dag2}}</v></c>
+                    {{/if}}
+                </row>
+            {{/xlsxAdd}}  
+            {{/if}}      
+        {{/each}}  
+
+         {{rowCounter}}
+
+        {{#each listArray}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+               <row r= "{{getRowIndex}}">
+                    <c t="inlineStr" s="15"><is><t>{{name}}</t></is></c>
+                    <c t="inlineStr" s="15"><is><t>{{logo}}</t></is></c>        
+                </row>
+            {{/xlsxAdd}} 
+
+           
+            
+            {{#each items}}
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    <row>        
+                        <c t="inlineStr" s="2"><is><t>{{name}}</t></is></c>         
+                        <c t="inlineStr" s="2"><is><t>{{forhandlerpartyk}}</t></is></c>         
+                        <c t="n" s="14" ><v>{{zone0}}</v></c>
+                        <c t="n" s="14" ><v>{{zone1}}</v></c>         
+                        <c t="n" s="14" ><v>{{zone2}}</v></c>         
+                        <c t="n" s="14" ><v>{{totalSum zone0 zone1 zone2}}</v></c>         
+                        {{#if (checkDistrDate ../../distrDate)}} 
+                        <c t="n" s="14" ><v>{{dag1}}</v></c>
+                        <c t="n" s="14" ><v>{{dag2}}</v></c>
+                        {{/if}} 
+                    </row>
+                {{/xlsxAdd}}                
+            {{/each}}
+        {{/each}}  
+
+        {{#each listArray}}
+            {{#each items}} 
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    <row>        
+                    </row>
+                {{/xlsxAdd}}
+                 
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                    {{rowCounter}}
+                    {{rowCounter}}
+                     {{rowCounter}}
+                    {{rowCounter}}
+                    <row r= "{{getRowIndex}}">
+                        <c t="inlineStr" s="22">
+                            <is>
+                                <t>{{name}}</t>
+                            </is>
+                        </c>  
+                        {{#if showHousehold}}
+                        <c t="inlineStr" s="9"><is><t>Husholdninger totalt:</t></is></c>
+                        <c t="n" s="14" ><v>{{HouseHolds}}</v></c>
+                        {{/if}} 
+                        {{#if showBusiness}} 
+                        <c t="inlineStr" s="9"><is><t>Virksomheter totalt:</t></is></c>
+                        <c t="n" s="14" ><v>{{Business}}</v></c>
+                        {{/if}}        
+                    </row>
+                {{/xlsxAdd}}
+                
+                {{rowCounter}}
+
+                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                 <row r= "{{getRowIndex}}">
+                    <c t="inlineStr"></c> 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH sone 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 2</t></is></c>
+                    {{/if}}
+                    {{#if (checkDistrDate ../../distrDate)}} 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Dag 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Dag 2</t></is></c>
+                    {{/if}}
+                    {{/if}}
+                </row>
+                {{/xlsxAdd}}    
+
+{{#if (checkRuteLevel ../../level ../../distrDate)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>   
+                <c t="inlineStr"><is><t>Antallsopplysninger for utvalget‎:‎</t></is></c>                 
+                    {{#if showHousehold}}
+                    <c t="n" s="19" ><v>{{totalH0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalV0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV2}}</v></c>
+                    {{/if}}                
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    {{#if showHousehold}}
+                    <c t="n"  s="19" ><v>{{totalHD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalHD2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    {{/if}}               
+                    {{/if}}  
+            </row>
+            {{/xlsxAdd}}
+            {{/if}}
+
+                {{#each Reoler}}
+                        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                        <row>
+                            <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c> 
+                            {{#if ../showHousehold}}     
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                            {{/if}}
+                            {{#if ../showBusiness}} 
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                            {{/if}}                
+                            {{#if (checkDistrDate ../../../distrDate)}} 
+                            {{#if ../showHousehold}}
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                            {{/if}} 
+                            {{#if ../showBusiness}} 
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                            <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                            {{/if}}               
+                            {{/if}}
+                        </row>
+                        {{/xlsxAdd}}
+                        {{#if (checkFlykeLevel ../../../uptoLevel)}}
+                            {{#if children}}
+                                {{#each children}}
+                                    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                    {{rowCounter}}
+                                    <row>
+                                        <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                        {{#if ../../showHousehold}}
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                        {{/if}}                
+                                        {{#if (checkDistrDate ../../../../distrDate)}} 
+                                        {{#if ../../showHousehold}}
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                        {{/if}}               
+                                        {{/if}}
+                                    </row>
+                                    {{/xlsxAdd}}
+                                    {{#if (checkKommuneLevel ../../../../uptoLevel)}}
+                                        {{#if children}}
+                                            {{#each children}}
+                                                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                {{rowCounter}}
+                                                <row>
+                                                    <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c> 
+                                                    {{#if ../../../showHousehold}}                 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                    {{/if}}
+                                                    {{#if ../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                    {{/if}}                
+                                                    {{#if (checkDistrDate ../../../../../distrDate)}}
+                                                    {{#if ../../../showHousehold}}  
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                    {{/if}}
+                                                    {{#if ../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                    {{/if}}               
+                                                    {{/if}}
+                                                </row>
+                                                {{/xlsxAdd}} 
+                                                {{#if (checkTeamLevel ../../../../../uptoLevel)}} 
+                                                    {{#if children}}
+                                                        {{#each children}}
+                                                            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                            {{rowCounter}}
+                                                            <row>
+                                                                <c t="inlineStr" s="{{CssClass}}"><is><t>{{name}}</t></is></c>                 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                                 {{/if}}
+                                                                {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                                {{/if}}                
+                                                                {{#if (checkDistrDate ../../../../../../distrDate)}} 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}} 
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                                {{/if}}               
+                                                                {{/if}}
+                                                            </row>
+                                                            {{/xlsxAdd}}        
+                                                    {{/each}}
+                                                {{/if}}
+                                            {{/if}}
+                                        {{/each}} 
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                    {{/if}}
+                {{/each}}  
+            {{/each}}
+        {{/each}}
+
+
+    {{else}}
+
+        {{#each items}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                {{rowCounter}}
+                <row>                        
+                    <c t="inlineStr" ><is><t>{{name}}</t></is></c> 
+                    <c t="inlineStr" ><is><t>{{forhandlerpartyk}}</t></is></c>
+                    <c t="n" s="14" ><v>{{zone0}}</v></c>
+                    <c t="n" s="14"><v>{{zone1}}</v></c>
+                    <c t="n" s="14"><v>{{zone2}}</v></c>
+                    <c t="n" s="14"><v>{{totalSum zone0 zone1 zone2}}</v></c>
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    <c t="n" s="14"><v>{{dag1}}</v></c>
+                    <c t="n" s="14"><v>{{dag2}}</v></c>
+                    {{/if}}
+                </row>
+            {{/xlsxAdd}}
+        {{/each}}
+
+       {{#each items}}      
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>        
+            </row>
+        {{/xlsxAdd}}
+         
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            {{rowCounter}}
+            {{rowCounter}}
+            <row>
+                <c t="inlineStr" s="22">
+                        <is>
+                            <t>{{name}}</t>
+                        </is>
+                    </c>  
+                <c t="inlineStr"><is><t>Husholdninger totalt:</t></is></c>
+                {{#if showHousehold}}
+                <c t="n" s="14" ><v>{{HouseHolds}}</v></c>
+                {{else}}
+                <c t="n" s="14" ><v>0</v></c>
+                {{/if}}
+                <c t="inlineStr"><is><t>Virksomheter totalt:</t></is></c>
+                {{#if showBusiness}} 
+                <c t="n" s="14" ><v>{{Business}}</v></c>
+                {{else}}
+                <c t="n" s="14" ><v>0</v></c>
+                {{/if}}
+            </row>
+        {{/xlsxAdd}}  
+    
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>
+                <c t="inlineStr"></c>
+            </row>
+        {{/xlsxAdd}} 
+
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+        {{rowCounter}}
+
+        <row r= "{{getRowIndex}}">
+                    <c t="inlineStr"></c> 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH sone 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Sone 0</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Sone 2</t></is></c>
+                    {{/if}}
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    {{#if showHousehold}} 
+                    <c t="inlineStr" s="3"><is><t>HH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>HH Dag 2</t></is></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="inlineStr" s="3"><is><t>VH Dag 1</t></is></c>
+                    <c t="inlineStr" s="3"><is><t>VH Dag 2</t></is></c>
+                    {{/if}}
+                    {{/if}}
+                </row>
+        {{/xlsxAdd}}
+            
+            {{#if (checkRuteLevel ../level ../distrDate)}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>   
+                <c t="inlineStr"><is><t>Antallsopplysninger for utvalget‎:‎</t></is></c>                 
+                    {{#if showHousehold}}
+                    <c t="n" s="19" ><v>{{totalH0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalH2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalV0}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalV2}}</v></c>
+                    {{/if}}                
+                    {{#if (checkDistrDate ../distrDate)}} 
+                    {{#if showHousehold}}
+                    <c t="n"  s="19" ><v>{{totalHD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalHD2}}</v></c>
+                    {{/if}}
+                    {{#if showBusiness}} 
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    <c t="n"  s="19" ><v>{{totalVD1}}</v></c>
+                    {{/if}}               
+                    {{/if}}  
+            </row>
+            {{/xlsxAdd}}
+            {{/if}}
+
+        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+        {{rowCounter}}
+        <row>        
+        </row>
+        {{/xlsxAdd}}
+
+        {{#each Reoler}}
+            {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+            {{rowCounter}}
+            <row>
+                <c t="inlineStr"><is><t>{{name}}</t></is></c>  
+                {{#if ../showHousehold}}                
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                {{/if}}
+                {{#if ../showBusiness}} 
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                {{/if}}                
+                {{#if (checkDistrDate ../../distrDate)}} 
+                {{#if ../showHousehold}}
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                {{/if}}
+                {{#if ../showBusiness}} 
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                {{/if}}               
+                {{/if}}
+            </row>
+            {{/xlsxAdd}}
+            
+            {{#if (checkFlykeLevel ../../uptoLevel)}}
+                {{#if children}}
+                    {{#each children}}
+                        {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                            {{rowCounter}}
+                            <row>
+                                <c t="inlineStr"><is><t>{{name}}</t></is></c>                 
+                                {{#if ../../showHousehold}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                {{/if}}
+                                {{#if ../../showBusiness}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                {{/if}}                
+                                {{#if (checkDistrDate ../../../distrDate)}} 
+                                {{#if ../../showHousehold}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                {{/if}}
+                                {{#if ../../showBusiness}} 
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                {{/if}}               
+                                {{/if}}   
+                            </row>
+                        {{/xlsxAdd}}
+                        {{#if (checkKommuneLevel ../../../uptoLevel)}}
+                            {{#if children}}
+                                {{#each children}}
+                                    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                    {{rowCounter}}
+                                    <row>
+                                        <c t="inlineStr"><is><t>{{name}}</t></is></c> 
+                                        {{#if ../../../showHousehold}}                
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                        {{/if}}                
+                                        {{#if (checkDistrDate ../../../../distrDate)}} 
+                                        {{#if ../../../showHousehold}}
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                        {{/if}}
+                                        {{#if ../../../showBusiness}} 
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                        <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                        {{/if}}               
+                                        {{/if}} 
+                                    </row>
+                                    {{/xlsxAdd}} 
+                                    {{#if (checkTeamLevel ../../../../uptoLevel)}} 
+                                        {{#if children}}
+                                            {{#each children}}
+                                                {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+                                                {{rowCounter}}
+                                                <row>
+                                                    <c t="inlineStr"><is><t>{{name}}</t></is></c>                 
+                                                    {{#if ../../../../showHousehold}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{H2}}</v></c>
+                                                    {{/if}} 
+                                                    {{#if ../../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V0}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{V2}}</v></c>
+                                                    {{/if}}                
+                                                    {{#if (checkDistrDate ../../../../../distrDate)}} 
+                                                    {{#if ../../../../showHousehold}}
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{HHD2}}</v></c>
+                                                    {{/if}} 
+                                                    {{#if ../../../../showBusiness}} 
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD1}}</v></c>
+                                                    <c t="n" s="{{getChildClass CssClass}}" ><v>{{VHD2}}</v></c>
+                                                    {{/if}}               
+                                                    {{/if}} 
+                                                </row>
+                                                {{/xlsxAdd}}        
+                                            {{/each}}
+                                        {{/if}}
+                                    {{/if}}
+                                {{/each}} 
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    {{/each}}
+    {{/if}}
+{{/if}}
+
+{{{xlsxPrint}}}

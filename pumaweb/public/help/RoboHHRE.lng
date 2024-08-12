@@ -1,0 +1,102 @@
+[GlossaryTab]
+TabCaption=&Ordliste
+TermCaption=&Term
+DefinitionCaption=&Definisjon på:
+
+[BrowseSequence]
+PreCaption=Forrige
+PreTooltip=Forrige emne
+NextCaption=Neste
+NextTooltip=Neste emne
+BlockTooltip=Velg sekvenser for Bla gjennom
+
+[Common]
+Contents=Innhold
+Index=Indeks
+Search=Søk
+Glossary=Ordliste
+Logo/Author=Drevet av
+Show=Vis
+Hide=Skjul
+SyncToc=SyncToc
+Prev=<<
+Next=>>
+Disabled Prev=<<
+Disabled Next=>>
+Seperate = |
+
+[WebHelp]
+Cancel=Avbryt
+CantOpenURLorFile=Kan ikke åpne URL eller fil
+CompletingContents=Fullfører innhold...
+Display=Vis
+Term=Begrep:
+Definition=Definisjon:
+Done=Ferdig
+Find=Søk etter
+IndexInputPrompt=Skriv inn nøkkelordet du vil søke etter:
+RelateTopicListPrompt=Klikk på et emne og deretter på Vis.
+LoadingData=Laster data, vent litt...
+LoadingContents=Laster innhold, vent litt...
+LoadingContentsData=Laster, klikk her for å avbryte...
+LoadingFTS=Leser søkedata...
+LoadingIndex=Laster stikkordregister...
+LoadingTOCItem=Laster innholdsfortegnelse:
+Searching=Søker...
+FtsInputPrompt=Skriv inn ordet/ordene du vil søke etter:
+TopicsFound=Emner som ble funnet
+BrowserLimitedMessage=Nettleseren din støtter ikke rammer. Vi anbefaler at du oppdaterer leseren til en versjon som støtter rammer.
+SuggestViewNoFrameMessage=Klikk på denne hyperkoblingen hvis du vil åpne Hjelp-systemet uten
+SuggestViewNoFrameMsg2=rammer.
+TopicsNotFound=Fant ingen emner.
+CantSearch=Kan ikke søke etter dette uttrykket.
+JS_alert_appletNotLoad = Kan ikke laste inn programmet. Hvis du bruker en gammel versjon av Netscape, må du redigere filen prefs.js.
+JS_alert_colorlimitation=WebHelp har registrert at skjermen er innstilt til å vise 16 farger. Endre innstillingen til 256 eller flere farger for å oppnå full støtte for WebHelp.
+Blank_topic_text=Dette emnet ble opprettet med WinHelp Project Conversion Wizard, og er målet når det forekommer emner som mangler eller hyperkoblinger som er brutt.
+JS_alert_ProjectLoadingFail=Kan ikke laste på riktig måte, klikk på Oppdater.
+JS_alert_cantLoadProject=Kan ikke laste prosjektet:
+JS_alert_ErrorInLoading=Feil under lasting av navigeringskomponent. Generer WebHelp på nytt.
+IndexBtnText=Start
+FtsBtnText=Start
+ToolBarSearchBtnText=Start
+InTopicSearchBtnText=Start
+SearchLabel=Søk
+SearchPrompt=- Søk -
+PreTooltip=Forrige emne
+NextTooltip=Neste emne
+WebSearch=WebSearch
+SyncTocTooltip=Synkroniser innholdsfortegnelse
+Book=Bok
+Page=Side
+Remote_Page=Ekstern side
+Show_Navigation_Component=Vis navigeringskomponent
+Hide_Navigation_Component=Skjul navigeringskomponent
+nls_edit_label=Skriv spørsmålet:
+nls_button_go_hint=Start søket
+nls_button_go_text=Start
+nls_body_instruction=Skriv spørsmålet i tekstboksen ovenfor, og klikk på GO.
+nls_body_empty=Beklager. Vi klarte ikke å finne et godt svar på spørsmålet ditt.
+IndexSelectTopicTitle=Velg et emne
+IndexSelectTopicLabel=Velg et emne, og klikk på Vis
+IndexSelectTopicError=Velg et emne.
+IndexAlphabetBookmarks=ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ
+MergeError1=Det sammenslåtte hjelpesystemet
+MergeError2=bruker et annet språk enn hovedhjelpesystemet. Dette innebærer at stikkordregisteret og funksjonen for fulltekstsøk ikke virker som de skal i det sammenslåtte hjelpesystemet.
+PoweredBy=Drevet av
+GeneratedBy=Generert av
+Author=Forfatter
+About=Om
+Print=Skriv ut
+
+[PrintedDoc]
+ChapterFileNamePrefix=Chapter_
+TitlePage=Tittelside
+TitlePageFileName=Chapter__Title_Page.doc
+TableOfContents=Innholdsfortegnelse
+
+CrossReferencePrefix=Se
+GlossaryHeadingStyleName=Ordlisteoverskrift
+GlossaryTermStyleName=Ordlisteterm
+GlossaryDefinitionStyleName=Ordlistedefinisjon
+TitlePageTitleStyleName=Tittelsidetittel
+TocPageTitleStyleName=Innholdsfortegnelsetittel

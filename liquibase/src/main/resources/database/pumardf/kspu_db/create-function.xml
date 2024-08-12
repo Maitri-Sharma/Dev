@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-function">
+<sql>
+
+
+
+
+CREATE OR REPLACE FUNCTION kspu_db.sp_prscalendardatafortheday (DATO_IN timestamp) RETURNS REFCURSOR AS $body$
+DECLARE
+
+   ret_cursor REFCURSOR;
+
+BEGIN
+ DECLARE 
+    EWS varchar(2):='N';
+    MWS varchar(2):='N';
+    TotalRows numeric := 0;
+
+BEGIN
+ SELECT COUNT(*) INTO STRICT TotalRows  FROM kspu_db.CALENDARDETAILSFROMPRS WHERE DATO = DATO_IN;
+
+   select case
+           when exists (SELECT * FROM kspu_db.CALENDARDETAILSFROMPRS WHERE DATO = DATO_IN )
+           then 1
+           else 0
+         end  into STRICT TotalRows
+;
+
+
+  if TotalRows = 0 then
+      open ret_cursor for EXECUTE 'SELECT * from kspu_db.CALENDARDETAILSFROMPRS WHERE ROWNUM = 1 order by Dato';
+  else
+  SELECT trim(both IsEarlyWeekSecondDay) , trim(both IsMidWeekSecondDay) INTO STRICT EWS,MWS  FROM kspu_db.CALENDARDETAILSFROMPRS WHERE DATO = DATO_IN;
+      if EWS = 'Y' then
+        open ret_cursor for EXECUTE
+        'select * from kspu_db.CALENDARDETAILSFROMPRS c WHERE TRIM(c.isearlyweekfirstday) = ''Y'' AND c.DATO =(SELECT max(DATO) from kspu_db.CALENDARDETAILSFROMPRS WHERE TRIM(isearlyweekfirstday) = ''Y'' AND DATO < :DATO_IN)' using dato_in;
+    elsif MWS = 'Y' then
+        open ret_cursor for EXECUTE
+        'select * from kspu_db.CALENDARDETAILSFROMPRS c WHERE TRIM(c.ismidweekfirstday) = ''Y'' AND c.DATO =(SELECT max(DATO) from kspu_db.CALENDARDETAILSFROMPRS WHERE TRIM(ismidweekfirstday) = ''Y'' AND DATO < :DATO_IN)' using dato_in;
+    else
+        open ret_cursor for EXECUTE
+        'select * from kspu_db.CALENDARDETAILSFROMPRS WHERE DATO = :DATO_IN' using dato_in;
+    end if;
+
+  end if;
+  return ret_cursor;
+  END;
+END;
+$body$
+LANGUAGE PLPGSQL
+SECURITY DEFINER
+;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

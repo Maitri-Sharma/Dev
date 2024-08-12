@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-calendardetailsfromprs">
+<sql>
+
+CREATE TABLE kspu_db."calendardetailsfromprs" (dato timestamp,
+	isholiday char(2),
+	isearlyweekfirstday char(2),
+	isearlyweeksecondday char(2),
+	ismidweekfirstday char(2),
+	ismidweeksecondday char(2),
+	frequencytype char(2),
+	weekno bigint,
+	lastmodifieddate timestamp
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

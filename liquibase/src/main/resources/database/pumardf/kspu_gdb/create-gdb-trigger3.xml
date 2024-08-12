@@ -1,0 +1,4461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-gdb-trigger3">
+<sql>
+
+
+
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4279 ON norway_reol20180210 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4279() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4279 WHERE KSPU_GDB.F4279.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4279 WHERE KSPU_GDB.S4279.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4279 WHERE KSPU_GDB.F4279.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4279 WHERE KSPU_GDB.S4279.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4279() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4279
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180210 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4279();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4319 ON norway_reol20180317 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4319() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4319 WHERE KSPU_GDB.F4319.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4319 WHERE KSPU_GDB.S4319.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4319 WHERE KSPU_GDB.F4319.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4319 WHERE KSPU_GDB.S4319.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4319() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4319
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180317 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4319();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4346 ON norway_reol20180414 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4346() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4346 WHERE KSPU_GDB.F4346.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4346 WHERE KSPU_GDB.S4346.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4346 WHERE KSPU_GDB.F4346.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4346 WHERE KSPU_GDB.S4346.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4346() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4346
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180414 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4346();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4373 ON norway_reol20180609 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4373() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4373 WHERE KSPU_GDB.F4373.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4373 WHERE KSPU_GDB.S4373.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4373 WHERE KSPU_GDB.F4373.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4373 WHERE KSPU_GDB.S4373.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4373() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4373
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180609 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4373();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4415 ON norway_reol20180826 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4415() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4415 WHERE KSPU_GDB.F4415.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4415 WHERE KSPU_GDB.S4415.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4415 WHERE KSPU_GDB.F4415.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4415 WHERE KSPU_GDB.S4415.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4415() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4415
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180826 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4415();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4442 ON norway_reol20180915 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4442() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4442 WHERE KSPU_GDB.F4442.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4442 WHERE KSPU_GDB.S4442.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4442 WHERE KSPU_GDB.F4442.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4442 WHERE KSPU_GDB.S4442.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4442() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4442
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20180915 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4442();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4469 ON norway_reol20181013 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4469() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4469 WHERE KSPU_GDB.F4469.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4469 WHERE KSPU_GDB.S4469.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4469 WHERE KSPU_GDB.F4469.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4469 WHERE KSPU_GDB.S4469.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4469() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4469
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20181013 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4469();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4502 ON norway_reol20181014 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4502() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4502 WHERE KSPU_GDB.F4502.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4502 WHERE KSPU_GDB.S4502.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4502 WHERE KSPU_GDB.F4502.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4502 WHERE KSPU_GDB.S4502.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4502() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4502
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20181014 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4502();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4529 ON norway_reol20181117 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4529() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4529 WHERE KSPU_GDB.F4529.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4529 WHERE KSPU_GDB.S4529.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4529 WHERE KSPU_GDB.F4529.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4529 WHERE KSPU_GDB.S4529.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4529() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4529
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20181117 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4529();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4554 ON norway_reol20181214 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4554() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4554 WHERE KSPU_GDB.F4554.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4554 WHERE KSPU_GDB.S4554.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4554 WHERE KSPU_GDB.F4554.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4554 WHERE KSPU_GDB.S4554.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4554() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4554
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20181214 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4554();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4561 ON n250_komm_f_19012019 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4561() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4561 WHERE KSPU_GDB.F4561.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4561 WHERE KSPU_GDB.S4561.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4561 WHERE KSPU_GDB.F4561.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4561 WHERE KSPU_GDB.S4561.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4561() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4561
+	AFTER UPDATE OR DELETE OF shape ON n250_komm_f_19012019 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4561();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4562 ON n250_komm_f_svalbard_19012019 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4562() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4562 WHERE KSPU_GDB.F4562.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4562 WHERE KSPU_GDB.S4562.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4562 WHERE KSPU_GDB.F4562.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4562 WHERE KSPU_GDB.S4562.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4562() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4562
+	AFTER UPDATE OR DELETE OF shape ON n250_komm_f_svalbard_19012019 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4562();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4563 ON postnummergrenser_f_19012019 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4563() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4563 WHERE KSPU_GDB.F4563.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4563 WHERE KSPU_GDB.S4563.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4563 WHERE KSPU_GDB.F4563.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4563 WHERE KSPU_GDB.S4563.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4563() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4563
+	AFTER UPDATE OR DELETE OF shape ON postnummergrenser_f_19012019 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4563();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4605 ON norway_reol20190120 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4605() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4605 WHERE KSPU_GDB.F4605.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4605 WHERE KSPU_GDB.S4605.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4605 WHERE KSPU_GDB.F4605.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4605 WHERE KSPU_GDB.S4605.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4605() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4605
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190120 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4605();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4635 ON norway_reol20190217 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4635() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4635 WHERE KSPU_GDB.F4635.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4635 WHERE KSPU_GDB.S4635.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4635 WHERE KSPU_GDB.F4635.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4635 WHERE KSPU_GDB.S4635.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4635() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4635
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190217 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4635();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4673 ON norway_reol20190324 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4673() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4673 WHERE KSPU_GDB.F4673.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4673 WHERE KSPU_GDB.S4673.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4673 WHERE KSPU_GDB.F4673.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4673 WHERE KSPU_GDB.S4673.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4673() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4673
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190324 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4673();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4704 ON norway_reol20190511 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4704() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4704 WHERE KSPU_GDB.F4704.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4704 WHERE KSPU_GDB.S4704.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4704 WHERE KSPU_GDB.F4704.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4704 WHERE KSPU_GDB.S4704.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4704() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4704
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190511 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4704();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4731 ON norway_reol20190601 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4731() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4731 WHERE KSPU_GDB.F4731.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4731 WHERE KSPU_GDB.S4731.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4731 WHERE KSPU_GDB.F4731.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4731 WHERE KSPU_GDB.S4731.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4731() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4731
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190601 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4731();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4758 ON norway_reol20190823 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4758() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4758 WHERE KSPU_GDB.F4758.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4758 WHERE KSPU_GDB.S4758.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4758 WHERE KSPU_GDB.F4758.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4758 WHERE KSPU_GDB.S4758.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4758() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4758
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190823 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4758();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4792 ON norway_reol20190914 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4792() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4792 WHERE KSPU_GDB.F4792.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4792 WHERE KSPU_GDB.S4792.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4792 WHERE KSPU_GDB.F4792.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4792 WHERE KSPU_GDB.S4792.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4792() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4792
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20190914 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4792();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4819 ON norway_reol20191012 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4819() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4819 WHERE KSPU_GDB.F4819.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4819 WHERE KSPU_GDB.S4819.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4819 WHERE KSPU_GDB.F4819.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4819 WHERE KSPU_GDB.S4819.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4819() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4819
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20191012 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4819();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4846 ON norway_reol20191115 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4846() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4846 WHERE KSPU_GDB.F4846.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4846 WHERE KSPU_GDB.S4846.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4846 WHERE KSPU_GDB.F4846.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4846 WHERE KSPU_GDB.S4846.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4846() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4846
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20191115 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4846();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4873 ON norway_reol20191220 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4873() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4873 WHERE KSPU_GDB.F4873.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4873 WHERE KSPU_GDB.S4873.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4873 WHERE KSPU_GDB.F4873.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4873 WHERE KSPU_GDB.S4873.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4873() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4873
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20191220 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4873();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4878 ON fylke_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4878() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4878 WHERE KSPU_GDB.F4878.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4878 WHERE KSPU_GDB.S4878.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4878 WHERE KSPU_GDB.F4878.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4878 WHERE KSPU_GDB.S4878.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4878() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4878
+	AFTER UPDATE OR DELETE OF shape ON fylke_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4878();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4879 ON gkrets_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4879() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4879 WHERE KSPU_GDB.F4879.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4879 WHERE KSPU_GDB.S4879.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4879 WHERE KSPU_GDB.F4879.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4879 WHERE KSPU_GDB.S4879.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4879() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4879
+	AFTER UPDATE OR DELETE OF shape ON gkrets_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4879();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4880 ON komm_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4880() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4880 WHERE KSPU_GDB.F4880.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4880 WHERE KSPU_GDB.S4880.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4880 WHERE KSPU_GDB.F4880.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4880 WHERE KSPU_GDB.S4880.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4880() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4880
+	AFTER UPDATE OR DELETE OF shape ON komm_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4880();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4881 ON postnummergrenser_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4881() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4881 WHERE KSPU_GDB.F4881.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4881 WHERE KSPU_GDB.S4881.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4881 WHERE KSPU_GDB.F4881.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4881 WHERE KSPU_GDB.S4881.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4881() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4881
+	AFTER UPDATE OR DELETE OF shape ON postnummergrenser_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4881();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4882 ON postsoner_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4882() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4882 WHERE KSPU_GDB.F4882.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4882 WHERE KSPU_GDB.S4882.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4882 WHERE KSPU_GDB.F4882.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4882 WHERE KSPU_GDB.S4882.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4882() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4882
+	AFTER UPDATE OR DELETE OF shape ON postsoner_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4882();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4883 ON naring_p CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4883() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4883 WHERE KSPU_GDB.F4883.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4883 WHERE KSPU_GDB.S4883.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4883 WHERE KSPU_GDB.F4883.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4883 WHERE KSPU_GDB.S4883.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4883() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4883
+	AFTER UPDATE OR DELETE OF shape ON naring_p FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4883();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4884 ON bomstasjoner_p CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4884() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4884 WHERE KSPU_GDB.F4884.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4884 WHERE KSPU_GDB.S4884.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4884 WHERE KSPU_GDB.F4884.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4884 WHERE KSPU_GDB.S4884.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4884() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4884
+	AFTER UPDATE OR DELETE OF shape ON bomstasjoner_p FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4884();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4885 ON bydeler_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4885() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4885 WHERE KSPU_GDB.F4885.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4885 WHERE KSPU_GDB.S4885.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4885 WHERE KSPU_GDB.F4885.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4885 WHERE KSPU_GDB.S4885.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4885() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4885
+	AFTER UPDATE OR DELETE OF shape ON bydeler_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4885();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4886 ON n2000_arealdekkeflate CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4886() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4886 WHERE KSPU_GDB.F4886.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4886 WHERE KSPU_GDB.S4886.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4886 WHERE KSPU_GDB.F4886.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4886 WHERE KSPU_GDB.S4886.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4886() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4886
+	AFTER UPDATE OR DELETE OF shape ON n2000_arealdekkeflate FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4886();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4887 ON n2000_arealdekkelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4887() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4887 WHERE KSPU_GDB.F4887.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4887 WHERE KSPU_GDB.S4887.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4887 WHERE KSPU_GDB.F4887.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4887 WHERE KSPU_GDB.S4887.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4887() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4887
+	AFTER UPDATE OR DELETE OF shape ON n2000_arealdekkelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4887();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4888 ON n2000_arealdekkepunkt CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4888() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4888 WHERE KSPU_GDB.F4888.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4888 WHERE KSPU_GDB.S4888.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4888 WHERE KSPU_GDB.F4888.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4888 WHERE KSPU_GDB.S4888.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4888() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4888
+	AFTER UPDATE OR DELETE OF shape ON n2000_arealdekkepunkt FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4888();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4889 ON n2000_banelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4889() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4889 WHERE KSPU_GDB.F4889.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4889 WHERE KSPU_GDB.S4889.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4889 WHERE KSPU_GDB.F4889.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4889 WHERE KSPU_GDB.S4889.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4889() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4889
+	AFTER UPDATE OR DELETE OF shape ON n2000_banelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4889();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4890 ON n2000_fergelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4890() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4890 WHERE KSPU_GDB.F4890.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4890 WHERE KSPU_GDB.S4890.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4890 WHERE KSPU_GDB.F4890.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4890 WHERE KSPU_GDB.S4890.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4890() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4890
+	AFTER UPDATE OR DELETE OF shape ON n2000_fergelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4890();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4891 ON n250_arealdekkeflate CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4891() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4891 WHERE KSPU_GDB.F4891.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4891 WHERE KSPU_GDB.S4891.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4891 WHERE KSPU_GDB.F4891.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4891 WHERE KSPU_GDB.S4891.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4891() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4891
+	AFTER UPDATE OR DELETE OF shape ON n250_arealdekkeflate FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4891();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4892 ON n250_arealdekkelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4892() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4892 WHERE KSPU_GDB.F4892.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4892 WHERE KSPU_GDB.S4892.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4892 WHERE KSPU_GDB.F4892.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4892 WHERE KSPU_GDB.S4892.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4892() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4892
+	AFTER UPDATE OR DELETE OF shape ON n250_arealdekkelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4892();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4893 ON n250_arealdekkepunkt CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4893() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4893 WHERE KSPU_GDB.F4893.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4893 WHERE KSPU_GDB.S4893.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4893 WHERE KSPU_GDB.F4893.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4893 WHERE KSPU_GDB.S4893.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4893() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4893
+	AFTER UPDATE OR DELETE OF shape ON n250_arealdekkepunkt FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4893();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4894 ON n250_banelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4894() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4894 WHERE KSPU_GDB.F4894.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4894 WHERE KSPU_GDB.S4894.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4894 WHERE KSPU_GDB.F4894.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4894 WHERE KSPU_GDB.S4894.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4894() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4894
+	AFTER UPDATE OR DELETE OF shape ON n250_banelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4894();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4895 ON n250_fergelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4895() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4895 WHERE KSPU_GDB.F4895.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4895 WHERE KSPU_GDB.S4895.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4895 WHERE KSPU_GDB.F4895.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4895 WHERE KSPU_GDB.S4895.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4895() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4895
+	AFTER UPDATE OR DELETE OF shape ON n250_fergelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4895();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4896 ON n250_jernbanepunkt CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4896() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4896 WHERE KSPU_GDB.F4896.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4896 WHERE KSPU_GDB.S4896.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4896 WHERE KSPU_GDB.F4896.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4896 WHERE KSPU_GDB.S4896.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4896() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4896
+	AFTER UPDATE OR DELETE OF shape ON n250_jernbanepunkt FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4896();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4897 ON n250_lufthavnpunkt CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4897() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4897 WHERE KSPU_GDB.F4897.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4897 WHERE KSPU_GDB.S4897.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4897 WHERE KSPU_GDB.F4897.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4897 WHERE KSPU_GDB.S4897.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4897() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4897
+	AFTER UPDATE OR DELETE OF shape ON n250_lufthavnpunkt FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4897();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4898 ON n5000_arealdekkeflate CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4898() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4898 WHERE KSPU_GDB.F4898.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4898 WHERE KSPU_GDB.S4898.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4898 WHERE KSPU_GDB.F4898.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4898 WHERE KSPU_GDB.S4898.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4898() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4898
+	AFTER UPDATE OR DELETE OF shape ON n5000_arealdekkeflate FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4898();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4899 ON n5000_arealdekkelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4899() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4899 WHERE KSPU_GDB.F4899.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4899 WHERE KSPU_GDB.S4899.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4899 WHERE KSPU_GDB.F4899.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4899 WHERE KSPU_GDB.S4899.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4899() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4899
+	AFTER UPDATE OR DELETE OF shape ON n5000_arealdekkelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4899();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4900 ON n5000_banelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4900() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4900 WHERE KSPU_GDB.F4900.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4900 WHERE KSPU_GDB.S4900.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4900 WHERE KSPU_GDB.F4900.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4900 WHERE KSPU_GDB.S4900.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4900() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4900
+	AFTER UPDATE OR DELETE OF shape ON n5000_banelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4900();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4901 ON n5000_fergelinje CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4901() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4901 WHERE KSPU_GDB.F4901.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4901 WHERE KSPU_GDB.S4901.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4901 WHERE KSPU_GDB.F4901.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4901 WHERE KSPU_GDB.S4901.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4901() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4901
+	AFTER UPDATE OR DELETE OF shape ON n5000_fergelinje FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4901();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4902 ON n5000_navnpunkt CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4902() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4902 WHERE KSPU_GDB.F4902.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4902 WHERE KSPU_GDB.S4902.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4902 WHERE KSPU_GDB.F4902.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4902 WHERE KSPU_GDB.S4902.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4902() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4902
+	AFTER UPDATE OR DELETE OF shape ON n5000_navnpunkt FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4902();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4903 ON trafikktelling_l CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4903() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4903 WHERE KSPU_GDB.F4903.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4903 WHERE KSPU_GDB.S4903.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4903 WHERE KSPU_GDB.F4903.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4903 WHERE KSPU_GDB.S4903.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4903() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4903
+	AFTER UPDATE OR DELETE OF shape ON trafikktelling_l FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4903();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4904 ON norway_bedrift CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4904() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4904 WHERE KSPU_GDB.F4904.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4904 WHERE KSPU_GDB.S4904.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4904 WHERE KSPU_GDB.F4904.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4904 WHERE KSPU_GDB.S4904.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4904() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4904
+	AFTER UPDATE OR DELETE OF shape ON norway_bedrift FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4904();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4905 ON norway_bef100 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4905() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4905 WHERE KSPU_GDB.F4905.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4905 WHERE KSPU_GDB.S4905.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4905 WHERE KSPU_GDB.F4905.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4905 WHERE KSPU_GDB.S4905.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4905() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4905
+	AFTER UPDATE OR DELETE OF shape ON norway_bef100 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4905();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4906 ON norway_future_kommune CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4906() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4906 WHERE KSPU_GDB.F4906.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4906 WHERE KSPU_GDB.S4906.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4906 WHERE KSPU_GDB.F4906.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4906 WHERE KSPU_GDB.S4906.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4906() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4906
+	AFTER UPDATE OR DELETE OF shape ON norway_future_kommune FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4906();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4907 ON norway_fylke CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4907() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4907 WHERE KSPU_GDB.F4907.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4907 WHERE KSPU_GDB.S4907.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4907 WHERE KSPU_GDB.F4907.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4907 WHERE KSPU_GDB.S4907.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4907() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4907
+	AFTER UPDATE OR DELETE OF shape ON norway_fylke FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4907();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4908 ON norway_fylke_index CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4908() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4908 WHERE KSPU_GDB.F4908.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4908 WHERE KSPU_GDB.S4908.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4908 WHERE KSPU_GDB.F4908.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4908 WHERE KSPU_GDB.S4908.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4908() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4908
+	AFTER UPDATE OR DELETE OF shape ON norway_fylke_index FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4908();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4909 ON norway_fylke_percent CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4909() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4909 WHERE KSPU_GDB.F4909.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4909 WHERE KSPU_GDB.S4909.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4909 WHERE KSPU_GDB.F4909.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4909 WHERE KSPU_GDB.S4909.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4909() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4909
+	AFTER UPDATE OR DELETE OF shape ON norway_fylke_percent FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4909();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4910 ON norway_grunnkrets CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4910() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4910 WHERE KSPU_GDB.F4910.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4910 WHERE KSPU_GDB.S4910.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4910 WHERE KSPU_GDB.F4910.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4910 WHERE KSPU_GDB.S4910.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4910() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4910
+	AFTER UPDATE OR DELETE OF shape ON norway_grunnkrets FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4910();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4911 ON norway_grunnkrets_index CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4911() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4911 WHERE KSPU_GDB.F4911.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4911 WHERE KSPU_GDB.S4911.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4911 WHERE KSPU_GDB.F4911.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4911 WHERE KSPU_GDB.S4911.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4911() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4911
+	AFTER UPDATE OR DELETE OF shape ON norway_grunnkrets_index FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4911();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4912 ON norway_grunnkrets_percent CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4912() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4912 WHERE KSPU_GDB.F4912.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4912 WHERE KSPU_GDB.S4912.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4912 WHERE KSPU_GDB.F4912.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4912 WHERE KSPU_GDB.S4912.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4912() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4912
+	AFTER UPDATE OR DELETE OF shape ON norway_grunnkrets_percent FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4912();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4913 ON norway_kommune CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4913() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4913 WHERE KSPU_GDB.F4913.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4913 WHERE KSPU_GDB.S4913.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4913 WHERE KSPU_GDB.F4913.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4913 WHERE KSPU_GDB.S4913.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4913() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4913
+	AFTER UPDATE OR DELETE OF shape ON norway_kommune FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4913();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4914 ON norway_kommune_index CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4914() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4914 WHERE KSPU_GDB.F4914.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4914 WHERE KSPU_GDB.S4914.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4914 WHERE KSPU_GDB.F4914.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4914 WHERE KSPU_GDB.S4914.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4914() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4914
+	AFTER UPDATE OR DELETE OF shape ON norway_kommune_index FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4914();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4915 ON norway_kommune_percent CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4915() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4915 WHERE KSPU_GDB.F4915.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4915 WHERE KSPU_GDB.S4915.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4915 WHERE KSPU_GDB.F4915.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4915 WHERE KSPU_GDB.S4915.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4915() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4915
+	AFTER UPDATE OR DELETE OF shape ON norway_kommune_percent FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4915();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4918 ON adr_p_posten CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4918() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4918 WHERE KSPU_GDB.F4918.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4918 WHERE KSPU_GDB.S4918.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4918 WHERE KSPU_GDB.F4918.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4918 WHERE KSPU_GDB.S4918.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4918() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4918
+	AFTER UPDATE OR DELETE OF shape ON adr_p_posten FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4918();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4919 ON n250_komm_f_svalbard CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4919() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4919 WHERE KSPU_GDB.F4919.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4919 WHERE KSPU_GDB.S4919.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4919 WHERE KSPU_GDB.F4919.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4919 WHERE KSPU_GDB.S4919.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4919() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4919
+	AFTER UPDATE OR DELETE OF shape ON n250_komm_f_svalbard FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4919();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4920 ON n250_komm_f CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4920() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4920 WHERE KSPU_GDB.F4920.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4920 WHERE KSPU_GDB.S4920.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4920 WHERE KSPU_GDB.F4920.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4920 WHERE KSPU_GDB.S4920.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4920() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4920
+	AFTER UPDATE OR DELETE OF shape ON n250_komm_f FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4920();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4921 ON gab_adr_p_bolig CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4921() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4921 WHERE KSPU_GDB.F4921.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4921 WHERE KSPU_GDB.S4921.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4921 WHERE KSPU_GDB.F4921.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4921 WHERE KSPU_GDB.S4921.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4921() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4921
+	AFTER UPDATE OR DELETE OF shape ON gab_adr_p_bolig FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4921();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4951 ON norway_reol20200125 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4951() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4951 WHERE KSPU_GDB.F4951.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4951 WHERE KSPU_GDB.S4951.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4951 WHERE KSPU_GDB.F4951.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4951 WHERE KSPU_GDB.S4951.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4951() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4951
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200125 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4951();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4956 ON avisdekningkomm CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4956() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4956 WHERE KSPU_GDB.F4956.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4956 WHERE KSPU_GDB.S4956.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4956 WHERE KSPU_GDB.F4956.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4956 WHERE KSPU_GDB.S4956.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4956() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4956
+	AFTER UPDATE OR DELETE OF shape ON avisdekningkomm FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4956();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4957 ON vegnett_l CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4957() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4957 WHERE KSPU_GDB.F4957.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4957 WHERE KSPU_GDB.S4957.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4957 WHERE KSPU_GDB.F4957.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S4957 WHERE KSPU_GDB.S4957.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4957() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4957
+	AFTER UPDATE OR DELETE OF shape ON vegnett_l FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4957();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_4995 ON norway_reol20200229 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_4995() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F4995 WHERE KSPU_GDB.F4995.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4995 WHERE KSPU_GDB.S4995.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F4995 WHERE KSPU_GDB.F4995.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S4995 WHERE KSPU_GDB.S4995.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_4995() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_4995
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200229 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_4995();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5069 ON norway_reol20200321 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5069() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5069 WHERE KSPU_GDB.F5069.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5069 WHERE KSPU_GDB.S5069.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5069 WHERE KSPU_GDB.F5069.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5069 WHERE KSPU_GDB.S5069.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5069() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5069
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200321 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5069();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5108 ON norway_reol20200501 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5108() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5108 WHERE KSPU_GDB.F5108.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5108 WHERE KSPU_GDB.S5108.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5108 WHERE KSPU_GDB.F5108.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5108 WHERE KSPU_GDB.S5108.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5108() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5108
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200501 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5108();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5113 ON kspurdf_bck10062020 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5113() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5113 WHERE KSPU_GDB.F5113.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5113 WHERE KSPU_GDB.S5113.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5113 WHERE KSPU_GDB.F5113.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5113 WHERE KSPU_GDB.S5113.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5113() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5113
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck10062020 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5113();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5137 ON norway_reol20200610 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5137() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5137 WHERE KSPU_GDB.F5137.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5137 WHERE KSPU_GDB.S5137.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5137 WHERE KSPU_GDB.F5137.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5137 WHERE KSPU_GDB.S5137.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5137() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5137
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200610 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5137();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5141 ON kspurdf_bck14092020 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5141() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5141 WHERE KSPU_GDB.F5141.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5141 WHERE KSPU_GDB.S5141.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5141 WHERE KSPU_GDB.F5141.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5141 WHERE KSPU_GDB.S5141.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5141() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5141
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck14092020 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5141();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5164 ON norway_reol20200913 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5164() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5164 WHERE KSPU_GDB.F5164.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5164 WHERE KSPU_GDB.S5164.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5164 WHERE KSPU_GDB.F5164.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5164 WHERE KSPU_GDB.S5164.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5164() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5164
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20200913 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5164();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5169 ON kspurdf_bck12102020 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5169() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5169 WHERE KSPU_GDB.F5169.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5169 WHERE KSPU_GDB.S5169.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5169 WHERE KSPU_GDB.F5169.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5169 WHERE KSPU_GDB.S5169.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5169() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5169
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck12102020 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5169();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5170 ON postnummergrenser_f_20201012 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5170() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5170 WHERE KSPU_GDB.F5170.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5170 WHERE KSPU_GDB.S5170.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5170 WHERE KSPU_GDB.F5170.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5170 WHERE KSPU_GDB.S5170.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5170() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5170
+	AFTER UPDATE OR DELETE OF shape ON postnummergrenser_f_20201012 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5170();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5193 ON norway_reol20201013 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5193() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5193 WHERE KSPU_GDB.F5193.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5193 WHERE KSPU_GDB.S5193.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5193 WHERE KSPU_GDB.F5193.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5193 WHERE KSPU_GDB.S5193.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5193() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5193
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20201013 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5193();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5197 ON kspurdf_bck23012021 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5197() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5197 WHERE KSPU_GDB.F5197.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5197 WHERE KSPU_GDB.S5197.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5197 WHERE KSPU_GDB.F5197.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5197 WHERE KSPU_GDB.S5197.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5197() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5197
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck23012021 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5197();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5220 ON norway_reol20201113 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5220() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5220 WHERE KSPU_GDB.F5220.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5220 WHERE KSPU_GDB.S5220.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5220 WHERE KSPU_GDB.F5220.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5220 WHERE KSPU_GDB.S5220.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5220() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5220
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20201113 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5220();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5246 ON norway_reol20210122 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5246() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5246 WHERE KSPU_GDB.F5246.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5246 WHERE KSPU_GDB.S5246.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5246 WHERE KSPU_GDB.F5246.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5246 WHERE KSPU_GDB.S5246.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5246() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5246
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210122 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5246();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5272 ON norway_reol20210123 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5272() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5272 WHERE KSPU_GDB.F5272.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5272 WHERE KSPU_GDB.S5272.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5272 WHERE KSPU_GDB.F5272.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5272 WHERE KSPU_GDB.S5272.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5272() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5272
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210123 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5272();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5276 ON kspurdf_bck20022021 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5276() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5276 WHERE KSPU_GDB.F5276.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5276 WHERE KSPU_GDB.S5276.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5276 WHERE KSPU_GDB.F5276.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5276 WHERE KSPU_GDB.S5276.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5276() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5276
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck20022021 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5276();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5299 ON norway_reol20210219 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5299() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5299 WHERE KSPU_GDB.F5299.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5299 WHERE KSPU_GDB.S5299.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5299 WHERE KSPU_GDB.F5299.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5299 WHERE KSPU_GDB.S5299.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5299() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5299
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210219 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5299();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5325 ON norway_reol20210220 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5325() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5325 WHERE KSPU_GDB.F5325.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5325 WHERE KSPU_GDB.S5325.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5325 WHERE KSPU_GDB.F5325.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5325 WHERE KSPU_GDB.S5325.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5325() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5325
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210220 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5325();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5329 ON kspurdf_bck14032021 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5329() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5329 WHERE KSPU_GDB.F5329.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5329 WHERE KSPU_GDB.S5329.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5329 WHERE KSPU_GDB.F5329.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5329 WHERE KSPU_GDB.S5329.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5329() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5329
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck14032021 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5329();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5352 ON norway_reol20210312 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5352() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5352 WHERE KSPU_GDB.F5352.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5352 WHERE KSPU_GDB.S5352.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5352 WHERE KSPU_GDB.F5352.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5352 WHERE KSPU_GDB.S5352.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5352() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5352
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210312 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5352();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5356 ON kspurdf_bck25042021 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5356() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5356 WHERE KSPU_GDB.F5356.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5356 WHERE KSPU_GDB.S5356.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5356 WHERE KSPU_GDB.F5356.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5356 WHERE KSPU_GDB.S5356.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5356() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5356
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck25042021 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5356();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5379 ON norway_reol20210423 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5379() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5379 WHERE KSPU_GDB.F5379.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5379 WHERE KSPU_GDB.S5379.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5379 WHERE KSPU_GDB.F5379.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5379 WHERE KSPU_GDB.S5379.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5379() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5379
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210423 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5379();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5405 ON norway_reol20210424 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5405() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5405 WHERE KSPU_GDB.F5405.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5405 WHERE KSPU_GDB.S5405.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5405 WHERE KSPU_GDB.F5405.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5405 WHERE KSPU_GDB.S5405.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5405() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5405
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210424 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5405();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5409 ON kspurdf_bck06062021 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5409() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5409 WHERE KSPU_GDB.F5409.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5409 WHERE KSPU_GDB.S5409.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5409 WHERE KSPU_GDB.F5409.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5409 WHERE KSPU_GDB.S5409.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5409() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5409
+	AFTER UPDATE OR DELETE OF shape ON kspurdf_bck06062021 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5409();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5432 ON norway_reol20210604 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5432() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5432 WHERE KSPU_GDB.F5432.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5432 WHERE KSPU_GDB.S5432.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5432 WHERE KSPU_GDB.F5432.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5432 WHERE KSPU_GDB.S5432.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5432() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5432
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210604 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5432();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5436 ON kspurdf CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5436() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5436 WHERE KSPU_GDB.F5436.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5436 WHERE KSPU_GDB.S5436.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5436 WHERE KSPU_GDB.F5436.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5436 WHERE KSPU_GDB.S5436.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5436() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5436
+	AFTER UPDATE OR DELETE OF shape ON kspurdf FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5436();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5459 ON norway_reol20210804 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5459() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5459 WHERE KSPU_GDB.F5459.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5459 WHERE KSPU_GDB.S5459.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5459 WHERE KSPU_GDB.F5459.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5459 WHERE KSPU_GDB.S5459.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5459() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5459
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210804 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5459();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5473 ON old_boksanlegg CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5473() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5473 WHERE KSPU_GDB.F5473.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5473 WHERE KSPU_GDB.S5473.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5473 WHERE KSPU_GDB.F5473.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5473 WHERE KSPU_GDB.S5473.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5473() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5473
+	AFTER UPDATE OR DELETE OF shape ON old_boksanlegg FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5473();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5481 ON old_norway_reol CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5481() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5481 WHERE KSPU_GDB.F5481.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5481 WHERE KSPU_GDB.S5481.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5481 WHERE KSPU_GDB.F5481.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5481 WHERE KSPU_GDB.S5481.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5481() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5481
+	AFTER UPDATE OR DELETE OF shape ON old_norway_reol FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5481();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5482 ON old_norway_reol_index CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5482() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5482 WHERE KSPU_GDB.F5482.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5482 WHERE KSPU_GDB.S5482.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5482 WHERE KSPU_GDB.F5482.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5482 WHERE KSPU_GDB.S5482.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5482() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5482
+	AFTER UPDATE OR DELETE OF shape ON old_norway_reol_index FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5482();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5483 ON old_norway_reol_percent CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5483() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5483 WHERE KSPU_GDB.F5483.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5483 WHERE KSPU_GDB.S5483.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5483 WHERE KSPU_GDB.F5483.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5483 WHERE KSPU_GDB.S5483.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5483() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5483
+	AFTER UPDATE OR DELETE OF shape ON old_norway_reol_percent FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5483();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5484 ON old_reol_bef100 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5484() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5484 WHERE KSPU_GDB.F5484.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5484 WHERE KSPU_GDB.S5484.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5484 WHERE KSPU_GDB.F5484.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5484 WHERE KSPU_GDB.S5484.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5484() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5484
+	AFTER UPDATE OR DELETE OF shape ON old_reol_bef100 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5484();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5485 ON norway_reol20210819 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5485() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5485 WHERE KSPU_GDB.F5485.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5485 WHERE KSPU_GDB.S5485.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5485 WHERE KSPU_GDB.F5485.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5485 WHERE KSPU_GDB.S5485.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5485() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5485
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210819 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5485();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5499 ON boksanlegg CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5499() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5499 WHERE KSPU_GDB.F5499.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5499 WHERE KSPU_GDB.S5499.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5499 WHERE KSPU_GDB.F5499.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5499 WHERE KSPU_GDB.S5499.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5499() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5499
+	AFTER UPDATE OR DELETE OF shape ON boksanlegg FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5499();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5507 ON norway_reol CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5507() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5507 WHERE KSPU_GDB.F5507.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5507 WHERE KSPU_GDB.S5507.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5507 WHERE KSPU_GDB.F5507.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5507 WHERE KSPU_GDB.S5507.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5507() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5507
+	AFTER UPDATE OR DELETE OF shape ON norway_reol FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5507();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5508 ON norway_reol_index CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5508() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5508 WHERE KSPU_GDB.F5508.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5508 WHERE KSPU_GDB.S5508.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5508 WHERE KSPU_GDB.F5508.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5508 WHERE KSPU_GDB.S5508.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5508() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5508
+	AFTER UPDATE OR DELETE OF shape ON norway_reol_index FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5508();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5509 ON norway_reol_percent CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5509() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5509 WHERE KSPU_GDB.F5509.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5509 WHERE KSPU_GDB.S5509.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5509 WHERE KSPU_GDB.F5509.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5509 WHERE KSPU_GDB.S5509.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5509() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5509
+	AFTER UPDATE OR DELETE OF shape ON norway_reol_percent FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5509();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5510 ON reol_bef100 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5510() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5510 WHERE KSPU_GDB.F5510.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5510 WHERE KSPU_GDB.S5510.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5510 WHERE KSPU_GDB.F5510.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5510 WHERE KSPU_GDB.S5510.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5510() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5510
+	AFTER UPDATE OR DELETE OF shape ON reol_bef100 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5510();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5511 ON norway_reol20210822 CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5511() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5511 WHERE KSPU_GDB.F5511.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5511 WHERE KSPU_GDB.S5511.sp_fid = OLD.Shape
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.Shape::text, '') = '' AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5511 WHERE KSPU_GDB.F5511.fid = OLD.Shape;
+    DELETE FROM KSPU_GDB.S5511 WHERE KSPU_GDB.S5511.sp_fid = OLD.Shape
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.Shape != OLD.Shape AND (OLD.Shape IS NOT NULL AND OLD.Shape::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.Shape::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5511() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5511
+	AFTER UPDATE OR DELETE OF shape ON norway_reol20210822 FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5511();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5512 ON tmp_reol_centroids CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5512() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5512 WHERE KSPU_GDB.F5512.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5512 WHERE KSPU_GDB.S5512.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5512 WHERE KSPU_GDB.F5512.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5512 WHERE KSPU_GDB.S5512.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5512() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5512
+	AFTER UPDATE OR DELETE OF shape ON tmp_reol_centroids FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5512();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_5514 ON postdekning CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_5514() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F5514 WHERE KSPU_GDB.F5514.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5514 WHERE KSPU_GDB.S5514.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F5514 WHERE KSPU_GDB.F5514.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S5514 WHERE KSPU_GDB.S5514.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_5514() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_5514
+	AFTER UPDATE OR DELETE OF shape ON postdekning FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_5514();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_679 ON boksanlegg_old CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_679() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F679 WHERE KSPU_GDB.F679.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S679 WHERE KSPU_GDB.S679.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F679 WHERE KSPU_GDB.F679.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S679 WHERE KSPU_GDB.S679.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_679() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_679
+	AFTER UPDATE OR DELETE OF shape ON boksanlegg_old FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_679();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_685 ON norway_reol_old CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_685() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F685 WHERE KSPU_GDB.F685.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S685 WHERE KSPU_GDB.S685.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F685 WHERE KSPU_GDB.F685.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S685 WHERE KSPU_GDB.S685.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_685() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_685
+	AFTER UPDATE OR DELETE OF shape ON norway_reol_old FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_685();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_686 ON norway_reol_index_old CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_686() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F686 WHERE KSPU_GDB.F686.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S686 WHERE KSPU_GDB.S686.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F686 WHERE KSPU_GDB.F686.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S686 WHERE KSPU_GDB.S686.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_686() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_686
+	AFTER UPDATE OR DELETE OF shape ON norway_reol_index_old FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_686();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_687 ON norway_reol_percent_old CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_687() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F687 WHERE KSPU_GDB.F687.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S687 WHERE KSPU_GDB.S687.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F687 WHERE KSPU_GDB.F687.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S687 WHERE KSPU_GDB.S687.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_687() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_687
+	AFTER UPDATE OR DELETE OF shape ON norway_reol_percent_old FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_687();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_696 ON reol_bef100_ny CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_696() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F696 WHERE KSPU_GDB.F696.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S696 WHERE KSPU_GDB.S696.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F696 WHERE KSPU_GDB.F696.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S696 WHERE KSPU_GDB.S696.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_696() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_696
+	AFTER UPDATE OR DELETE OF shape ON reol_bef100_ny FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_696();
+
+DROP TRIGGER IF EXISTS kspu_gdb.spcol_del_cascade_874 ON oldutvalggeometry_old CASCADE;
+CREATE OR REPLACE FUNCTION kspu_gdb.trigger_fct_spcol_del_cascade_874() RETURNS trigger AS $BODY$
+DECLARE
+             -- ArcSDE 9.2 --
+BEGIN
+  BEGIN
+           IF TG_OP = 'DELETE' THEN
+           DELETE FROM KSPU_GDB.F874 WHERE KSPU_GDB.F874.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S874 WHERE KSPU_GDB.S874.sp_fid = OLD.SHAPE
+;
+           END IF;
+          IF TG_OP = 'UPDATE' AND (coalesce(NEW.SHAPE::text, '') = '' AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+          DELETE FROM KSPU_GDB.F874 WHERE KSPU_GDB.F874.fid = OLD.SHAPE;
+    DELETE FROM KSPU_GDB.S874 WHERE KSPU_GDB.S874.sp_fid = OLD.SHAPE
+;
+          END IF;
+
+           IF TG_OP = 'UPDATE' AND (NEW.SHAPE != OLD.SHAPE AND (OLD.SHAPE IS NOT NULL AND OLD.SHAPE::text <> '')) THEN
+             RAISE EXCEPTION 'inv_spatial_col1' USING ERRCODE = '50001';
+           END IF;
+
+          EXCEPTION
+            WHEN SQLSTATE '50001' THEN
+            RAISE EXCEPTION '%', 'Invalid SDE spatial column UPDATE. Cannot update spatial column value '||NEW.SHAPE::varchar||' to non-NULL value.' USING ERRCODE = '45013';  END;
+IF TG_OP = 'DELETE' THEN
+	RETURN OLD;
+ELSE
+	RETURN NEW;
+END IF;
+
+END
+$BODY$
+ LANGUAGE 'plpgsql' SECURITY DEFINER;
+-- REVOKE ALL ON FUNCTION trigger_fct_spcol_del_cascade_874() FROM PUBLIC;
+
+CREATE TRIGGER kspu_gdb.spcol_del_cascade_874
+	AFTER UPDATE OR DELETE OF shape ON oldutvalggeometry_old FOR EACH ROW
+	EXECUTE PROCEDURE trigger_fct_spcol_del_cascade_874();
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

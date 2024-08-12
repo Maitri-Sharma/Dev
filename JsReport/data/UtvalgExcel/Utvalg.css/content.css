@@ -1,0 +1,116 @@
+ 
+hr {
+  border:none;
+  border-top:2px solid rgb(248, 62, 6);
+}
+h3{
+    padding-left: 5px;
+}
+.HeaderText {
+    text-align: center;
+    width: auto;
+    display: flex;
+    align-items: center;
+  justify-content: space-around;
+  margin-top: 40%;
+}
+
+.Header-table{
+    text-align: center;
+    width: 100%; 
+     border-collapse: collapse; 
+}
+
+.header-row{
+    border-bottom:3px solid rgb(248, 62, 6);
+}
+.header-row h2{
+    margin-bottom:0px;
+    padding-bottom: 5px;
+}
+.UtvalgListName h3{
+    margin-top: 10px;
+     margin-bottom:0px;
+    padding-bottom: 5px;
+}
+.DetailsText {
+    text-align: center;
+    width: auto;
+    display: flex;
+    align-items: center;
+  justify-content:  space-evenly;
+  margin:1px;   
+}
+ 
+.report-details-table{
+      text-align: center;
+    width: 100%; 
+     border-collapse: collapse;  
+}
+.imageDiv{
+     display: flex;
+    align-items: center;
+  justify-content:  space-evenly;
+}
+.ruteDetails-table{
+    width: 100%; 
+     border-collapse: collapse; 
+     text-align: center;       
+    padding-bottom: 10px; 
+}
+.flykerow{
+    background-color: rgb(9, 53, 51);
+    color: white;  
+  margin-bottom:0px; 
+  font-size: large;
+  padding-bottom:3px;
+}
+.flykerow-name{     
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 10px;
+}
+.kommunerow{
+     background-color: teal;
+     color: white;
+      margin-bottom:0px;  font-size: medium; 
+        padding-bottom:3px;
+    
+}
+.kommunerow-name{
+     margin-bottom:0px;
+    padding-left: 30px;
+   padding-top: 3px;
+   
+   font-weight: bold;
+   text-align: left;
+}
+.teamrow{
+        background-color: mediumturquoise;
+        color: black;
+    margin-bottom:0px;     
+   font-size: small;
+     padding-bottom:3px;
+
+}
+.teamrow-name{
+     margin-bottom:0px;
+    padding-left: 50px;
+   padding-top: 3px; 
+   font-weight: bold;
+   text-align: left;
+}
+.ruterow{
+  background-color: lightblue;
+    margin-bottom:0px;    
+    font-size: smaller;
+      padding-bottom:3px;
+
+}
+.ruterow-name{
+     margin-bottom:0px;
+    padding-left: 70px;
+    padding-top: 3px;
+   font-weight: bold; 
+    text-align: left;
+}

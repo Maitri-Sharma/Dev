@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Posten Sans";
+    src: url("../../assets/fonts/PostenSans-Bold.otf") format("otf");
+  }
+.addressPoint{
+    font-size: 90%;
+    font-weight: normal;
+    color: Green;
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 18px;
+    margin-right: 15px;
+
+}
+.wrongAddressPoint{
+  font-size: 90%;
+  font-weight: normal;
+  color: red;
+  text-align: left;
+  margin-top: 5px;
+  padding-left: 18px;
+  margin-right: 15px;
+
+}

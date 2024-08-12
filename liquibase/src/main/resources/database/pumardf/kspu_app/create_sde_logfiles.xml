@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create_sde_logfiles">
+<sql>
+
+
+CREATE TABLE kspu_app."sde_logfiles" (
+	logfile_name varchar(256) NOT NULL,
+	logfile_id numeric(38) NOT NULL,
+	logfile_data_id numeric(38) NOT NULL,
+	registration_id numeric(38) NOT NULL,
+	flags numeric(38) NOT NULL,
+	session_tag numeric(38) NOT NULL,
+	logfile_data_db varchar(32),
+	logfile_data_owner varchar(32),
+	logfile_data_table varchar(98),
+	column_name varchar(32),
+	UNIQUE (logfile_name),
+	PRIMARY KEY (logfile_id)
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

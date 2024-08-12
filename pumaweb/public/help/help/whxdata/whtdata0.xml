@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<tocdata>
+<book name="InternWeb" url="InternWeb/Oppstart_InternWeb.htm" >
+  <item name="Hva er PUMA?" url="InternWeb/Hva_er_KSPU.htm" />
+  <item name="Forside InternWeb" url="InternWeb/Forside_InternWeb.htm" />
+  <book name="Seleksjoner" url="InternWeb/Seleksjoner.htm" >
+    <item name="Geografi" url="InternWeb/Geografi_InternWeb.htm" />
+    <item name="Kommunedistribusjon" url="InternWeb/Kommunedistribusjon_InternWeb.htm" />
+    <item name="Demografi" url="InternWeb/Demografi_InternWeb.htm" />
+    <item name="Postreklame Segmenter" url="InternWeb/Segmenter_InternWeb.htm" />
+    <item name="Kjøreanalyse" url="InternWeb/Kj_reanalyse_InternWeb.htm" />
+    <item name="Rundt adressepunkt" url="InternWeb/Rundt_adressepunkt_InternWeb.htm" />
+    <item name="Opplasting av fil med adressepunkter" url="InternWeb/Opplasting_av_fil_med_adressepunkter_InternWeb.htm" />
+    <item name="Mottakergrupper" url="InternWeb/Mottakergrupper_InternWeb.htm" />
+  </book>
+  <book name="Utvalgshåndtering" >
+    <item name="Hente" url="InternWeb/Hente_InternWeb.htm" />
+    <item name="Endringshistorikk" url="InternWeb/Endringshistorikk_InternWeb.htm" />
+    <item name="Lagre" url="InternWeb/Lagre_InternWeb.htm" />
+    <item name="Slette" url="InternWeb/Slette_InternWeb.htm" />
+    <item name="Aktivt utvalg, åpning og gjenskapning" url="InternWeb/Aktivt_utvalg_InternWeb.htm" />
+    <item name="Arbeidsliste" url="InternWeb/Arbeidsliste_InternWeb.htm" />
+  </book>
+  <book name="Prisberegning" >
+    <item name="Prisberegning" url="InternWeb/Prisberegning.htm" />
+  </book>
+  <book name="Ruteutforsker" >
+    <item name="Ruteutforsker" url="InternWeb/Ruteutforsker.htm" />
+  </book>
+  <book name="Trestruktur" >
+    <item name="Trestruktur" url="InternWeb/Trestruktur_InternWeb.htm" />
+  </book>
+  <book name="Oppdatering" >
+    <item name="Strukturendringer" url="InternWeb/Strukturendringer_InternWeb.htm" />
+  </book>
+  <book name="Rapporter" >
+    <item name="Rapporter" url="InternWeb/Rapporter.htm" />
+  </book>
+  <book name="Kart" >
+    <item name="Navigering" url="InternWeb/Kart_navigering.htm" />
+    <item name="Seleksjon" url="InternWeb/Kart_Seleksjon.htm" />
+    <item name="Andre funksjoner" url="InternWeb/Kart_annet.htm" />
+  </book>
+</book>
+<book name="Generelt" >
+  <item name="Versjon" url="Felles/Versjon.htm" />
+  <item name="Om Geodata" url="Felles/Om_Geodata.htm" />
+</book>
+
+</tocdata>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-input_reoler_backup_new">
+<sql>
+
+
+CREATE TABLE kspu_db."input_reoler_backup_new" (reol_id varchar(10) NOT NULL,
+	reolnr varchar(4) NOT NULL,
+	reolnavn varchar(32),
+	reoltype varchar(25),
+	teamnr varchar(6) NOT NULL,
+	teamnavn varchar(50),
+	prsnr varchar(6),
+	prsnavn varchar(255),
+	prsbeskrivelse varchar(255),
+	beskrivelse varchar(256),
+	kommentar varchar(60),
+	pbkontnavn varchar(30),
+	postnr varchar(4),
+	poststed varchar(23),
+	kommuneid varchar(4),
+	kommune varchar(32),
+	fylkeid varchar(2),
+	fylke varchar(32),
+	hh numeric(38),
+	er numeric(38),
+	gb numeric(38),
+	vh numeric(38),
+	hh_res numeric(38),
+	er_res numeric(38),
+	gb_res numeric(38),
+	prissone numeric(38),
+	regnr varchar(6),
+	vh_m_res numeric(38),
+	hh_gr_res numeric(38),
+	l_u_res numeric(38),
+	l_m_res numeric(38),
+	antp numeric(38)
+) ;
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

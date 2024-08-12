@@ -1,0 +1,96 @@
+{
+  "name": "pumaweb",
+  "version": "0.1.0",
+  "description": "PUMA (Posten Unaddressed Mailing App)",
+  "private": true,
+  "keywords": [
+    "nodejs",
+    "react",
+    "ArcGIS"
+  ],
+  "dependencies": {
+    "@arcgis/core": "^4.22.2",
+    "@azure/msal-browser": "^2.22.0",
+    "@azure/msal-react": "^1.3.0",
+    "@datadog/browser-logs": "^3.10.1",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@microsoft/microsoft-graph-client": "^2.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/popper.js": "^1.11.0",
+    "ansi-html": "0.0.8",
+    "antd": "^4.17.3",
+    "axios": "^0.21.4",
+    "better-xlsx": "^0.7.6",
+    "bootstrap": "^4.3.1",
+    "buffer": "^6.0.3",
+    "env-cmd": "^10.1.0",
+    "esri": "0.0.1-security",
+    "esri-loader": "^3.2.0",
+    "file-saver": "^2.0.5",
+    "iconv-lite": "^0.6.3",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.3",
+    "msal": "^1.4.16",
+    "namor": "^2.0.3",
+    "react": "^17.0.2",
+    "react-aad-msal": "^2.3.5",
+    "react-app-polyfill": "^2.0.0",
+    "react-bootstrap": "^2.0.0-rc.0",
+    "react-day-picker": "^7.4.10",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-number-format": "^4.9.3",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.0",
+    "react-table": "^7.7.0",
+    "resolve-url": "^0.2.1",
+    "sass": "^1.45.0",
+    "styled-components": "^5.3.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.9",
+    "urix": "^0.1.0",
+    "url-search-params": "^1.1.0",
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "npm run copy && env-cmd -f .env.development.local react-scripts start",
+    "start:development": "set HOST =127.0.0.1 && env-cmd -f .env.development.local react-scripts start",
+    "start:Kundeweb": "env-cmd -f .env.Kundeweb.production.local react-scripts --openssl-legacy-provider start",
+    "start:Internweb": "env-cmd -f .env.Internweb.production.local react-scripts --openssl-legacy-provider start",
+    "build:development": "npm run copy && env-cmd -f .env.development.local react-scripts build",
+    "build": "npm run copy && env-cmd -f .env.production.local  react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "rollup-plugin-babel": "^4.4.0"
+  }
+}

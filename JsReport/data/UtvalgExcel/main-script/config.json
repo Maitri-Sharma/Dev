@@ -1,0 +1,14 @@
+{
+    "name": "main-script",
+    "creationDate": {
+        "$$date": 1643021481362
+    },
+    "modificationDate": {
+        "$$date": 1661160936318
+    },
+    "shortid": "OKuYOzO",
+    "_id": "6NwAI8GHqQOkO0Wg",
+    "$entitySet": "scripts",
+    "scope": "template",
+    "isGlobal": false
+}

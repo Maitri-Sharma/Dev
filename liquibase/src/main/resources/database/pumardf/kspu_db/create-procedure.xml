@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-procedure">
+<sql>
+
+
+
+
+CREATE OR REPLACE PROCEDURE kspu_db.pib_mapping () AS $body$
+DECLARE
+
+
+  cnt numeric;
+cnt1 numeric;
+cnt2 numeric;
+
+BEGIN
+  SELECT COUNT(*) INTO STRICT cnt FROM pg_tables WHERE tablename = 'INPUT_PIB_MAPPING_OLD';
+    IF cnt = 1 THEN
+      EXECUTE 'Drop TABLE INPUT_PIB_MAPPING_OLD';
+    END IF;
+      RAISE NOTICE 'cnt%', cnt;
+    SELECT COUNT(*) INTO STRICT cnt1 FROM pg_tables WHERE tablename = 'INPUT_PIB_MAPPING';
+    RAISE NOTICE 'cnt01%', cnt1;
+    IF cnt1 = 1 THEN
+     RAISE NOTICE 'rename';
+      EXECUTE 'RENAME INPUT_PIB_MAPPING TO INPUT_PIB_MAPPING_OLD';
+      RAISE NOTICE 'rename';
+      commit;
+    END IF;
+     RAISE NOTICE 'cnt1%', cnt1;
+    SELECT COUNT(*) INTO STRICT cnt2 FROM pg_tables WHERE tablename = 'INPUT_PIB_MAPPING';
+    IF cnt2 = 0 THEN
+     RAISE NOTICE 'cnt2%', cnt2;
+     begin
+      EXECUTE 'CREATE TABLE KSPU_DB.INPUT_PIB_MAPPING
+( OLD_REOL_ID VARCHAR2(10),
+  NEW_REOL_ID VARCHAR2(10),
+  OLD_ENHNRRUTEANSV VARCHAR2(6),
+  NEW_ENHNRRUTEANSV VARCHAR2(6)
+)';
+exception
+when others then
+RAISE NOTICE 'Error Ali re%', sqlerrm;
+end;
+    END IF;
+   RAISE NOTICE 'cnt2%', cnt2;
+  END;
+$body$
+LANGUAGE PLPGSQL
+SECURITY DEFINER
+;
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+["
+<?xml version='1.0' encoding='UTF-8'?>
+<OrdreStatusRequest xmlns='http://Posten.KSPU.UtvalgService.DataContracts/2007/05'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<CorrelationID>D8D8C2957F192640E05388AA728BCE51</CorrelationID>
+<OrdreStatus>
+<Id>2363197</Id>
+<Type>Utvalg</Type>
+<Kildesystem>KSPU</Kildesystem>
+<OEBSType>T</OEBSType>
+<OEBSRef>9275047</OEBSRef>
+<Status>R</Status>
+<Kommentar />
+<Innleveringsdato>2022-02-25T00:00:00</Innleveringsdato>
+<EndretAv>222592</EndretAv>
+<ReturnerFordeling>true</ReturnerFordeling>
+<Avtalenummer>3189561</Avtalenummer>
+<DistribusjonsDato>2022-03-14T00:00:00</DistribusjonsDato>
+<OmdelingsType>2</OmdelingsType>
+</OrdreStatus>
+</OrdreStatusRequest>
+
+
+
+"]

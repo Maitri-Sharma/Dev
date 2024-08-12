@@ -1,0 +1,225 @@
+body {
+    font-family: "Posten Sans";
+    margin: 0px 10px 0px 10px;
+    padding: 0px;
+}
+hr {
+     border: none;
+     border-top: 2px solid #00643A;
+ }
+
+ h3 {
+     margin-top: 5px;
+     text-align: left;
+ }
+
+ h4 {
+     margin-bottom: 0px;
+ }
+
+ .w10 {
+     width: 10%;
+ }
+
+ .w08 {
+     width: 8%;
+     margin-right: 10pt;
+ }
+ .nowrap
+ {
+    white-space: nowrap;
+ }
+ .HeaderText {
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: safe;
+     margin-top: 3%;
+ }
+
+ .Header-table {
+     text-align: left;
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ .header-row {
+     border-bottom: 3px solid #00643A;
+ }
+
+ .header-row h2 {
+     margin-bottom: 0px;
+     padding-bottom: 5px;
+ }
+
+ .seperator-row {
+     border-bottom: 1px solid #000;
+ }
+
+ .UtvalgListName h3 {
+     margin-top: 5px;
+     text-align: left;
+     margin-bottom: 0px;
+ }
+
+ .UtvalgListNameAmount {
+     margin-top: 5px;
+     text-align: right;
+     margin-bottom: 0px;
+ }
+
+ .UtvalgListName h5 {
+     margin-top: 5px;
+     text-align: left;
+     margin-bottom: 0px;
+     padding-bottom: 5px;
+ }
+
+ .UtvalgListName h6 {
+     margin-top: 5px;
+     text-align: right;
+     margin-bottom: 0px;
+     padding-bottom: 5px;
+ }
+
+ .UtvalgListItems {
+     text-align: left;
+     padding-left: 20px;
+ }
+
+ .UtvalgListItemsAmount {
+     text-align: right;
+ }
+
+ .DetailsText {
+     text-align: center;
+     width: auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     margin: 1px;
+ }
+
+ .report-details-table {
+     text-align: center;
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ .imageDiv {
+     display: flex;
+     align-items: left;
+     justify-content: space-around;
+ }
+
+ .ruteDetails-table {
+     width: 100%;
+     border-collapse: collapse;
+     text-align: center;
+     padding-bottom: 10px;
+ }
+
+ .flykerow {
+     background-color: #00643A;
+     color: white;
+     margin-bottom: 0px;
+     padding-bottom: 3px;
+ }
+
+ .flykerow-name {
+     text-align: left;
+     padding-left: 10px;
+ }
+
+ .ruteDetails-table th {
+     font-size: 9pt;
+ }
+
+ .kommunerow {
+     background-color: #C8DC8C;
+     color: black;
+     margin-bottom: 0px;
+     padding-bottom: 3px;
+ }
+
+ .kommunerow-name {
+     margin-bottom: 0px;
+     padding-left: 30px;
+     padding-top: 3px;
+     text-align: left;
+ }
+
+ .teamrow {
+     background-color: #D6D6D6;
+     color: black;
+     margin-bottom: 0px;
+     padding-bottom: 3px;
+ }
+
+ .teamrow-name {
+     margin-bottom: 0px;
+     padding-left: 50px;
+     padding-top: 3px;
+     font-weight: bold;
+     text-align: left;
+ }
+
+ .ruterow {
+     background-color: #ffffff;
+     margin-bottom: 0px;
+     padding-bottom: 3px;
+ }
+
+ .ruterow-name {
+     margin-bottom: 0px;
+     padding-left: 70px;
+     padding-top: 3px;
+     text-align: left;
+ }
+
+ .fontbig {
+     font-size: 9pt;
+ }
+
+ .fontsmall {
+     font-size: 7pt;
+ }
+
+ .fontsmaller {
+     font-size: 6pt;
+ }
+
+ .fontextrasmall {
+     font-size: 6pt;
+ }
+
+ .postalrow {
+     background-color: #ffffff;
+     margin-bottom: 0px;
+     padding-bottom: 3px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+ }
+
+ .postalrow-name {
+     margin-bottom: 0px;
+     padding-left: 70px;
+     text-align: left;
+ }
+
+ .columnDynamic
+ {
+      font-weight: bold;
+       text-align: left;
+ }
+
+ .maxwidth
+ {
+     max-width: 75%;
+ }
+
+ .s_2 {
+  /* ... */
+  width: fit-content;
+  /* ... */
+}

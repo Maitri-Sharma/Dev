@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-gkreoloverforing">
+<sql>
+
+
+
+CREATE TABLE kspu_db."gkreoloverforing" (reol_id varchar(10),
+	gkid varchar(8),
+	gktoreolfaktor bigint,
+	reoltogkfaktor bigint
+) ;
+CREATE INDEX idx_gkreoloverforing ON kspu_db.gkreoloverforing (reol_id, gkid);
+CREATE INDEX idx_gkreol_reol ON kspu_db.gkreoloverforing (gkid);
+CREATE INDEX idx_gkreol_reol_gk ON kspu_db.gkreoloverforing (reol_id);
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

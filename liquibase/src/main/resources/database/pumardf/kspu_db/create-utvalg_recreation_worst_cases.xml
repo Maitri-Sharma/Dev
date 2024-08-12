@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalg_recreation_worst_cases">
+<sql>
+
+
+
+
+CREATE TABLE kspu_db."utvalg_recreation_worst_cases" (utvalg varchar(50) NOT NULL,
+	utvalgid numeric(38) NOT NULL,
+	antallavvik decimal(38,4) NOT NULL,
+	antalldifferanse numeric(38) NOT NULL,
+	antallforgjenskaping numeric(38) NOT NULL,
+	antettergjenskp numeric(38) NOT NULL,
+	arealavvik decimal(38,4) NOT NULL,
+	arealgammelt decimal(38,4) NOT NULL,
+	arealnytt decimal(38,4) NOT NULL,
+	fjernetbokser varchar(4000),
+	registrationdate timestamp NOT NULL DEFAULT LOCALTIMESTAMP,
+	dobbeldekningfjernet numeric(38),
+	quoteid varchar(30),
+	basisnavn varchar(50),
+	kampanjenavn varchar(50),
+	bestemorlisteid numeric(38),
+	bestemorlistenavn varchar(50),
+	bestemorlistelogo varchar(50),
+	morlisteid numeric(38),
+	morlistenavn varchar(50),
+	morlistelogo varchar(50),
+	utvalglogo varchar(50),
+	antallhhfor numeric(38),
+	antallhhetter numeric(38),
+	antallsavvikhh decimal(38,4),
+	antalldiffhh numeric(38),
+	antallvfor numeric(38),
+	antallvetter numeric(38),
+	antallresfor numeric(38),
+	antallresetter numeric(38),
+	totantallfor numeric(38),
+	totantetter numeric(38),
+	nettoarealfor decimal(38,4),
+	nettoarealetter decimal(38,4),
+	nettoarealavvikprosent decimal(38,2),
+	bruttoarealfor decimal(38,4),
+	bruttoarealetter decimal(38,4),
+	bruttoarealavikprosent decimal(38,2),
+	bruttoendringantall numeric(38),
+	bruttoendringprosent decimal(38,2),
+	bestiller varchar(50),
+	distribusjonsdato timestamp,
+	distribusjonstype char(1),
+	ordretype varchar(1),
+	ordrestatus varchar(1),
+	kundenummer varchar(30),
+	nyebokser varchar(4000),
+	rplebokser varchar(4000)
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

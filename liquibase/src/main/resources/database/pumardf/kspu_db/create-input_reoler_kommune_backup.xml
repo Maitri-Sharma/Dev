@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-input_reoler_kommune_backup">
+<sql>
+
+CREATE TABLE kspu_db."input_reoler_kommune_backup" (reol_id varchar(10) NOT NULL,
+	kommuneid varchar(4) NOT NULL,
+	hh numeric(38),
+	er numeric(38),
+	gb numeric(38),
+	vh numeric(38),
+	hh_res numeric(38),
+	er_res numeric(38),
+	gb_res numeric(38),
+	teamnr varchar(6) NOT NULL,
+	reolnr varchar(4) NOT NULL
+) ;
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

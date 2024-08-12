@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-ergo_errorlog">
+<sql>
+
+
+
+CREATE TABLE kspu_db."ergo_errorlog" (job_number timestamp NOT NULL,
+	seqnr bigint NOT NULL,
+	message_type varchar(100),
+	message varchar(4000),
+	error_text varchar(4000),
+	PRIMARY KEY (job_number,seqnr)
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

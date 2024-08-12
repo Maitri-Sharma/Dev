@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-avisfieldmapping_220416">
+<sql>
+
+
+CREATE TABLE kspu_db."avisfieldmapping_220416" (objectid numeric(38) NOT NULL,
+	utgave varchar(255),
+	feltnavn varchar(4)
+) ;
+CREATE UNIQUE INDEX r3955_sde_rowid_uk ON kspu_db.avisfieldmapping_220416 (objectid);
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

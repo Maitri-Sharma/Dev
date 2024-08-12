@@ -1,0 +1,359 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: restcapacity-persistent-volumeclaim
+  namespace: {{namespace}}
+spec:
+  storageClassName: managed-csi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dataaccessapi
+  namespace: {{namespace}}
+  labels:
+    app: dataaccessapi
+spec:
+  selector:
+    matchLabels:
+      app: dataaccessapi
+  replicas: 1
+  strategy:
+    type: Recreate # RollingUpdate
+    # rollingUpdate:
+    #     maxSurge: 1
+    #     maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: dataaccessapi
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      containers:
+        - name: dataaccessapi
+          image: {{acrName}}/dataaccessapi:{{sha}}
+          securityContext:
+            allowPrivilegeEscalation: false
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+              hostPort: 80
+          volumeMounts:
+            - mountPath: "/restcapacity"
+              name: restcapacity-volume
+      volumes:
+        - name: restcapacity-volume
+          persistentVolumeClaim:
+            claimName: restcapacity-persistent-volumeclaim
+      tolerations:
+            - key: "nodetype"
+              operator: "Equal"
+              value: "linux"
+              effect: "NoSchedule"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pumaweb
+  namespace: {{namespace}}
+  labels:
+    app: pumaweb
+spec:
+  selector:
+    matchLabels:
+      app: pumaweb
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  strategy:
+    type: Recreate # RollingUpdate
+    # rollingUpdate:
+    #     maxSurge: 1
+    #     maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: pumaweb
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      containers:
+        - name: pumaweb
+          image: {{acrName}}/pumaweb:{{sha}}
+          securityContext:
+            allowPrivilegeEscalation: false
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+              hostPort: 3000
+
+      tolerations:
+            - key: "nodetype"
+              operator: "Equal"
+              value: "linux"
+              effect: "NoSchedule"
+
+---
+ #--- pumakundeweb WebSite
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pumakundeweb
+  namespace: {{namespace}}
+  labels:
+    app: pumakundeweb
+spec:
+  selector:
+    matchLabels:
+      app: pumakundeweb
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  strategy:
+    type: Recreate # RollingUpdate
+    # rollingUpdate:
+    #     maxSurge: 1
+    #     maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: pumakundeweb
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      containers:
+        - name: pumakundeweb
+          image: {{acrName}}/pumakundeweb:{{sha}}
+          securityContext:
+            allowPrivilegeEscalation: false
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+              hostPort: 3000
+
+      tolerations:
+            - key: "nodetype"
+              operator: "Equal"
+              value: "linux"
+              effect: "NoSchedule"
+
+
+---
+ #--- Jsreport
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsreport
+  namespace: {{namespace}}
+  labels:
+    app: jsreport
+spec:
+  selector:
+    matchLabels:
+      app: jsreport
+  replicas: 1
+  strategy:
+    type: Recreate # RollingUpdate
+    # rollingUpdate:
+    #     maxSurge: 1
+    #     maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: jsreport
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      containers:
+        - name: jsreport
+          image: {{acrName}}/jsreport:{{sha}}
+          securityContext:
+            allowPrivilegeEscalation: false
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 5488
+              protocol: TCP
+              hostPort: 5488
+
+      tolerations:
+            - key: "nodetype"
+              operator: "Equal"
+              value: "linux"
+              effect: "NoSchedule"
+
+
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: dataaccessapi
+  namespace: {{namespace}}
+spec:
+  selector:
+    app: dataaccessapi
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  type: ClusterIP
+
+---
+
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: pumaweb
+  namespace: {{namespace}}
+spec:
+  selector:
+    app: pumaweb
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  type: ClusterIP
+---
+
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: pumakundeweb
+  namespace: {{namespace}}
+spec:
+  selector:
+    app: pumakundeweb
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  type: ClusterIP
+---
+
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: jsreport
+  namespace: {{namespace}}
+spec:
+  selector:
+    app: jsreport
+  ports:
+    - port: 80
+      targetPort: 5488
+      protocol: TCP
+      name: http
+  type: ClusterIP
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pumaweb-ingress-services
+  namespace: {{namespace}}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-name: PUMAWEB
+    nginx.ingress.kubernetes.io/session-cookie-expires: '172800'
+    nginx.ingress.kubernetes.io/session-cookie-max-age: '172800'
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/default-backend: pumaweb
+    nginx.ingress.kubernetes.io/proxy-body-size: "75m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/client-body-buffer-size: "1m"
+spec:
+  rules:
+  - host: dev.pumainternweb.bring.no
+    http:
+      paths:
+      - path: /?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: pumaweb
+            port:
+              number: 80
+      - path: /reports/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: jsreport
+            port:
+              number: 80
+  - host: dev.pumakundeweb.bring.no
+    http:
+      paths:
+      - path: /?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: pumakundeweb
+            port:
+              number: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pumaweb-dataaccessapi-ingress-services
+  namespace: {{namespace}}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/default-backend: pumaweb
+    nginx.ingress.kubernetes.io/proxy-body-size: "75m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/client-body-buffer-size: "1m"
+    # nginx.ingress.kubernetes.io/whitelist-source-range: 10.102.82.0/24,10.101.48.0/20
+spec:
+  rules:
+  - host: dev.pumainternweb.bring.no
+    http:
+      paths:
+      - path: /dataaccessapi/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: dataaccessapi
+            port:
+              number: 80

@@ -1,0 +1,4519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-gdb-object6">
+<sql>
+
+
+CREATE TABLE kspu_gdb."s1021" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1021_ix1 ON kspu_gdb.s1021 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1021_ix2 ON kspu_gdb.s1021 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1052" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1052_ix1 ON kspu_gdb.s1052 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1052_ix2 ON kspu_gdb.s1052 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1085" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1085_ix1 ON kspu_gdb.s1085 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1085_ix2 ON kspu_gdb.s1085 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1088" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1088_ix1 ON kspu_gdb.s1088 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1088_ix2 ON kspu_gdb.s1088 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1119" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1119_ix1 ON kspu_gdb.s1119 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1119_ix2 ON kspu_gdb.s1119 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1149" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1149_ix1 ON kspu_gdb.s1149 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1149_ix2 ON kspu_gdb.s1149 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1180" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1180_ix1 ON kspu_gdb.s1180 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1180_ix2 ON kspu_gdb.s1180 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1229" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1229_ix1 ON kspu_gdb.s1229 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1229_ix2 ON kspu_gdb.s1229 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1260" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1260_ix1 ON kspu_gdb.s1260 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1260_ix2 ON kspu_gdb.s1260 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1388" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1388_ix1 ON kspu_gdb.s1388 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1388_ix2 ON kspu_gdb.s1388 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1393" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1393_ix1 ON kspu_gdb.s1393 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1393_ix2 ON kspu_gdb.s1393 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1449" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1449_ix1 ON kspu_gdb.s1449 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1449_ix2 ON kspu_gdb.s1449 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1481" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1481_ix1 ON kspu_gdb.s1481 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1481_ix2 ON kspu_gdb.s1481 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1516" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1516_ix1 ON kspu_gdb.s1516 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1516_ix2 ON kspu_gdb.s1516 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1546" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1546_ix1 ON kspu_gdb.s1546 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1546_ix2 ON kspu_gdb.s1546 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1593" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1593_ix1 ON kspu_gdb.s1593 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1593_ix2 ON kspu_gdb.s1593 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1624" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1624_ix1 ON kspu_gdb.s1624 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1624_ix2 ON kspu_gdb.s1624 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1655" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1655_ix1 ON kspu_gdb.s1655 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1655_ix2 ON kspu_gdb.s1655 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1660" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1660_ix1 ON kspu_gdb.s1660 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1660_ix2 ON kspu_gdb.s1660 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1691" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1691_ix1 ON kspu_gdb.s1691 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1691_ix2 ON kspu_gdb.s1691 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1722" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1722_ix1 ON kspu_gdb.s1722 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1722_ix2 ON kspu_gdb.s1722 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1816" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1816_ix1 ON kspu_gdb.s1816 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1816_ix2 ON kspu_gdb.s1816 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1817" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1817_ix1 ON kspu_gdb.s1817 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1817_ix2 ON kspu_gdb.s1817 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1818" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1818_ix1 ON kspu_gdb.s1818 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1818_ix2 ON kspu_gdb.s1818 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1820" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1820_ix1 ON kspu_gdb.s1820 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1820_ix2 ON kspu_gdb.s1820 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1825" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1825_ix1 ON kspu_gdb.s1825 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1825_ix2 ON kspu_gdb.s1825 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1827" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1827_ix1 ON kspu_gdb.s1827 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1827_ix2 ON kspu_gdb.s1827 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1855" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1855_ix1 ON kspu_gdb.s1855 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1855_ix2 ON kspu_gdb.s1855 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1889" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1889_ix1 ON kspu_gdb.s1889 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1889_ix2 ON kspu_gdb.s1889 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1919" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1919_ix1 ON kspu_gdb.s1919 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1919_ix2 ON kspu_gdb.s1919 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1954" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1954_ix1 ON kspu_gdb.s1954 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1954_ix2 ON kspu_gdb.s1954 (sp_fid);
+
+CREATE TABLE kspu_gdb."s1983" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s1983_ix1 ON kspu_gdb.s1983 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s1983_ix2 ON kspu_gdb.s1983 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2012" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2012_ix1 ON kspu_gdb.s2012 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2012_ix2 ON kspu_gdb.s2012 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2041" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2041_ix1 ON kspu_gdb.s2041 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2041_ix2 ON kspu_gdb.s2041 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2070" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2070_ix1 ON kspu_gdb.s2070 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2070_ix2 ON kspu_gdb.s2070 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2101" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2101_ix1 ON kspu_gdb.s2101 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2101_ix2 ON kspu_gdb.s2101 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2130" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2130_ix1 ON kspu_gdb.s2130 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2130_ix2 ON kspu_gdb.s2130 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2137" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2137_ix1 ON kspu_gdb.s2137 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2137_ix2 ON kspu_gdb.s2137 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2171" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2171_ix1 ON kspu_gdb.s2171 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2171_ix2 ON kspu_gdb.s2171 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2183" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2183_ix1 ON kspu_gdb.s2183 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2183_ix2 ON kspu_gdb.s2183 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2188" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2188_ix1 ON kspu_gdb.s2188 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2188_ix2 ON kspu_gdb.s2188 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2189" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2189_ix1 ON kspu_gdb.s2189 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2189_ix2 ON kspu_gdb.s2189 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2190" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2190_ix1 ON kspu_gdb.s2190 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2190_ix2 ON kspu_gdb.s2190 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2191" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2191_ix1 ON kspu_gdb.s2191 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2191_ix2 ON kspu_gdb.s2191 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2192" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2192_ix1 ON kspu_gdb.s2192 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2192_ix2 ON kspu_gdb.s2192 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2193" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2193_ix1 ON kspu_gdb.s2193 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2193_ix2 ON kspu_gdb.s2193 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2194" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2194_ix1 ON kspu_gdb.s2194 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2194_ix2 ON kspu_gdb.s2194 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2195" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2195_ix1 ON kspu_gdb.s2195 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2195_ix2 ON kspu_gdb.s2195 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2196" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2196_ix1 ON kspu_gdb.s2196 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2196_ix2 ON kspu_gdb.s2196 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2224" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2224_ix1 ON kspu_gdb.s2224 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2224_ix2 ON kspu_gdb.s2224 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2253" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2253_ix1 ON kspu_gdb.s2253 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2253_ix2 ON kspu_gdb.s2253 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2282" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2282_ix1 ON kspu_gdb.s2282 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2282_ix2 ON kspu_gdb.s2282 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2311" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2311_ix1 ON kspu_gdb.s2311 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2311_ix2 ON kspu_gdb.s2311 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2314" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2314_ix1 ON kspu_gdb.s2314 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2314_ix2 ON kspu_gdb.s2314 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2343" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2343_ix1 ON kspu_gdb.s2343 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2343_ix2 ON kspu_gdb.s2343 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2375" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2375_ix1 ON kspu_gdb.s2375 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2375_ix2 ON kspu_gdb.s2375 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2404" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2404_ix1 ON kspu_gdb.s2404 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2404_ix2 ON kspu_gdb.s2404 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2407" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2407_ix1 ON kspu_gdb.s2407 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2407_ix2 ON kspu_gdb.s2407 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2409" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2409_ix1 ON kspu_gdb.s2409 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2409_ix2 ON kspu_gdb.s2409 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2410" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2410_ix1 ON kspu_gdb.s2410 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2410_ix2 ON kspu_gdb.s2410 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2412" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2412_ix1 ON kspu_gdb.s2412 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2412_ix2 ON kspu_gdb.s2412 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2413" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2413_ix1 ON kspu_gdb.s2413 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2413_ix2 ON kspu_gdb.s2413 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2414" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2414_ix1 ON kspu_gdb.s2414 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2414_ix2 ON kspu_gdb.s2414 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2415" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2415_ix1 ON kspu_gdb.s2415 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2415_ix2 ON kspu_gdb.s2415 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2416" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2416_ix1 ON kspu_gdb.s2416 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2416_ix2 ON kspu_gdb.s2416 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2417" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2417_ix1 ON kspu_gdb.s2417 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2417_ix2 ON kspu_gdb.s2417 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2418" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2418_ix1 ON kspu_gdb.s2418 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2418_ix2 ON kspu_gdb.s2418 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2419" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2419_ix1 ON kspu_gdb.s2419 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2419_ix2 ON kspu_gdb.s2419 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2420" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2420_ix1 ON kspu_gdb.s2420 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2420_ix2 ON kspu_gdb.s2420 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2421" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2421_ix1 ON kspu_gdb.s2421 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2421_ix2 ON kspu_gdb.s2421 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2422" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2422_ix1 ON kspu_gdb.s2422 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2422_ix2 ON kspu_gdb.s2422 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2423" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2423_ix1 ON kspu_gdb.s2423 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2423_ix2 ON kspu_gdb.s2423 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2424" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2424_ix1 ON kspu_gdb.s2424 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2424_ix2 ON kspu_gdb.s2424 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2425" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2425_ix1 ON kspu_gdb.s2425 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2425_ix2 ON kspu_gdb.s2425 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2426" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2426_ix1 ON kspu_gdb.s2426 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2426_ix2 ON kspu_gdb.s2426 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2427" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2427_ix1 ON kspu_gdb.s2427 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2427_ix2 ON kspu_gdb.s2427 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2428" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2428_ix1 ON kspu_gdb.s2428 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2428_ix2 ON kspu_gdb.s2428 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2429" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2429_ix1 ON kspu_gdb.s2429 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2429_ix2 ON kspu_gdb.s2429 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2430" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2430_ix1 ON kspu_gdb.s2430 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2430_ix2 ON kspu_gdb.s2430 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2431" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2431_ix1 ON kspu_gdb.s2431 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2431_ix2 ON kspu_gdb.s2431 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2432" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2432_ix1 ON kspu_gdb.s2432 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2432_ix2 ON kspu_gdb.s2432 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2433" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2433_ix1 ON kspu_gdb.s2433 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2433_ix2 ON kspu_gdb.s2433 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2434" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2434_ix1 ON kspu_gdb.s2434 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2434_ix2 ON kspu_gdb.s2434 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2435" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2435_ix1 ON kspu_gdb.s2435 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2435_ix2 ON kspu_gdb.s2435 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2436" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2436_ix1 ON kspu_gdb.s2436 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2436_ix2 ON kspu_gdb.s2436 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2437" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2437_ix1 ON kspu_gdb.s2437 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2437_ix2 ON kspu_gdb.s2437 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2438" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2438_ix1 ON kspu_gdb.s2438 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2438_ix2 ON kspu_gdb.s2438 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2439" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2439_ix1 ON kspu_gdb.s2439 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2439_ix2 ON kspu_gdb.s2439 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2440" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2440_ix1 ON kspu_gdb.s2440 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2440_ix2 ON kspu_gdb.s2440 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2441" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2441_ix1 ON kspu_gdb.s2441 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2441_ix2 ON kspu_gdb.s2441 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2468" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2468_ix1 ON kspu_gdb.s2468 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2468_ix2 ON kspu_gdb.s2468 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2499" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2499_ix1 ON kspu_gdb.s2499 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2499_ix2 ON kspu_gdb.s2499 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2504" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2504_ix1 ON kspu_gdb.s2504 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2504_ix2 ON kspu_gdb.s2504 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2562" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2562_ix1 ON kspu_gdb.s2562 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2562_ix2 ON kspu_gdb.s2562 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2593" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2593_ix1 ON kspu_gdb.s2593 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2593_ix2 ON kspu_gdb.s2593 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2624" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2624_ix1 ON kspu_gdb.s2624 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2624_ix2 ON kspu_gdb.s2624 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2655" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2655_ix1 ON kspu_gdb.s2655 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2655_ix2 ON kspu_gdb.s2655 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2686" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2686_ix1 ON kspu_gdb.s2686 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2686_ix2 ON kspu_gdb.s2686 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2721" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2721_ix1 ON kspu_gdb.s2721 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2721_ix2 ON kspu_gdb.s2721 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2775" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2775_ix1 ON kspu_gdb.s2775 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2775_ix2 ON kspu_gdb.s2775 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2806" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2806_ix1 ON kspu_gdb.s2806 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2806_ix2 ON kspu_gdb.s2806 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2841" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2841_ix1 ON kspu_gdb.s2841 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2841_ix2 ON kspu_gdb.s2841 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2846" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2846_ix1 ON kspu_gdb.s2846 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2846_ix2 ON kspu_gdb.s2846 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2847" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2847_ix1 ON kspu_gdb.s2847 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2847_ix2 ON kspu_gdb.s2847 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2848" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2848_ix1 ON kspu_gdb.s2848 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2848_ix2 ON kspu_gdb.s2848 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2849" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2849_ix1 ON kspu_gdb.s2849 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2849_ix2 ON kspu_gdb.s2849 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2850" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2850_ix1 ON kspu_gdb.s2850 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2850_ix2 ON kspu_gdb.s2850 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2851" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2851_ix1 ON kspu_gdb.s2851 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2851_ix2 ON kspu_gdb.s2851 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2852" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2852_ix1 ON kspu_gdb.s2852 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2852_ix2 ON kspu_gdb.s2852 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2853" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2853_ix1 ON kspu_gdb.s2853 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2853_ix2 ON kspu_gdb.s2853 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2854" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2854_ix1 ON kspu_gdb.s2854 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2854_ix2 ON kspu_gdb.s2854 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2855" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2855_ix1 ON kspu_gdb.s2855 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2855_ix2 ON kspu_gdb.s2855 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2856" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2856_ix1 ON kspu_gdb.s2856 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2856_ix2 ON kspu_gdb.s2856 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2857" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2857_ix1 ON kspu_gdb.s2857 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2857_ix2 ON kspu_gdb.s2857 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2858" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2858_ix1 ON kspu_gdb.s2858 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2858_ix2 ON kspu_gdb.s2858 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2859" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2859_ix1 ON kspu_gdb.s2859 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2859_ix2 ON kspu_gdb.s2859 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2860" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2860_ix1 ON kspu_gdb.s2860 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2860_ix2 ON kspu_gdb.s2860 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2861" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2861_ix1 ON kspu_gdb.s2861 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2861_ix2 ON kspu_gdb.s2861 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2862" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2862_ix1 ON kspu_gdb.s2862 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2862_ix2 ON kspu_gdb.s2862 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2863" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2863_ix1 ON kspu_gdb.s2863 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2863_ix2 ON kspu_gdb.s2863 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2864" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2864_ix1 ON kspu_gdb.s2864 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2864_ix2 ON kspu_gdb.s2864 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2865" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2865_ix1 ON kspu_gdb.s2865 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2865_ix2 ON kspu_gdb.s2865 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2866" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2866_ix1 ON kspu_gdb.s2866 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2866_ix2 ON kspu_gdb.s2866 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2867" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2867_ix1 ON kspu_gdb.s2867 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2867_ix2 ON kspu_gdb.s2867 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2868" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2868_ix1 ON kspu_gdb.s2868 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2868_ix2 ON kspu_gdb.s2868 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2869" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2869_ix1 ON kspu_gdb.s2869 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2869_ix2 ON kspu_gdb.s2869 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2870" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2870_ix1 ON kspu_gdb.s2870 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2870_ix2 ON kspu_gdb.s2870 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2871" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2871_ix1 ON kspu_gdb.s2871 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2871_ix2 ON kspu_gdb.s2871 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2872" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2872_ix1 ON kspu_gdb.s2872 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2872_ix2 ON kspu_gdb.s2872 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2873" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2873_ix1 ON kspu_gdb.s2873 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2873_ix2 ON kspu_gdb.s2873 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2874" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2874_ix1 ON kspu_gdb.s2874 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2874_ix2 ON kspu_gdb.s2874 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2875" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2875_ix1 ON kspu_gdb.s2875 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2875_ix2 ON kspu_gdb.s2875 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2876" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2876_ix1 ON kspu_gdb.s2876 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2876_ix2 ON kspu_gdb.s2876 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2877" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2877_ix1 ON kspu_gdb.s2877 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2877_ix2 ON kspu_gdb.s2877 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2878" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2878_ix1 ON kspu_gdb.s2878 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2878_ix2 ON kspu_gdb.s2878 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2880" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2880_ix1 ON kspu_gdb.s2880 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2880_ix2 ON kspu_gdb.s2880 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2881" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2881_ix1 ON kspu_gdb.s2881 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2881_ix2 ON kspu_gdb.s2881 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2908" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2908_ix1 ON kspu_gdb.s2908 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2908_ix2 ON kspu_gdb.s2908 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2939" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2939_ix1 ON kspu_gdb.s2939 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2939_ix2 ON kspu_gdb.s2939 (sp_fid);
+
+CREATE TABLE kspu_gdb."s2970" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s2970_ix1 ON kspu_gdb.s2970 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s2970_ix2 ON kspu_gdb.s2970 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3032" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3032_ix1 ON kspu_gdb.s3032 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3032_ix2 ON kspu_gdb.s3032 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3066" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3066_ix1 ON kspu_gdb.s3066 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3066_ix2 ON kspu_gdb.s3066 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3071" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3071_ix1 ON kspu_gdb.s3071 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3071_ix2 ON kspu_gdb.s3071 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3072" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3072_ix1 ON kspu_gdb.s3072 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3072_ix2 ON kspu_gdb.s3072 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3099" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3099_ix1 ON kspu_gdb.s3099 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3099_ix2 ON kspu_gdb.s3099 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3133" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3133_ix1 ON kspu_gdb.s3133 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3133_ix2 ON kspu_gdb.s3133 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3168" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3168_ix1 ON kspu_gdb.s3168 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3168_ix2 ON kspu_gdb.s3168 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3203" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3203_ix1 ON kspu_gdb.s3203 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3203_ix2 ON kspu_gdb.s3203 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3234" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3234_ix1 ON kspu_gdb.s3234 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3234_ix2 ON kspu_gdb.s3234 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3261" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3261_ix1 ON kspu_gdb.s3261 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3261_ix2 ON kspu_gdb.s3261 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3288" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3288_ix1 ON kspu_gdb.s3288 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3288_ix2 ON kspu_gdb.s3288 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3315" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3315_ix1 ON kspu_gdb.s3315 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3315_ix2 ON kspu_gdb.s3315 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3342" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3342_ix1 ON kspu_gdb.s3342 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3342_ix2 ON kspu_gdb.s3342 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3369" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3369_ix1 ON kspu_gdb.s3369 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3369_ix2 ON kspu_gdb.s3369 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3396" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3396_ix1 ON kspu_gdb.s3396 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3396_ix2 ON kspu_gdb.s3396 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3443" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3443_ix1 ON kspu_gdb.s3443 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3443_ix2 ON kspu_gdb.s3443 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3470" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3470_ix1 ON kspu_gdb.s3470 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3470_ix2 ON kspu_gdb.s3470 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3503" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3503_ix1 ON kspu_gdb.s3503 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3503_ix2 ON kspu_gdb.s3503 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3530" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3530_ix1 ON kspu_gdb.s3530 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3530_ix2 ON kspu_gdb.s3530 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3559" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3559_ix1 ON kspu_gdb.s3559 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3559_ix2 ON kspu_gdb.s3559 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3586" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3586_ix1 ON kspu_gdb.s3586 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3586_ix2 ON kspu_gdb.s3586 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3613" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3613_ix1 ON kspu_gdb.s3613 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3613_ix2 ON kspu_gdb.s3613 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3640" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3640_ix1 ON kspu_gdb.s3640 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3640_ix2 ON kspu_gdb.s3640 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3646" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3646_ix1 ON kspu_gdb.s3646 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3646_ix2 ON kspu_gdb.s3646 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3647" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3647_ix1 ON kspu_gdb.s3647 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3647_ix2 ON kspu_gdb.s3647 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3648" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3648_ix1 ON kspu_gdb.s3648 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3648_ix2 ON kspu_gdb.s3648 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3649" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3649_ix1 ON kspu_gdb.s3649 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3649_ix2 ON kspu_gdb.s3649 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3650" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3650_ix1 ON kspu_gdb.s3650 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3650_ix2 ON kspu_gdb.s3650 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3651" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3651_ix1 ON kspu_gdb.s3651 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3651_ix2 ON kspu_gdb.s3651 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3652" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3652_ix1 ON kspu_gdb.s3652 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3652_ix2 ON kspu_gdb.s3652 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3653" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3653_ix1 ON kspu_gdb.s3653 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3653_ix2 ON kspu_gdb.s3653 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3654" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3654_ix1 ON kspu_gdb.s3654 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3654_ix2 ON kspu_gdb.s3654 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3655" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3655_ix1 ON kspu_gdb.s3655 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3655_ix2 ON kspu_gdb.s3655 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3656" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3656_ix1 ON kspu_gdb.s3656 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3656_ix2 ON kspu_gdb.s3656 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3657" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3657_ix1 ON kspu_gdb.s3657 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3657_ix2 ON kspu_gdb.s3657 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3658" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3658_ix1 ON kspu_gdb.s3658 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3658_ix2 ON kspu_gdb.s3658 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3659" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3659_ix1 ON kspu_gdb.s3659 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3659_ix2 ON kspu_gdb.s3659 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3660" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3660_ix1 ON kspu_gdb.s3660 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3660_ix2 ON kspu_gdb.s3660 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3661" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3661_ix1 ON kspu_gdb.s3661 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3661_ix2 ON kspu_gdb.s3661 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3662" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3662_ix1 ON kspu_gdb.s3662 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3662_ix2 ON kspu_gdb.s3662 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3663" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3663_ix1 ON kspu_gdb.s3663 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3663_ix2 ON kspu_gdb.s3663 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3664" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3664_ix1 ON kspu_gdb.s3664 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3664_ix2 ON kspu_gdb.s3664 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3665" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3665_ix1 ON kspu_gdb.s3665 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3665_ix2 ON kspu_gdb.s3665 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3666" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3666_ix1 ON kspu_gdb.s3666 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3666_ix2 ON kspu_gdb.s3666 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3667" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3667_ix1 ON kspu_gdb.s3667 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3667_ix2 ON kspu_gdb.s3667 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3668" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3668_ix1 ON kspu_gdb.s3668 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3668_ix2 ON kspu_gdb.s3668 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3669" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3669_ix1 ON kspu_gdb.s3669 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3669_ix2 ON kspu_gdb.s3669 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3670" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3670_ix1 ON kspu_gdb.s3670 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3670_ix2 ON kspu_gdb.s3670 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3671" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3671_ix1 ON kspu_gdb.s3671 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3671_ix2 ON kspu_gdb.s3671 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3672" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3672_ix1 ON kspu_gdb.s3672 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3672_ix2 ON kspu_gdb.s3672 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3673" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3673_ix1 ON kspu_gdb.s3673 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3673_ix2 ON kspu_gdb.s3673 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3674" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3674_ix1 ON kspu_gdb.s3674 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3674_ix2 ON kspu_gdb.s3674 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3675" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3675_ix1 ON kspu_gdb.s3675 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3675_ix2 ON kspu_gdb.s3675 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3676" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3676_ix1 ON kspu_gdb.s3676 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3676_ix2 ON kspu_gdb.s3676 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3677" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3677_ix1 ON kspu_gdb.s3677 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3677_ix2 ON kspu_gdb.s3677 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3678" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3678_ix1 ON kspu_gdb.s3678 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3678_ix2 ON kspu_gdb.s3678 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3679" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3679_ix1 ON kspu_gdb.s3679 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3679_ix2 ON kspu_gdb.s3679 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3680" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3680_ix1 ON kspu_gdb.s3680 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3680_ix2 ON kspu_gdb.s3680 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3681" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3681_ix1 ON kspu_gdb.s3681 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3681_ix2 ON kspu_gdb.s3681 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3682" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3682_ix1 ON kspu_gdb.s3682 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3682_ix2 ON kspu_gdb.s3682 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3683" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3683_ix1 ON kspu_gdb.s3683 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3683_ix2 ON kspu_gdb.s3683 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3685" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3685_ix1 ON kspu_gdb.s3685 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3685_ix2 ON kspu_gdb.s3685 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3686" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3686_ix1 ON kspu_gdb.s3686 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3686_ix2 ON kspu_gdb.s3686 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3687" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3687_ix1 ON kspu_gdb.s3687 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3687_ix2 ON kspu_gdb.s3687 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3688" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3688_ix1 ON kspu_gdb.s3688 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3688_ix2 ON kspu_gdb.s3688 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3689" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3689_ix1 ON kspu_gdb.s3689 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3689_ix2 ON kspu_gdb.s3689 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3690" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3690_ix1 ON kspu_gdb.s3690 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3690_ix2 ON kspu_gdb.s3690 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3691" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3691_ix1 ON kspu_gdb.s3691 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3691_ix2 ON kspu_gdb.s3691 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3718" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3718_ix1 ON kspu_gdb.s3718 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3718_ix2 ON kspu_gdb.s3718 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3719" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3719_ix1 ON kspu_gdb.s3719 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3719_ix2 ON kspu_gdb.s3719 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3746" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3746_ix1 ON kspu_gdb.s3746 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3746_ix2 ON kspu_gdb.s3746 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3773" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3773_ix1 ON kspu_gdb.s3773 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3773_ix2 ON kspu_gdb.s3773 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3800" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3800_ix1 ON kspu_gdb.s3800 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3800_ix2 ON kspu_gdb.s3800 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3827" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3827_ix1 ON kspu_gdb.s3827 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3827_ix2 ON kspu_gdb.s3827 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3832" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3832_ix1 ON kspu_gdb.s3832 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3832_ix2 ON kspu_gdb.s3832 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3833" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3833_ix1 ON kspu_gdb.s3833 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3833_ix2 ON kspu_gdb.s3833 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3834" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3834_ix1 ON kspu_gdb.s3834 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3834_ix2 ON kspu_gdb.s3834 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3835" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3835_ix1 ON kspu_gdb.s3835 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3835_ix2 ON kspu_gdb.s3835 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3836" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3836_ix1 ON kspu_gdb.s3836 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3836_ix2 ON kspu_gdb.s3836 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3837" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3837_ix1 ON kspu_gdb.s3837 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3837_ix2 ON kspu_gdb.s3837 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3838" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3838_ix1 ON kspu_gdb.s3838 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3838_ix2 ON kspu_gdb.s3838 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3839" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3839_ix1 ON kspu_gdb.s3839 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3839_ix2 ON kspu_gdb.s3839 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3840" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3840_ix1 ON kspu_gdb.s3840 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3840_ix2 ON kspu_gdb.s3840 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3841" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3841_ix1 ON kspu_gdb.s3841 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3841_ix2 ON kspu_gdb.s3841 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3842" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3842_ix1 ON kspu_gdb.s3842 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3842_ix2 ON kspu_gdb.s3842 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3843" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3843_ix1 ON kspu_gdb.s3843 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3843_ix2 ON kspu_gdb.s3843 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3844" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3844_ix1 ON kspu_gdb.s3844 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3844_ix2 ON kspu_gdb.s3844 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3845" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3845_ix1 ON kspu_gdb.s3845 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3845_ix2 ON kspu_gdb.s3845 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3846" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3846_ix1 ON kspu_gdb.s3846 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3846_ix2 ON kspu_gdb.s3846 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3847" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3847_ix1 ON kspu_gdb.s3847 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3847_ix2 ON kspu_gdb.s3847 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3848" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3848_ix1 ON kspu_gdb.s3848 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3848_ix2 ON kspu_gdb.s3848 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3849" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3849_ix1 ON kspu_gdb.s3849 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3849_ix2 ON kspu_gdb.s3849 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3850" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3850_ix1 ON kspu_gdb.s3850 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3850_ix2 ON kspu_gdb.s3850 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3851" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3851_ix1 ON kspu_gdb.s3851 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3851_ix2 ON kspu_gdb.s3851 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3852" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3852_ix1 ON kspu_gdb.s3852 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3852_ix2 ON kspu_gdb.s3852 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3853" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3853_ix1 ON kspu_gdb.s3853 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3853_ix2 ON kspu_gdb.s3853 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3854" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3854_ix1 ON kspu_gdb.s3854 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3854_ix2 ON kspu_gdb.s3854 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3855" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3855_ix1 ON kspu_gdb.s3855 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3855_ix2 ON kspu_gdb.s3855 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3856" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3856_ix1 ON kspu_gdb.s3856 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3856_ix2 ON kspu_gdb.s3856 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3857" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3857_ix1 ON kspu_gdb.s3857 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3857_ix2 ON kspu_gdb.s3857 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3858" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3858_ix1 ON kspu_gdb.s3858 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3858_ix2 ON kspu_gdb.s3858 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3859" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3859_ix1 ON kspu_gdb.s3859 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3859_ix2 ON kspu_gdb.s3859 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3860" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3860_ix1 ON kspu_gdb.s3860 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3860_ix2 ON kspu_gdb.s3860 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3861" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3861_ix1 ON kspu_gdb.s3861 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3861_ix2 ON kspu_gdb.s3861 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3862" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3862_ix1 ON kspu_gdb.s3862 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3862_ix2 ON kspu_gdb.s3862 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3863" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3863_ix1 ON kspu_gdb.s3863 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3863_ix2 ON kspu_gdb.s3863 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3864" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3864_ix1 ON kspu_gdb.s3864 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3864_ix2 ON kspu_gdb.s3864 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3865" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3865_ix1 ON kspu_gdb.s3865 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3865_ix2 ON kspu_gdb.s3865 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3866" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3866_ix1 ON kspu_gdb.s3866 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3866_ix2 ON kspu_gdb.s3866 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3867" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3867_ix1 ON kspu_gdb.s3867 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3867_ix2 ON kspu_gdb.s3867 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3868" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3868_ix1 ON kspu_gdb.s3868 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3868_ix2 ON kspu_gdb.s3868 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3869" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3869_ix1 ON kspu_gdb.s3869 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3869_ix2 ON kspu_gdb.s3869 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3870" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3870_ix1 ON kspu_gdb.s3870 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3870_ix2 ON kspu_gdb.s3870 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3871" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3871_ix1 ON kspu_gdb.s3871 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3871_ix2 ON kspu_gdb.s3871 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3872" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3872_ix1 ON kspu_gdb.s3872 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3872_ix2 ON kspu_gdb.s3872 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3873" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3873_ix1 ON kspu_gdb.s3873 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3873_ix2 ON kspu_gdb.s3873 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3874" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3874_ix1 ON kspu_gdb.s3874 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3874_ix2 ON kspu_gdb.s3874 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3875" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3875_ix1 ON kspu_gdb.s3875 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3875_ix2 ON kspu_gdb.s3875 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3876" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3876_ix1 ON kspu_gdb.s3876 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3876_ix2 ON kspu_gdb.s3876 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3899" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3899_ix1 ON kspu_gdb.s3899 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3899_ix2 ON kspu_gdb.s3899 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3926" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3926_ix1 ON kspu_gdb.s3926 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3926_ix2 ON kspu_gdb.s3926 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3957" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3957_ix1 ON kspu_gdb.s3957 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3957_ix2 ON kspu_gdb.s3957 (sp_fid);
+
+CREATE TABLE kspu_gdb."s3984" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s3984_ix1 ON kspu_gdb.s3984 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s3984_ix2 ON kspu_gdb.s3984 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4011" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4011_ix1 ON kspu_gdb.s4011 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4011_ix2 ON kspu_gdb.s4011 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4038" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4038_ix1 ON kspu_gdb.s4038 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4038_ix2 ON kspu_gdb.s4038 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4065" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4065_ix1 ON kspu_gdb.s4065 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4065_ix2 ON kspu_gdb.s4065 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4092" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4092_ix1 ON kspu_gdb.s4092 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4092_ix2 ON kspu_gdb.s4092 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4098" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4098_ix1 ON kspu_gdb.s4098 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4098_ix2 ON kspu_gdb.s4098 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4099" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4099_ix1 ON kspu_gdb.s4099 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4099_ix2 ON kspu_gdb.s4099 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4100" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4100_ix1 ON kspu_gdb.s4100 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4100_ix2 ON kspu_gdb.s4100 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4101" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4101_ix1 ON kspu_gdb.s4101 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4101_ix2 ON kspu_gdb.s4101 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4102" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4102_ix1 ON kspu_gdb.s4102 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4102_ix2 ON kspu_gdb.s4102 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4103" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4103_ix1 ON kspu_gdb.s4103 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4103_ix2 ON kspu_gdb.s4103 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4104" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4104_ix1 ON kspu_gdb.s4104 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4104_ix2 ON kspu_gdb.s4104 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4105" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4105_ix1 ON kspu_gdb.s4105 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4105_ix2 ON kspu_gdb.s4105 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4106" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4106_ix1 ON kspu_gdb.s4106 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4106_ix2 ON kspu_gdb.s4106 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4107" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4107_ix1 ON kspu_gdb.s4107 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4107_ix2 ON kspu_gdb.s4107 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4108" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4108_ix1 ON kspu_gdb.s4108 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4108_ix2 ON kspu_gdb.s4108 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4109" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4109_ix1 ON kspu_gdb.s4109 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4109_ix2 ON kspu_gdb.s4109 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4110" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4110_ix1 ON kspu_gdb.s4110 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4110_ix2 ON kspu_gdb.s4110 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4112" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4112_ix1 ON kspu_gdb.s4112 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4112_ix2 ON kspu_gdb.s4112 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4113" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4113_ix1 ON kspu_gdb.s4113 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4113_ix2 ON kspu_gdb.s4113 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4118" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4118_ix1 ON kspu_gdb.s4118 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4118_ix2 ON kspu_gdb.s4118 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4119" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4119_ix1 ON kspu_gdb.s4119 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4119_ix2 ON kspu_gdb.s4119 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4120" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4120_ix1 ON kspu_gdb.s4120 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4120_ix2 ON kspu_gdb.s4120 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4121" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4121_ix1 ON kspu_gdb.s4121 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4121_ix2 ON kspu_gdb.s4121 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4122" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4122_ix1 ON kspu_gdb.s4122 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4122_ix2 ON kspu_gdb.s4122 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4123" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4123_ix1 ON kspu_gdb.s4123 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4123_ix2 ON kspu_gdb.s4123 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4124" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4124_ix1 ON kspu_gdb.s4124 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4124_ix2 ON kspu_gdb.s4124 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4125" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4125_ix1 ON kspu_gdb.s4125 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4125_ix2 ON kspu_gdb.s4125 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4126" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4126_ix1 ON kspu_gdb.s4126 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4126_ix2 ON kspu_gdb.s4126 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4128" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4128_ix1 ON kspu_gdb.s4128 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4128_ix2 ON kspu_gdb.s4128 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4129" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4129_ix1 ON kspu_gdb.s4129 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4129_ix2 ON kspu_gdb.s4129 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4130" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4130_ix1 ON kspu_gdb.s4130 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4130_ix2 ON kspu_gdb.s4130 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4131" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4131_ix1 ON kspu_gdb.s4131 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4131_ix2 ON kspu_gdb.s4131 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4132" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4132_ix1 ON kspu_gdb.s4132 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4132_ix2 ON kspu_gdb.s4132 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4133" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4133_ix1 ON kspu_gdb.s4133 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4133_ix2 ON kspu_gdb.s4133 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4134" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4134_ix1 ON kspu_gdb.s4134 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4134_ix2 ON kspu_gdb.s4134 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4135" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4135_ix1 ON kspu_gdb.s4135 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4135_ix2 ON kspu_gdb.s4135 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4136" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4136_ix1 ON kspu_gdb.s4136 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4136_ix2 ON kspu_gdb.s4136 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4137" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4137_ix1 ON kspu_gdb.s4137 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4137_ix2 ON kspu_gdb.s4137 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4138" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4138_ix1 ON kspu_gdb.s4138 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4138_ix2 ON kspu_gdb.s4138 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4139" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4139_ix1 ON kspu_gdb.s4139 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4139_ix2 ON kspu_gdb.s4139 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4140" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4140_ix1 ON kspu_gdb.s4140 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4140_ix2 ON kspu_gdb.s4140 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4141" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4141_ix1 ON kspu_gdb.s4141 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4141_ix2 ON kspu_gdb.s4141 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4142" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4142_ix1 ON kspu_gdb.s4142 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4142_ix2 ON kspu_gdb.s4142 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4143" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4143_ix1 ON kspu_gdb.s4143 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4143_ix2 ON kspu_gdb.s4143 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4144" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4144_ix1 ON kspu_gdb.s4144 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4144_ix2 ON kspu_gdb.s4144 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4167" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4167_ix1 ON kspu_gdb.s4167 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4167_ix2 ON kspu_gdb.s4167 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4172" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4172_ix1 ON kspu_gdb.s4172 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4172_ix2 ON kspu_gdb.s4172 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4173" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4173_ix1 ON kspu_gdb.s4173 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4173_ix2 ON kspu_gdb.s4173 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4174" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4174_ix1 ON kspu_gdb.s4174 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4174_ix2 ON kspu_gdb.s4174 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4175" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4175_ix1 ON kspu_gdb.s4175 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4175_ix2 ON kspu_gdb.s4175 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4176" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4176_ix1 ON kspu_gdb.s4176 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4176_ix2 ON kspu_gdb.s4176 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4177" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4177_ix1 ON kspu_gdb.s4177 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4177_ix2 ON kspu_gdb.s4177 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4178" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4178_ix1 ON kspu_gdb.s4178 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4178_ix2 ON kspu_gdb.s4178 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4179" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4179_ix1 ON kspu_gdb.s4179 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4179_ix2 ON kspu_gdb.s4179 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4180" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4180_ix1 ON kspu_gdb.s4180 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4180_ix2 ON kspu_gdb.s4180 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4181" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4181_ix1 ON kspu_gdb.s4181 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4181_ix2 ON kspu_gdb.s4181 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4182" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4182_ix1 ON kspu_gdb.s4182 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4182_ix2 ON kspu_gdb.s4182 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4183" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4183_ix1 ON kspu_gdb.s4183 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4183_ix2 ON kspu_gdb.s4183 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4184" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4184_ix1 ON kspu_gdb.s4184 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4184_ix2 ON kspu_gdb.s4184 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4185" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4185_ix1 ON kspu_gdb.s4185 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4185_ix2 ON kspu_gdb.s4185 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4186" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4186_ix1 ON kspu_gdb.s4186 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4186_ix2 ON kspu_gdb.s4186 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4187" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4187_ix1 ON kspu_gdb.s4187 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4187_ix2 ON kspu_gdb.s4187 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4188" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4188_ix1 ON kspu_gdb.s4188 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4188_ix2 ON kspu_gdb.s4188 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4189" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4189_ix1 ON kspu_gdb.s4189 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4189_ix2 ON kspu_gdb.s4189 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4190" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4190_ix1 ON kspu_gdb.s4190 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4190_ix2 ON kspu_gdb.s4190 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4191" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4191_ix1 ON kspu_gdb.s4191 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4191_ix2 ON kspu_gdb.s4191 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4192" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4192_ix1 ON kspu_gdb.s4192 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4192_ix2 ON kspu_gdb.s4192 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4193" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4193_ix1 ON kspu_gdb.s4193 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4193_ix2 ON kspu_gdb.s4193 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4194" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4194_ix1 ON kspu_gdb.s4194 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4194_ix2 ON kspu_gdb.s4194 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4195" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4195_ix1 ON kspu_gdb.s4195 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4195_ix2 ON kspu_gdb.s4195 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4196" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4196_ix1 ON kspu_gdb.s4196 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4196_ix2 ON kspu_gdb.s4196 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4197" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4197_ix1 ON kspu_gdb.s4197 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4197_ix2 ON kspu_gdb.s4197 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4198" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4198_ix1 ON kspu_gdb.s4198 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4198_ix2 ON kspu_gdb.s4198 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4199" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4199_ix1 ON kspu_gdb.s4199 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4199_ix2 ON kspu_gdb.s4199 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4200" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4200_ix1 ON kspu_gdb.s4200 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4200_ix2 ON kspu_gdb.s4200 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4201" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4201_ix1 ON kspu_gdb.s4201 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4201_ix2 ON kspu_gdb.s4201 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4202" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4202_ix1 ON kspu_gdb.s4202 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4202_ix2 ON kspu_gdb.s4202 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4203" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4203_ix1 ON kspu_gdb.s4203 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4203_ix2 ON kspu_gdb.s4203 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4204" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4204_ix1 ON kspu_gdb.s4204 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4204_ix2 ON kspu_gdb.s4204 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4205" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4205_ix1 ON kspu_gdb.s4205 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4205_ix2 ON kspu_gdb.s4205 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4206" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4206_ix1 ON kspu_gdb.s4206 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4206_ix2 ON kspu_gdb.s4206 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4207" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4207_ix1 ON kspu_gdb.s4207 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4207_ix2 ON kspu_gdb.s4207 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4208" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4208_ix1 ON kspu_gdb.s4208 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4208_ix2 ON kspu_gdb.s4208 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4209" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4209_ix1 ON kspu_gdb.s4209 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4209_ix2 ON kspu_gdb.s4209 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4210" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4210_ix1 ON kspu_gdb.s4210 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4210_ix2 ON kspu_gdb.s4210 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4211" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4211_ix1 ON kspu_gdb.s4211 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4211_ix2 ON kspu_gdb.s4211 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4212" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4212_ix1 ON kspu_gdb.s4212 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4212_ix2 ON kspu_gdb.s4212 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4213" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4213_ix1 ON kspu_gdb.s4213 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4213_ix2 ON kspu_gdb.s4213 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4214" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4214_ix1 ON kspu_gdb.s4214 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4214_ix2 ON kspu_gdb.s4214 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4215" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4215_ix1 ON kspu_gdb.s4215 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4215_ix2 ON kspu_gdb.s4215 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4216" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4216_ix1 ON kspu_gdb.s4216 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4216_ix2 ON kspu_gdb.s4216 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4217" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4217_ix1 ON kspu_gdb.s4217 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4217_ix2 ON kspu_gdb.s4217 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4218" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4218_ix1 ON kspu_gdb.s4218 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4218_ix2 ON kspu_gdb.s4218 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4219" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4219_ix1 ON kspu_gdb.s4219 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4219_ix2 ON kspu_gdb.s4219 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4220" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4220_ix1 ON kspu_gdb.s4220 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4220_ix2 ON kspu_gdb.s4220 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4221" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4221_ix1 ON kspu_gdb.s4221 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4221_ix2 ON kspu_gdb.s4221 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4222" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4222_ix1 ON kspu_gdb.s4222 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4222_ix2 ON kspu_gdb.s4222 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4223" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4223_ix1 ON kspu_gdb.s4223 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4223_ix2 ON kspu_gdb.s4223 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4224" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4224_ix1 ON kspu_gdb.s4224 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4224_ix2 ON kspu_gdb.s4224 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4225" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4225_ix1 ON kspu_gdb.s4225 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4225_ix2 ON kspu_gdb.s4225 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4226" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4226_ix1 ON kspu_gdb.s4226 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4226_ix2 ON kspu_gdb.s4226 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4227" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4227_ix1 ON kspu_gdb.s4227 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4227_ix2 ON kspu_gdb.s4227 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4228" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4228_ix1 ON kspu_gdb.s4228 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4228_ix2 ON kspu_gdb.s4228 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4229" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4229_ix1 ON kspu_gdb.s4229 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4229_ix2 ON kspu_gdb.s4229 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4230" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4230_ix1 ON kspu_gdb.s4230 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4230_ix2 ON kspu_gdb.s4230 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4231" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4231_ix1 ON kspu_gdb.s4231 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4231_ix2 ON kspu_gdb.s4231 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4232" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4232_ix1 ON kspu_gdb.s4232 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4232_ix2 ON kspu_gdb.s4232 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4233" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4233_ix1 ON kspu_gdb.s4233 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4233_ix2 ON kspu_gdb.s4233 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4234" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4234_ix1 ON kspu_gdb.s4234 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4234_ix2 ON kspu_gdb.s4234 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4235" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4235_ix1 ON kspu_gdb.s4235 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4235_ix2 ON kspu_gdb.s4235 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4236" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4236_ix1 ON kspu_gdb.s4236 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4236_ix2 ON kspu_gdb.s4236 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4237" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4237_ix1 ON kspu_gdb.s4237 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4237_ix2 ON kspu_gdb.s4237 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4238" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4238_ix1 ON kspu_gdb.s4238 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4238_ix2 ON kspu_gdb.s4238 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4239" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4239_ix1 ON kspu_gdb.s4239 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4239_ix2 ON kspu_gdb.s4239 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4240" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4240_ix1 ON kspu_gdb.s4240 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4240_ix2 ON kspu_gdb.s4240 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4241" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4241_ix1 ON kspu_gdb.s4241 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4241_ix2 ON kspu_gdb.s4241 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4242" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4242_ix1 ON kspu_gdb.s4242 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4242_ix2 ON kspu_gdb.s4242 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4243" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4243_ix1 ON kspu_gdb.s4243 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4243_ix2 ON kspu_gdb.s4243 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4244" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4244_ix1 ON kspu_gdb.s4244 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4244_ix2 ON kspu_gdb.s4244 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4245" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4245_ix1 ON kspu_gdb.s4245 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4245_ix2 ON kspu_gdb.s4245 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4246" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+
+CREATE TABLE kspu_gdb."s4247" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4247_ix1 ON kspu_gdb.s4247 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4247_ix2 ON kspu_gdb.s4247 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4248" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4248_ix1 ON kspu_gdb.s4248 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4248_ix2 ON kspu_gdb.s4248 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4249" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4249_ix1 ON kspu_gdb.s4249 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4249_ix2 ON kspu_gdb.s4249 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4250" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4250_ix1 ON kspu_gdb.s4250 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4250_ix2 ON kspu_gdb.s4250 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4251" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4251_ix1 ON kspu_gdb.s4251 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4251_ix2 ON kspu_gdb.s4251 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4252" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4252_ix1 ON kspu_gdb.s4252 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4252_ix2 ON kspu_gdb.s4252 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4253" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4253_ix1 ON kspu_gdb.s4253 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4253_ix2 ON kspu_gdb.s4253 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4254" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4254_ix1 ON kspu_gdb.s4254 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4254_ix2 ON kspu_gdb.s4254 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4255" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4255_ix1 ON kspu_gdb.s4255 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4255_ix2 ON kspu_gdb.s4255 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4256" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4256_ix1 ON kspu_gdb.s4256 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4256_ix2 ON kspu_gdb.s4256 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4279" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4279_ix1 ON kspu_gdb.s4279 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4279_ix2 ON kspu_gdb.s4279 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4319" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4319_ix1 ON kspu_gdb.s4319 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4319_ix2 ON kspu_gdb.s4319 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4346" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4346_ix1 ON kspu_gdb.s4346 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4346_ix2 ON kspu_gdb.s4346 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4373" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4373_ix1 ON kspu_gdb.s4373 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4373_ix2 ON kspu_gdb.s4373 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4415" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4415_ix1 ON kspu_gdb.s4415 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4415_ix2 ON kspu_gdb.s4415 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4442" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4442_ix1 ON kspu_gdb.s4442 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4442_ix2 ON kspu_gdb.s4442 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4469" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4469_ix1 ON kspu_gdb.s4469 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4469_ix2 ON kspu_gdb.s4469 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4502" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4502_ix1 ON kspu_gdb.s4502 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4502_ix2 ON kspu_gdb.s4502 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4529" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4529_ix1 ON kspu_gdb.s4529 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4529_ix2 ON kspu_gdb.s4529 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4554" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4554_ix1 ON kspu_gdb.s4554 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4554_ix2 ON kspu_gdb.s4554 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4561" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4561_ix1 ON kspu_gdb.s4561 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4561_ix2 ON kspu_gdb.s4561 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4562" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4562_ix1 ON kspu_gdb.s4562 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4562_ix2 ON kspu_gdb.s4562 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4563" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4563_ix1 ON kspu_gdb.s4563 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4563_ix2 ON kspu_gdb.s4563 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4605" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4605_ix1 ON kspu_gdb.s4605 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4605_ix2 ON kspu_gdb.s4605 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4635" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4635_ix1 ON kspu_gdb.s4635 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4635_ix2 ON kspu_gdb.s4635 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4673" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4673_ix1 ON kspu_gdb.s4673 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4673_ix2 ON kspu_gdb.s4673 (sp_fid);
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

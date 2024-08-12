@@ -1,0 +1,45 @@
+version: '3.4'
+
+services:
+  # HOSTING PUMA WEB on AKS
+  pumaweb:
+    image: {{docker_repository}}/pumaweb:{{tag}}
+    build:
+      context: ./pumaweb
+      dockerfile: InternwebDockerfile
+    ports:
+      - "0.0.0.0:80:3000"
+    stdin_open: true
+    command: npm start
+   
+  # HOSTING PUMA KUNDE WEB on AKS
+  pumakundeweb:
+    image: {{docker_repository}}/pumakundeweb:{{tag}}
+    build:
+      context: ./pumaweb
+      dockerfile: KundewebDockerfile
+    ports:
+      - "0.0.0.0:81:3000"
+    stdin_open: true
+    command: npm start
+
+   # HOSTING WEB API on AKS
+  dataaccessapi:
+    image: {{docker_repository}}/dataaccessapi:{{tag}}
+    build:
+      context: .
+      dockerfile: DataAccessAPI/Dockerfile
+    ports:
+      - "0.0.0.0:82:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    #Hosting JsReports  
+  jsreport:
+    image: {{docker_repository}}/jsreport:{{tag}}
+    build:
+      context: .
+      dockerfile: JsReport/Dockerfile
+    ports:
+      - "0.0.0.0:5488:5488"
+    
+    

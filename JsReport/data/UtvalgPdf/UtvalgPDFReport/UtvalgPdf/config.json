@@ -1,0 +1,35 @@
+{
+    "name": "UtvalgPdf",
+    "engine": "handlebars",
+    "recipe": "chrome-pdf",
+    "data": {
+        "shortid": "nQyK1Zndp"
+    },
+    "shortid": "ERh9JgOwD",
+    "chrome": {
+        "printBackground": true,
+        "marginTop": "2cm",
+        "marginBottom": "2cm",
+        "landscape": false
+    },
+    "creationDate": {
+        "$$date": 1640254699566
+    },
+    "modificationDate": {
+        "$$date": 1680155295128
+    },
+    "_id": "Q4xQJqddIPVyaqOi",
+    "pdfOperations": [
+        {
+            "type": "merge",
+            "templateShortid": "znX3mja",
+            "mergeWholeDocument": true
+        }
+    ],
+    "$entitySet": "templates",
+    "scripts": [
+        {
+            "shortid": "0L3uc_Jlb"
+        }
+    ]
+}

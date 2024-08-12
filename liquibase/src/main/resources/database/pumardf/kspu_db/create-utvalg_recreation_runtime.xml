@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-utvalg_recreation_runtime">
+<sql>
+
+CREATE TABLE kspu_db."utvalg_recreation_runtime" (utvalgid numeric(38) NOT NULL,
+	lockedtime timestamp DEFAULT LOCALTIMESTAMP,
+	processid bigint NOT NULL
+) ;
+CREATE INDEX index1 ON kspu_db.utvalg_recreation_runtime (utvalgid);
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

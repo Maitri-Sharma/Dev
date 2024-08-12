@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-prsplandata">
+<sql>
+
+
+CREATE TABLE kspu_db."prsplandata" (oebsid varchar(30),
+	ordreref varchar(30),
+	prs_count numeric(38),
+	prs_status varchar(1),
+	prs_date timestamp
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

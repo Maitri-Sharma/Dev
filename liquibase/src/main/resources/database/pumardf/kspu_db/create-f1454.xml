@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-f1454">
+<sql>
+
+
+CREATE TABLE kspu_db."f1454" (fid numeric(38) NOT NULL,
+	numofpts numeric(38) NOT NULL,
+	entity numeric(38) NOT NULL,
+	eminx double precision NOT NULL,
+	eminy double precision NOT NULL,
+	emaxx double precision NOT NULL,
+	emaxy double precision NOT NULL,
+	eminz double precision,
+	emaxz double precision,
+	min_measure double precision,
+	max_measure double precision,
+	area double precision NOT NULL,
+	len double precision NOT NULL,
+	points bytea
+) ;
+CREATE INDEX f1454_area_ix2 ON kspu_db.f1454 (area);
+CREATE INDEX f1454_len_ix3 ON kspu_db.f1454 (len);
+CREATE UNIQUE INDEX f1454_uk1 ON kspu_db.f1454 (fid);
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

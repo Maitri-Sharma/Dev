@@ -1,0 +1,2194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-gdb-object7">
+<sql>
+
+
+CREATE TABLE kspu_gdb."s4704" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4704_ix1 ON kspu_gdb.s4704 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4704_ix2 ON kspu_gdb.s4704 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4731" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4731_ix1 ON kspu_gdb.s4731 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4731_ix2 ON kspu_gdb.s4731 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4758" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4758_ix1 ON kspu_gdb.s4758 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4758_ix2 ON kspu_gdb.s4758 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4792" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4792_ix1 ON kspu_gdb.s4792 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4792_ix2 ON kspu_gdb.s4792 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4819" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4819_ix1 ON kspu_gdb.s4819 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4819_ix2 ON kspu_gdb.s4819 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4846" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4846_ix1 ON kspu_gdb.s4846 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4846_ix2 ON kspu_gdb.s4846 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4873" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4873_ix1 ON kspu_gdb.s4873 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4873_ix2 ON kspu_gdb.s4873 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4878" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4878_ix1 ON kspu_gdb.s4878 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4878_ix2 ON kspu_gdb.s4878 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4879" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4879_ix1 ON kspu_gdb.s4879 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4879_ix2 ON kspu_gdb.s4879 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4880" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4880_ix1 ON kspu_gdb.s4880 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4880_ix2 ON kspu_gdb.s4880 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4881" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4881_ix1 ON kspu_gdb.s4881 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4881_ix2 ON kspu_gdb.s4881 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4882" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4882_ix1 ON kspu_gdb.s4882 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4882_ix2 ON kspu_gdb.s4882 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4883" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4883_ix1 ON kspu_gdb.s4883 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4883_ix2 ON kspu_gdb.s4883 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4884" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4884_ix1 ON kspu_gdb.s4884 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4884_ix2 ON kspu_gdb.s4884 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4885" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4885_ix1 ON kspu_gdb.s4885 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4885_ix2 ON kspu_gdb.s4885 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4886" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4886_ix1 ON kspu_gdb.s4886 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4886_ix2 ON kspu_gdb.s4886 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4887" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4887_ix1 ON kspu_gdb.s4887 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4887_ix2 ON kspu_gdb.s4887 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4888" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4888_ix1 ON kspu_gdb.s4888 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4888_ix2 ON kspu_gdb.s4888 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4889" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4889_ix1 ON kspu_gdb.s4889 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4889_ix2 ON kspu_gdb.s4889 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4890" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4890_ix1 ON kspu_gdb.s4890 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4890_ix2 ON kspu_gdb.s4890 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4891" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4891_ix1 ON kspu_gdb.s4891 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4891_ix2 ON kspu_gdb.s4891 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4892" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4892_ix1 ON kspu_gdb.s4892 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4892_ix2 ON kspu_gdb.s4892 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4893" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4893_ix1 ON kspu_gdb.s4893 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4893_ix2 ON kspu_gdb.s4893 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4894" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4894_ix1 ON kspu_gdb.s4894 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4894_ix2 ON kspu_gdb.s4894 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4895" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4895_ix1 ON kspu_gdb.s4895 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4895_ix2 ON kspu_gdb.s4895 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4896" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4896_ix1 ON kspu_gdb.s4896 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4896_ix2 ON kspu_gdb.s4896 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4897" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4897_ix1 ON kspu_gdb.s4897 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4897_ix2 ON kspu_gdb.s4897 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4898" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4898_ix1 ON kspu_gdb.s4898 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4898_ix2 ON kspu_gdb.s4898 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4899" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4899_ix1 ON kspu_gdb.s4899 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4899_ix2 ON kspu_gdb.s4899 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4900" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4900_ix1 ON kspu_gdb.s4900 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4900_ix2 ON kspu_gdb.s4900 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4901" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4901_ix1 ON kspu_gdb.s4901 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4901_ix2 ON kspu_gdb.s4901 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4902" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4902_ix1 ON kspu_gdb.s4902 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4902_ix2 ON kspu_gdb.s4902 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4903" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4903_ix1 ON kspu_gdb.s4903 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4903_ix2 ON kspu_gdb.s4903 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4904" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4904_ix1 ON kspu_gdb.s4904 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4904_ix2 ON kspu_gdb.s4904 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4905" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4905_ix1 ON kspu_gdb.s4905 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4905_ix2 ON kspu_gdb.s4905 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4906" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4906_ix1 ON kspu_gdb.s4906 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4906_ix2 ON kspu_gdb.s4906 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4907" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4907_ix1 ON kspu_gdb.s4907 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4907_ix2 ON kspu_gdb.s4907 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4908" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4908_ix1 ON kspu_gdb.s4908 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4908_ix2 ON kspu_gdb.s4908 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4909" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4909_ix1 ON kspu_gdb.s4909 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4909_ix2 ON kspu_gdb.s4909 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4910" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4910_ix1 ON kspu_gdb.s4910 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4910_ix2 ON kspu_gdb.s4910 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4911" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4911_ix1 ON kspu_gdb.s4911 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4911_ix2 ON kspu_gdb.s4911 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4912" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4912_ix1 ON kspu_gdb.s4912 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4912_ix2 ON kspu_gdb.s4912 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4913" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4913_ix1 ON kspu_gdb.s4913 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4913_ix2 ON kspu_gdb.s4913 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4914" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4914_ix1 ON kspu_gdb.s4914 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4914_ix2 ON kspu_gdb.s4914 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4915" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4915_ix1 ON kspu_gdb.s4915 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4915_ix2 ON kspu_gdb.s4915 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4918" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4918_ix1 ON kspu_gdb.s4918 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4918_ix2 ON kspu_gdb.s4918 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4919" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4919_ix1 ON kspu_gdb.s4919 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4919_ix2 ON kspu_gdb.s4919 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4920" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4920_ix1 ON kspu_gdb.s4920 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4920_ix2 ON kspu_gdb.s4920 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4921" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4921_ix1 ON kspu_gdb.s4921 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4921_ix2 ON kspu_gdb.s4921 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4951" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4951_ix1 ON kspu_gdb.s4951 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4951_ix2 ON kspu_gdb.s4951 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4956" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4956_ix1 ON kspu_gdb.s4956 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4956_ix2 ON kspu_gdb.s4956 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4957" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4957_ix1 ON kspu_gdb.s4957 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4957_ix2 ON kspu_gdb.s4957 (sp_fid);
+
+CREATE TABLE kspu_gdb."s4995" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s4995_ix1 ON kspu_gdb.s4995 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s4995_ix2 ON kspu_gdb.s4995 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5069" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5069_ix1 ON kspu_gdb.s5069 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5069_ix2 ON kspu_gdb.s5069 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5108" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5108_ix1 ON kspu_gdb.s5108 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5108_ix2 ON kspu_gdb.s5108 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5113" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+
+CREATE TABLE kspu_gdb."s5137" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5137_ix1 ON kspu_gdb.s5137 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5137_ix2 ON kspu_gdb.s5137 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5141" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5141_ix1 ON kspu_gdb.s5141 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5141_ix2 ON kspu_gdb.s5141 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5164" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5164_ix1 ON kspu_gdb.s5164 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5164_ix2 ON kspu_gdb.s5164 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5169" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5169_ix1 ON kspu_gdb.s5169 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5169_ix2 ON kspu_gdb.s5169 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5170" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5170_ix1 ON kspu_gdb.s5170 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5170_ix2 ON kspu_gdb.s5170 (sp_fid);
+
+CREATE TABLE kspu_gdb."s518" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s518_ix1 ON kspu_gdb.s518 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s518_ix2 ON kspu_gdb.s518 (sp_fid);
+
+CREATE TABLE kspu_gdb."s519" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s519_ix1 ON kspu_gdb.s519 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s519_ix2 ON kspu_gdb.s519 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5193" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5193_ix1 ON kspu_gdb.s5193 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5193_ix2 ON kspu_gdb.s5193 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5197" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5197_ix1 ON kspu_gdb.s5197 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5197_ix2 ON kspu_gdb.s5197 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5220" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5220_ix1 ON kspu_gdb.s5220 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5220_ix2 ON kspu_gdb.s5220 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5246" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5246_ix1 ON kspu_gdb.s5246 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5246_ix2 ON kspu_gdb.s5246 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5272" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5272_ix1 ON kspu_gdb.s5272 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5272_ix2 ON kspu_gdb.s5272 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5276" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5276_ix1 ON kspu_gdb.s5276 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5276_ix2 ON kspu_gdb.s5276 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5299" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5299_ix1 ON kspu_gdb.s5299 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5299_ix2 ON kspu_gdb.s5299 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5325" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5325_ix1 ON kspu_gdb.s5325 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5325_ix2 ON kspu_gdb.s5325 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5329" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5329_ix1 ON kspu_gdb.s5329 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5329_ix2 ON kspu_gdb.s5329 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5352" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5352_ix1 ON kspu_gdb.s5352 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5352_ix2 ON kspu_gdb.s5352 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5356" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5356_ix1 ON kspu_gdb.s5356 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5356_ix2 ON kspu_gdb.s5356 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5379" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5379_ix1 ON kspu_gdb.s5379 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5379_ix2 ON kspu_gdb.s5379 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5405" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5405_ix1 ON kspu_gdb.s5405 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5405_ix2 ON kspu_gdb.s5405 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5409" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5409_ix1 ON kspu_gdb.s5409 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5409_ix2 ON kspu_gdb.s5409 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5432" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5432_ix1 ON kspu_gdb.s5432 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5432_ix2 ON kspu_gdb.s5432 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5436" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5436_ix1 ON kspu_gdb.s5436 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5436_ix2 ON kspu_gdb.s5436 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5459" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5459_ix1 ON kspu_gdb.s5459 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5459_ix2 ON kspu_gdb.s5459 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5473" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5473_ix1 ON kspu_gdb.s5473 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5473_ix2 ON kspu_gdb.s5473 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5481" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5481_ix1 ON kspu_gdb.s5481 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5481_ix2 ON kspu_gdb.s5481 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5482" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5482_ix1 ON kspu_gdb.s5482 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5482_ix2 ON kspu_gdb.s5482 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5483" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5483_ix1 ON kspu_gdb.s5483 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5483_ix2 ON kspu_gdb.s5483 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5484" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5484_ix1 ON kspu_gdb.s5484 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5484_ix2 ON kspu_gdb.s5484 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5485" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5485_ix1 ON kspu_gdb.s5485 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5485_ix2 ON kspu_gdb.s5485 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5499" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5499_ix1 ON kspu_gdb.s5499 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5499_ix2 ON kspu_gdb.s5499 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5507" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5507_ix1 ON kspu_gdb.s5507 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5507_ix2 ON kspu_gdb.s5507 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5508" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5508_ix1 ON kspu_gdb.s5508 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5508_ix2 ON kspu_gdb.s5508 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5509" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5509_ix1 ON kspu_gdb.s5509 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5509_ix2 ON kspu_gdb.s5509 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5510" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5510_ix1 ON kspu_gdb.s5510 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5510_ix2 ON kspu_gdb.s5510 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5511" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5511_ix1 ON kspu_gdb.s5511 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5511_ix2 ON kspu_gdb.s5511 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5512" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5512_ix1 ON kspu_gdb.s5512 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5512_ix2 ON kspu_gdb.s5512 (sp_fid);
+
+CREATE TABLE kspu_gdb."s5514" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s5514_ix1 ON kspu_gdb.s5514 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s5514_ix2 ON kspu_gdb.s5514 (sp_fid);
+
+CREATE TABLE kspu_gdb."s561" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s561_ix1 ON kspu_gdb.s561 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s561_ix2 ON kspu_gdb.s561 (sp_fid);
+
+CREATE TABLE kspu_gdb."s602" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s602_ix1 ON kspu_gdb.s602 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s602_ix2 ON kspu_gdb.s602 (sp_fid);
+
+CREATE TABLE kspu_gdb."s670" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s670_ix1 ON kspu_gdb.s670 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s670_ix2 ON kspu_gdb.s670 (sp_fid);
+
+CREATE TABLE kspu_gdb."s679" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s679_ix1 ON kspu_gdb.s679 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s679_ix2 ON kspu_gdb.s679 (sp_fid);
+
+CREATE TABLE kspu_gdb."s685" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s685_ix1 ON kspu_gdb.s685 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s685_ix2 ON kspu_gdb.s685 (sp_fid);
+
+CREATE TABLE kspu_gdb."s686" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s686_ix1 ON kspu_gdb.s686 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s686_ix2 ON kspu_gdb.s686 (sp_fid);
+
+CREATE TABLE kspu_gdb."s687" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s687_ix1 ON kspu_gdb.s687 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s687_ix2 ON kspu_gdb.s687 (sp_fid);
+
+CREATE TABLE kspu_gdb."s689" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s689_ix1 ON kspu_gdb.s689 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s689_ix2 ON kspu_gdb.s689 (sp_fid);
+
+CREATE TABLE kspu_gdb."s694" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s694_ix1 ON kspu_gdb.s694 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s694_ix2 ON kspu_gdb.s694 (sp_fid);
+
+CREATE TABLE kspu_gdb."s696" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s696_ix1 ON kspu_gdb.s696 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s696_ix2 ON kspu_gdb.s696 (sp_fid);
+
+CREATE TABLE kspu_gdb."s726" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s726_ix1 ON kspu_gdb.s726 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s726_ix2 ON kspu_gdb.s726 (sp_fid);
+
+CREATE TABLE kspu_gdb."s758" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s758_ix1 ON kspu_gdb.s758 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s758_ix2 ON kspu_gdb.s758 (sp_fid);
+
+CREATE TABLE kspu_gdb."s786" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s786_ix1 ON kspu_gdb.s786 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s786_ix2 ON kspu_gdb.s786 (sp_fid);
+
+CREATE TABLE kspu_gdb."s814" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s814_ix1 ON kspu_gdb.s814 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s814_ix2 ON kspu_gdb.s814 (sp_fid);
+
+CREATE TABLE kspu_gdb."s842" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s842_ix1 ON kspu_gdb.s842 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s842_ix2 ON kspu_gdb.s842 (sp_fid);
+
+CREATE TABLE kspu_gdb."s871" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s871_ix1 ON kspu_gdb.s871 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s871_ix2 ON kspu_gdb.s871 (sp_fid);
+
+CREATE TABLE kspu_gdb."s874" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s874_ix1 ON kspu_gdb.s874 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s874_ix2 ON kspu_gdb.s874 (sp_fid);
+
+CREATE TABLE kspu_gdb."s901" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s901_ix1 ON kspu_gdb.s901 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s901_ix2 ON kspu_gdb.s901 (sp_fid);
+
+CREATE TABLE kspu_gdb."s933" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s933_ix1 ON kspu_gdb.s933 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s933_ix2 ON kspu_gdb.s933 (sp_fid);
+
+CREATE TABLE kspu_gdb."s964" (sp_fid numeric(38) NOT NULL,
+	gx numeric(38) NOT NULL,
+	gy numeric(38) NOT NULL,
+	eminx numeric(38) NOT NULL,
+	eminy numeric(38) NOT NULL,
+	emaxx numeric(38) NOT NULL,
+	emaxy numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX s964_ix1 ON kspu_gdb.s964 (gx, gy, emaxx, emaxy, eminx, eminy, sp_fid);
+CREATE INDEX s964_ix2 ON kspu_gdb.s964 (sp_fid);
+
+CREATE TABLE kspu_gdb."sde_exceptions" ("row_id" oid,
+	"owner" varchar(30),
+	"table_name" varchar(30),
+	"constraint" varchar(30)
+) ;
+	
+CREATE TABLE kspu_gdb."sde_logfiles" (logfile_name varchar(256) NOT NULL,
+	logfile_id numeric(38) NOT NULL,
+	logfile_data_id numeric(38) NOT NULL,
+	registration_id numeric(38) NOT NULL,
+	flags numeric(38) NOT NULL,
+	session_tag numeric(38) NOT NULL,
+	logfile_data_db varchar(32),
+	logfile_data_owner varchar(32),
+	logfile_data_table varchar(98),
+	column_name varchar(32),
+	PRIMARY KEY (logfile_id)
+) ;
+ALTER TABLE kspu_gdb.sde_logfiles ADD UNIQUE (logfile_name);
+
+
+CREATE TABLE kspu_gdb."sde_logfile_data" (logfile_data_id numeric(38) NOT NULL,
+	sde_row_id numeric(38) NOT NULL
+) ;
+CREATE INDEX sde_logfile_data_idx1 ON kspu_gdb.sde_logfile_data (logfile_data_id, sde_row_id);
+CREATE INDEX sde_logfile_data_idx2 ON kspu_gdb.sde_logfile_data (sde_row_id);
+
+CREATE TABLE kspu_gdb."sde_session_303600" (logfile_data_id numeric(38) NOT NULL,
+	sde_row_id numeric(38) NOT NULL
+) ;
+CREATE INDEX sde_logsession_303600_idx1 ON kspu_gdb.sde_session_303600 (logfile_data_id, sde_row_id);
+CREATE INDEX sde_logsession_303600_idx2 ON kspu_gdb.sde_session_303600 (sde_row_id);
+
+CREATE TABLE kspu_gdb."ssr_n2000_p" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	navntype integer,
+	sosi_id numeric(38),
+	komm integer,
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	datafangstdato timestamp,
+	oppdateringsdato timestamp,
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2861_ix1 ON kspu_gdb.ssr_n2000_p (shape);
+CREATE UNIQUE INDEX r3972_sde_rowid_uk ON kspu_gdb.ssr_n2000_p (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n2000_p_o" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	ttema numeric(38),
+	navntype numeric(38),
+	komm numeric(38),
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	dato timestamp,
+	sosi_id numeric(38),
+	omradeid numeric(38),
+	navn varchar(50),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2427_ix1 ON kspu_gdb.ssr_n2000_p_o (shape);
+CREATE UNIQUE INDEX r3432_sde_rowid_uk ON kspu_gdb.ssr_n2000_p_o (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n250_p" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	navntype integer,
+	sosi_id numeric(38),
+	komm integer,
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	datafangstdato timestamp,
+	oppdateringsdato timestamp,
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2862_ix1 ON kspu_gdb.ssr_n250_p (shape);
+CREATE UNIQUE INDEX r3973_sde_rowid_uk ON kspu_gdb.ssr_n250_p (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n250_p_o" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	ttema numeric(38),
+	navntype numeric(38),
+	komm numeric(38),
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	dato timestamp,
+	sosi_id numeric(38),
+	omradeid numeric(38),
+	navn varchar(50),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2428_ix1 ON kspu_gdb.ssr_n250_p_o (shape);
+CREATE UNIQUE INDEX r3433_sde_rowid_uk ON kspu_gdb.ssr_n250_p_o (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n50_p" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	navntype integer,
+	sosi_id numeric(38),
+	komm integer,
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	datafangstdato timestamp,
+	oppdateringsdato timestamp,
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a3856_ix1 ON kspu_gdb.ssr_n50_p (shape);
+CREATE UNIQUE INDEX r5231_sde_rowid_uk ON kspu_gdb.ssr_n50_p (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n50_p_0012017" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	navntype integer,
+	sosi_id numeric(38),
+	komm integer,
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	datafangstdato timestamp,
+	oppdateringsdato timestamp,
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a3663_ix1 ON kspu_gdb.ssr_n50_p_0012017 (shape);
+CREATE UNIQUE INDEX r4986_sde_rowid_uk ON kspu_gdb.ssr_n50_p_0012017 (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n50_p_220416" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	navntype integer,
+	sosi_id numeric(38),
+	komm integer,
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	datafangstdato timestamp,
+	oppdateringsdato timestamp,
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2863_ix1 ON kspu_gdb.ssr_n50_p_220416 (shape);
+CREATE UNIQUE INDEX r3974_sde_rowid_uk ON kspu_gdb.ssr_n50_p_220416 (objectid);
+
+CREATE TABLE kspu_gdb."ssr_n50_p_o" (objectid numeric(38) NOT NULL,
+	objtype varchar(32),
+	ttema numeric(38),
+	navntype numeric(38),
+	komm numeric(38),
+	snavn varchar(50),
+	ssr_id numeric(38),
+	snregdato timestamp,
+	produkt varchar(15),
+	kartid varchar(35),
+	dato timestamp,
+	sosi_id numeric(38),
+	omradeid numeric(38),
+	navn varchar(50),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2429_ix1 ON kspu_gdb.ssr_n50_p_o (shape);
+CREATE UNIQUE INDEX r3434_sde_rowid_uk ON kspu_gdb.ssr_n50_p_o (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke" (objectid numeric(38) NOT NULL,
+	tesla decimal(38,8),
+	fylke_id varchar(8),
+	land_rover decimal(38,8),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6582_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_0012017" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5014_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_0012017 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_19012018" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5252_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_19012018 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_220416" (object_id numeric(38) NOT NULL,
+	geodb_oid numeric(38),
+	objectid numeric(38),
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_b decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2188_ix1 ON kspu_gdb.tbl_norway_fylke_220416 (shape);
+CREATE UNIQUE INDEX r3133_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_220416 (object_id);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_250120" (tesla decimal(38,8),
+	fylke_id varchar(8),
+	land_rover decimal(38,8),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	objectid numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX r5594_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_250120 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_index" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(8),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6583_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_index (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_index_220416" (object_id numeric(38) NOT NULL,
+	geodb_oid numeric(38),
+	objectid numeric(38),
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_b decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2189_ix1 ON kspu_gdb.tbl_norway_fylke_index_220416 (shape);
+CREATE UNIQUE INDEX r3134_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_index_220416 (object_id);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_ind_19012018" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5253_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_ind_19012018 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_ind_250120" (fylke_id varchar(8),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	objectid numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX r5595_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_ind_250120 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_percent" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6584_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_percent (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_per_19012018" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5254_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_per_19012018 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_per_220416" (object_id numeric(38) NOT NULL,
+	geodb_oid numeric(38),
+	objectid numeric(38),
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_b decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2190_ix1 ON kspu_gdb.tbl_norway_fylke_per_220416 (shape);
+CREATE UNIQUE INDEX r3135_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_per_220416 (object_id);
+
+CREATE TABLE kspu_gdb."tbl_norway_fylke_per_250120" (fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	objectid numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX r5596_sde_rowid_uk ON kspu_gdb.tbl_norway_fylke_per_250120 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fyl_ind_0012017" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5015_sde_rowid_uk ON kspu_gdb.tbl_norway_fyl_ind_0012017 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_fyl_per_0012017" (objectid numeric(38) NOT NULL,
+	fylke_id varchar(2),
+	fylke varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5017_sde_rowid_uk ON kspu_gdb.tbl_norway_fyl_per_0012017 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets" (objectid numeric(38) NOT NULL,
+	gkrets_id varchar(8),
+	grunnkrets varchar(50),
+	komm_id varchar(8),
+	kommune varchar(50),
+	fylke_id varchar(8),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	land_rover decimal(38,8),
+	tesla decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6579_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets_19012018" (objectid numeric(38) NOT NULL,
+	gkrets_id varchar(8),
+	grunnkrets varchar(32),
+	komm_id varchar(4),
+	kommune varchar(20),
+	fylke_id varchar(10),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5255_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets_19012018 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets_220416" (object_id numeric(38) NOT NULL,
+	geodb_oid numeric(38),
+	objectid numeric(38),
+	gkrets_id varchar(8),
+	grunnkrets varchar(32),
+	komm_id varchar(4),
+	kommune varchar(20),
+	fylke_id varchar(10),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_b decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	shape numeric(38)
+) ;
+CREATE UNIQUE INDEX a2191_ix1 ON kspu_gdb.tbl_norway_grunnkrets_220416 (shape);
+CREATE UNIQUE INDEX r3136_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets_220416 (object_id);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets_250120" (gkrets_id varchar(8),
+	grunnkrets varchar(50),
+	komm_id varchar(8),
+	kommune varchar(50),
+	fylke_id varchar(8),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	land_rover decimal(38,8),
+	tesla decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8),
+	objectid numeric(38) NOT NULL
+) ;
+CREATE UNIQUE INDEX r5599_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets_250120 (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets_index" (objectid numeric(38) NOT NULL,
+	gkrets_id varchar(8),
+	grunnkrets varchar(50),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6580_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets_index (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkrets_percent" (objectid numeric(38) NOT NULL,
+	gkrets_id varchar(8),
+	grunnkrets varchar(50),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	land_rover decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	tesla decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r6581_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkrets_percent (objectid);
+
+CREATE TABLE kspu_gdb."tbl_norway_grunnkr_in_0012017" (objectid numeric(38) NOT NULL,
+	gkrets_id varchar(8),
+	grunnkrets varchar(32),
+	total_bil decimal(38,8),
+	audi decimal(38,8),
+	bmw decimal(38,8),
+	chevrolet decimal(38,8),
+	chrysler decimal(38,8),
+	citroen decimal(38,8),
+	fiat decimal(38,8),
+	ford decimal(38,8),
+	honda decimal(38,8),
+	hyundai decimal(38,8),
+	kia decimal(38,8),
+	mazda decimal(38,8),
+	mercedes_benz decimal(38,8),
+	mitsubishi decimal(38,8),
+	nissan decimal(38,8),
+	opel decimal(38,8),
+	peugeot decimal(38,8),
+	renault decimal(38,8),
+	seat decimal(38,8),
+	skoda decimal(38,8),
+	subaru decimal(38,8),
+	suzuki decimal(38,8),
+	saab decimal(38,8),
+	toyota decimal(38,8),
+	volkswagen decimal(38,8),
+	volvo decimal(38,8),
+	andre_merk decimal(38,8)
+) ;
+CREATE UNIQUE INDEX r5019_sde_rowid_uk ON kspu_gdb.tbl_norway_grunnkr_in_0012017 (objectid);
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

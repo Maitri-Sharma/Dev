@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<glossarydata>
+ <entry name="Adressepunkt" value="Skriv inn adressepunkt for visning (zoom inn) i kart, som kan danne startpunkt forvidere analyse/ utvalg. Fritekst søk med eller uten gate-/veinummer" />
+ <entry name="Aktivt utvalg" value="Det utvalget som brukeren nå jobber på" />
+ <entry name="Aktørnummer" value="Unikt 11-sifret kundenummer som inneholder blant annet kundenavn og fakturaadresse. Kildesystemet er KIS (Kunde Informasjons Systemet i Posten)." />
+ <entry name="Analytiker" value="Avansert GIS-bruker i Posten" />
+ <entry name="Arbeidsliste" value="Arbeidslisten gir brukeren et kortfattet utdrag av de utvalg og utvalgslister som brukeren har åpnet." />
+ <entry name="Budruter" value="Postens distribusjonsområde; se også reoler" />
+ <entry name="CMS" value="City Mail Sverige; selskap som er deleid av Posten Norge AS" />
+ <entry name="Dekningsgrad" value="Dekning/ distribusjon i prosent av alle hustander. Sammenlignbare tall for Postreklame Uadressert og konkurrerende region-/lokalavis." />
+ <entry name="Demografianalyse" value="Analyse for utvalg basert på målgruppevariabler som: kjønn, alder, bosted/ type, inntekt, utdanning, biltype etc." />
+ <entry name="Distribusjonsområde" value="Postens distribusjonsområde; se også budruter og reoler" />
+ <entry name="Endringshistorikk" value="Viser endringer i utvalg/ utvalgslister med ”lagret dato” og ”navn”" />
+ <entry name="GAB" value="Grunneiendom Adresse Bygning; kildedata" />
+ <entry name="Geografisk søk" value="Åpner en veiviser for utvalg basert på fylke/ kommune/ team eller postnummer" />
+ <entry name="GIS" value="Geografisk InformasjonsSystem" />
+ <entry name="Grunnkrets" value="Administrative områder hvor husstandene i Norge er inndelt i ca. 13 700 grunnkretser, hver grunnkrets har 135 husstander i gjennomsnitt." />
+ <entry name="Informasjon" value="Utvalg for distribusjon til alle husstander i området = reserverte + ikke-reserverte" />
+ <entry name="Kart" value="Zoom: Du kan bevege deg inn/ ut i Norgeskartet. Panorer: Du kan bevege deg og dra kartet i ønsket retning. Merk adressepunkt i kart: Du kan aktivere og sette et punkt direkte i kartet som utgangspunkt for videre analyse" />
+ <entry name="Kjøreanalyse" value="Lage utvalg basert på kjøreavstand eller tid fra et adressepunkt" />
+ <entry name="Kommune- og bydelsdistribusjon" value="Utvalg for distribusjon i reoler/ ruter iht faktiske kommune- eller bydelsgrenser." />
+ <entry name="Kunderådgiver" value="GIS bruker i Posten, primært for UAP-utvalg" />
+ <entry name="Logo" value="&quot;Butikk&quot;spesifikke sendinger, hvilket betyr at hver av annonsørens &quot;butikker&quot; (eller samling av &quot;butikker&quot;) har  sin logo (navn og adresse) på sendingene" />
+ <entry name="Merkeskilt" value="Alle paller/bunter skal være påført et merkeskilt som bl.a. opplyser om hvilket postreklamesenter reklamen skal til, samt antall paller/bunter av totalt antall (f.eks 1 av 4, 2 av 4 etc.)" />
+ <entry name="Mine adresser" value="Mulighet for å hente opp (laste inn) lagrede adresselister, for grunnlag og bruk i analyser." />
+ <entry name="Mottakergrupper" value="En gruppering av postmottakere for distribusjon av uadressert postreklame. Posten distribuerer 1 sending per postkasse. Dvs 1 postkasse = 1 husholdning. Til virksomheter distribueres det en Postreklame pr Postkasse/postboks. Mottakergruppene er:- Husholdninger vil si alle private husholdninger. Antallet i mottakergruppene ”Eneboliger og rekkehus”  og ”Gårdbrukere” er inkludert i antallet &quot;Husholdninger&quot;. - Eneboliger og rekkehus vil si alle leiligheter (husholdninger) i bolighus med entil fire leiligheter, samt leiligheter i rekkehus og eneboliger  - Gårdbrukere vil si alle bruk som er i drift - Virksomheter vil si alle butikker, bedrifter, frivillige og humanitære organisasjoner,offentlige etater, kontorer og enkeltmannsbedrifter. For nærmere informasjon om hvavi har definert som virksomheter se www.posten.no  " />
+ <entry name="Opplasting av fil med adressepunkter" value="Mulighet for innlasting av adressepunkter fra liste (txt fil) - og få kartet panorert/zoomet til disse punktene" />
+ <entry name="Ordrenummer" value="Når distribusjonen er bestilt, vil den få et ordrenummer (grunnmur)" />
+ <entry name="Ordreseddel" value="Postens fakturagrunnlag" />
+ <entry name="PAS" value="Postens Adresse Service, kildedata for Postens eget register for næringslivsadresser" />
+ <entry name="Plukkliste" value="Hvis ikke hele fylke/ kommune/ team velges, kan bruker fritt velge (legge til /trekkefra) reoler i trestrukturen." />
+ <entry name="PMS" value="Post Mottaker Systemet (system) i Posten; grunnlaget for maskinsortering av post og for antallet postreklamesendinger som skal selges og distribueres." />
+ <entry name="Polygon" value="Definisjon: Mangekant. Et lukket kurve bestående av linjestykker. I GIS-sammenheng: konverterte geo-objekter." />
+ <entry name="Postboksanlegg" value="Utvalg basert på postboksinformasjon i geografisk søk; kan velge postboksanlegg ved markering i liste eller inntasting av navn" />
+ <entry name="Postreklame" value="Postens distribusjonsprodukter (Postreklame Adressert og -Uadressert)" />
+ <entry name="Prisberegning" value="Priser basert på produktbetingelser for Postreklame Uadressert; beregnes iht rabatt/kundeavtale som hentes fra aktørnummer" />
+ <entry name="Rapporter" value="Mulighet for å ta ut rapporter på ruter og antallsopplysninger i utvalgs og utvalgslister" />
+ <entry name="Referansenummer" value="Unikt nummer som identifiserer et utvalg som er lagret i den åpne kundeløsningen" />
+ <entry name="Reserverte" value="Postmottakere kan reservere seg mot uadressert reklame i postkassen. Avsenderne er i følge Markedsføringsloven forpliktet til å etterkomme dette. Posten deler derfor utsendelser i &quot;Reklame&quot; (til alle som ikke har reservert seg) og &quot;Informasjon&quot; (til alle). For nærmere  informasjon om hva som regnes som informasjon og reklame se www.posten.no" />
+ <entry name="Rute" value="Geografisk område som et postbud distribuerer post til (rute = budrute)" />
+ <entry name="Ruteutforsker" value="Utgangspunkt i trestruktur for direkte utvalg (ruter) basert på fylke/ kommune/ team/postnummer" />
+ <entry name="Segmentanalyse" value="Analyse for valg av mottagergrupper iht Postens segmenter (10 predefinerte) basertpå et geografisk område" />
+ <entry name="Sendeplaner" value="Planleggingsredskap for salg, kunde, innlevering og PRS. En medieplan inneholderblant annet opplysninger om kundens planlagte innleveringer, innleveringsdatoer,innleveringssted, antall sendinger, dekningsområde, navn på sendingen og omdelingstidspunkt." />
+ <entry name="Sletting av utvalg" value="Utvalg eller utvalgslister kan søkes frem i resultatliste og slettes med sletteknapp. Utvalg eldre enn x-måneder blir automatisk slettet av systemet." />
+ <entry name="SSB" value="Statistisk SentralByrå: datakilde for demografidata" />
+ <entry name="Strukturendringer" value="Endringer i grunnlagsdata:Strukturendringer og endringer i antall vil forekomme fordi grunnlagsdataene somkommer fra PMS (kildesystemet for antallsopplysninger), har endret seg. Eksempler på strukturendringer er:- Flytting av reoler fra et team til et annet. -Sammenslåing av reoler. -Flytting av team. -Sammenslåing/deling av team" />
+ <entry name="Team" value="En samling ruter innenfor et gitt geografisk område" />
+ <entry name="TOC" value="Table of contents – er i denne sammenheng en ”oversikt” over kartlag i løsningen…….(ikkenoe begrep Internbruker vil ”se”???)" />
+ <entry name="Type ahead" value="Liste over mulige navn kommer frem etter å ha tastet 3 tegn/ bokstaver" />
+ <entry name="Utvalg" value="De mottakerenhetene som det skal distribueres uadressert postreklame til." />
+ <entry name="Utvalgskriterier" value="Geografiske utvalgskriterier er - Fylke  - Kommune- Bydeler (i de 4 største byene)- Team- Reoler (ruter)" />
+ <entry name="Utvalgslister" value="Flere utvalg lagret sammen til en liste." />
+
+</glossarydata>

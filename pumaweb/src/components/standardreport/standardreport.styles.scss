@@ -1,0 +1,40 @@
+.distrDate{
+    width:50%;
+    height:50%
+}
+.reportLabel{
+    font-size: small;
+}
+.boldText{
+    font-weight:500;
+    font-size: medium;
+}
+.lagrepport {
+    float: right;
+    margin-bottom: 5%;
+}
+
+.filterContent{
+    padding-left: 5%;
+}
+
+.reportType{
+    height:50%;
+    margin-left: 5%;
+}
+
+.progressText {
+    width: auto;
+    font-size: smaller;
+    color: rgb(19, 165, 19);
+    height: auto;
+}
+
+.loadingImage{    
+        width: 20px;
+        height: 20px;        
+        position: absolute;
+        left: 70%;
+        top: 91%;
+        z-index: 100;   
+}

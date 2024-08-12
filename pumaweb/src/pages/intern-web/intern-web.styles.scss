@@ -1,0 +1,62 @@
+.small-padding {
+  padding: 1px !important;
+}
+._flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+._flex-row {
+  display: flex;
+  flex-direction: row;
+}
+._flex-column {
+  display: flex;
+  flex-direction: column;
+}
+._flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._flex-start-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+._center{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.responsive-text-1vw{
+  font-size: 1vw !important;
+}
+.responsive-text-FinClick{
+  font-size: 12px !important;
+}
+.no-margin{
+  margin:0px !important;
+}
+.no-width {
+  width: 0px !important;
+}
+.break-text{
+  white-space: break-spaces;
+}
+.KommunInputText1 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #4d4f53;
+  text-align: left;
+  width: 100%;
+}
+.bgGrey{
+  background-color: #929196 !important;
+}
+.white-text{
+  color:#ffffff;
+}
+.small-text{
+  font-size: 12px !important;
+}

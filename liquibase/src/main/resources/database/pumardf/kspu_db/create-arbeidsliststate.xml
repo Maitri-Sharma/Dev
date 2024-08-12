@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-arbeidsliststate">
+<sql>
+
+CREATE TABLE kspu_db."arbeidsliststate" (id bigint NOT NULL,
+	type char(1) NOT NULL,
+	userid varchar(50) NOT NULL,
+	active char(1) NOT NULL,
+	timecreated timestamp NOT NULL,
+	PRIMARY KEY (id,type,userid)
+) ;
+
+
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

@@ -1,0 +1,32 @@
+Butikk	Besøksadresse	Postnr	Poststed
+Obs Alnabru	Smalvollveien 65	0667	Oslo
+Obs Arendal 	Sagvannsveien 66	4848	Arendal
+Obs Bodø	Stormyrveien 20	8008	Bodø
+Obs Bryne	Jupitervegen 2	4340	Bryne
+Obs Buskerud	Sandstranda 24 	3055	Krokstadelva
+Obs City Lade	Haakon VIIs gt. 9	7041	Trondheim
+Obs City Syd	Østre Rosten 28	7075	Tiller
+Obs Elverum	Torggata 1	2408	Elverum
+Obs Harstad	Verkstedveien 7	9406	Harstad
+Obs Haugenstua	Østre Aker vei 264	0977	Oslo
+Obs Haugesund	Longhammarvegen 27	5536	Haugesund
+Obs Horisont	Myrdalsveien 6	5131	Bergen
+Obs Jessheim	Romsaas allé 1	2063	Jessheim
+Obs Kvadrat	Gamle Stokkavei 1	4313	Sandnes
+Obs Lagunen	Laguneveien 1	5239	Rådal
+Obs Lillestrøm	Nittedalsgata 50	2000	Lillestrøm
+Obs Lyngdal	Fiboveien 16 	4580	Lyngdal
+Obs Mariero	Langflåtveien 38	4017	Stavanger
+Obs Mo I Rana	Svortdalen 26	8626	Mo I Rana
+Obs Olrud	Klærtorpvegen 1	2320	Furnes
+Obs Rudshøgda	Stolvstadveien 2	2360	Rudshøgda
+Obs Rygge	Carlbergveien 2	1526	Moss
+Obs Sandefjord	Foksenrødveien 23	3241	Sandefjord
+Obs Sartor	Sartorvegen 12	5353	Straume
+Obs Slitu	Morstongveien 47	1859	Slitu
+Obs Steinkjer	Sjøfartsgata 2	7714	Steinkjer
+Obs Sørlandssenteret	Barstølveien 29	4636	Kristiansand
+Obs Tromsø	Heiloveien 4	9015	Tromsø
+Obs Vestkanten	Loddefjordveien 2	5171	Loddefjord
+Obs Vinterbro	Sjøskogenveien 7	1407	Vinterbro
+Obs Ålesund 	Moavegen 1	6018	Ålesund

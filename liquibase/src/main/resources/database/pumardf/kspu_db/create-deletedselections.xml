@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+<changeSet author="kinariwale-saurabh" context="prod" id="create-deletedselections">
+<sql>
+
+
+
+CREATE TABLE kspu_db."deletedselections" (utvalgid numeric(38) NOT NULL,
+	name varchar(50) NOT NULL,
+	antall numeric(38),
+	avtalenummer bigint,
+	distribusjonsdato timestamp,
+	isbasis smallint,
+	kundenummer varchar(30),
+	logo varchar(50),
+	ordrereferanse varchar(30),
+	ordrestatus varchar(1),
+	vekt integer,
+	reolmapname varchar(50) NOT NULL
+) ;
+
+</sql>
+</changeSet>
+  
+</databaseChangeLog>

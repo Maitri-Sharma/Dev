@@ -1,0 +1,640 @@
+{{!-- <script>  
+    window.JSREPORT_CHROME_PDF_OPTIONS = {
+        landscape:  {{landscape}}
+    }
+</script> --}}
+
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <style>
+            {{asset "Utvalg.css" "utf8"}}
+        </style>
+    </head>
+    <body>
+        <div style="text-align:right;margin-0px;padding:0px;">
+           <img alt="mapImage" src={{asset "logo.png" "dataURI"}} style="margin-top: -5px;" width="180px" />
+        </div>
+         {{#if (checkDistrDate distrDate)}}
+        
+        <div>
+            <p class="UtvalgListName">F‎ø‎rste dag i distribusjonsintervall‎: &nbsp;&nbsp;{{distrDate}}</p>
+        </div>
+    
+                    <div style="font-style: italic">
+                        <div style="display: inline-block;"><span style="color:green"> Grønn</span>: Distribueres innen 1. distribusjonsdag kl 20:00.</div>
+                        <div style="display: inline-block;"><span style="color:orange">Oransje</span>: Distribueres innen 2. distribusjonsdag kl 17:00.</div>
+                    </div>
+                  
+                <br></br>
+        {{/if}}
+
+        {{#if islist}}        
+            <div class="HeaderText">
+            
+                <table class="Header-table">
+                    <tr class="header-row fontbig">
+                        <th class="s_2"><h4>Liste/Utvalg</h4></th>
+                        <th><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forhandlerpåtrykk</h4></th>
+                        <th class="j UtvalgListNameAmount nowrap"><h4>Sone 0</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Sone 1</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Sone 2</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Totalt</h4></th> 
+                        {{#if (checkDistrDate distrDate)}} 
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Dag 1</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Dag 2</h4></th>                
+                        {{/if}} 
+                    </tr>
+                    <tr class="UtvalgListName fontbig">
+                    <td class="s_2"><h3>{{reportName}}</h3></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{logo}}</td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone0}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone1}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone2}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat (totalSum zone0 zone1 zone2)}}</h4></td>
+                    {{#if (checkDistrDate distrDate)}} 
+                        <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat dag1}}</h4></td>
+                        <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat dag2}}</h4></td>                   
+                    {{/if}}
+                    </tr>
+                {{#each listArray}}
+                {{#if (CheckListName ../reportName name)}}
+                    <tr class="UtvalgListName fontbig"><td class="s_2"><h5>{{name}}</h5></td><td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{logo}}</h5></td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone0}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone1}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone2}}</td>                    
+                        <td class="UtvalgListItemsAmount">{{numberFormat (totalSum zone0 zone1 zone2)}}</h7></td>
+                        {{#if (checkDistrDate ../../distrDate)}} 
+                        <td class="UtvalgListItemsAmount">{{numberFormat dag1}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat dag2}}</td>                   
+                        {{/if}}                
+                    </tr>
+                  {{/if}}  
+                {{/each}}
+                
+                {{!-- {{#each listArray}}
+                <tr class="UtvalgListName fontbig">
+                    <td><h5>{{name}}</h5></td>
+                    <td colspan="2"><h5>{{logo}}</h5></td>
+                    <td><h6>{{numberFormat zone0}}</h6></td>
+                    <td><h6>{{numberFormat zone1}}</h6></td>
+                    <td><h6>{{numberFormat zone2}}</h6></td>
+                    <td><h6>{{numberFormat (totalSum zone0 zone1 zone2)}}</h6></td>
+                    {{#if (checkDistrDate ../distrDate)}} 
+                        <td><h6>{{numberFormat dag1}}</h6></td>
+                        <td><h6>{{numberFormat dag2}}</h6></td>                   
+                    {{/if}} 
+                </tr>
+                {{/each}}   --}}
+                {{#if (checkDistrDate distrDate)}} 
+                    <tr class="seperator-row"><td colspan="11">&nbsp;</td></tr>
+                {{else}}
+                    <tr class="seperator-row"><td colspan="9">&nbsp;</td></tr>
+                {{/if}} 
+                 {{#each listArray}}
+                    <tr class="UtvalgListName fontbig"><td class="s_2"><h5>{{name}}</h5></td><td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{logo}}</h5></td></tr>
+                {{#each items}} 
+                    <tr class="UtvalgListItems fontsmall">                   
+                        <td class="s_2" class="UtvalgListItems">{{name}}</td>
+                        <td class="UtvalgListItems">{{forhandlerpartyk}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone0}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone1}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat zone2}}</td>                    
+                        <td class="UtvalgListItemsAmount">{{numberFormat (totalSum zone0 zone1 zone2)}}</h7></td>
+                        {{#if (checkDistrDate ../../distrDate)}} 
+                        <td class="UtvalgListItemsAmount">{{numberFormat dag1}}</td>
+                        <td class="UtvalgListItemsAmount">{{numberFormat dag2}}</td>                   
+                        {{/if}}                
+                    </tr>
+                    {{/each}}   
+                    {{#if (checkDistrDate ../distrDate)}} 
+                        <tr class="seperator-row"><td colspan="11">&nbsp;</td></tr>
+                    {{else}}
+                        <tr class="seperator-row"><td colspan="9">&nbsp;</td></tr>
+                    {{/if}} 
+                    {{/each}}
+                </table>            
+            </div>        
+
+            <div style='page-break-before: always;'></div>
+            
+            {{#each listArray}}      
+                {{#each items}} 
+                <div style="page-break-before: always;"></div>
+                    {{!-- <div>
+                        <p class="">{{../name}}</p>
+                    </div>                 --}}
+                    
+                      
+                    <div class="DetailsText fontbig">
+                    <table class="report-details-table">
+                        <tr>
+                            <td>{{name}}</td>
+                            {{#if showHousehold}}
+                            <td>Husholdninger totalt: {{numberFormat HouseHolds}}</td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td>Virksomheter totalt: {{numberFormat Business}}</td>
+                            {{/if}}
+                        </tr>
+                    </table>
+                    </div>
+                    <hr></hr>
+                   
+                    <div class="imageDiv">
+                        
+                        <img class="MapImg" alt="mapImage" src= "data:image/png;base64, {{imagedata}}"  width="550px" height="400px" />
+                        
+                    </div>
+                    <br></br>
+                    <table class="ruteDetails-table">
+                        <tr>
+                            <th colspan="4"></th>
+                            {{#if showHousehold}}
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 0
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 2
+                            </th>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 0
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 2
+                            </th>
+                            {{/if}}
+                            {{#if (checkDistrDate ../../distrDate)}} 
+                            {{#if showHousehold}}
+                            <th class="UtvalgListNameAmount">
+                                HH Dag 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Dag 2
+                            </th>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <th class="UtvalgListNameAmount">
+                                VH Dag 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Dag 2
+                            </th>
+                            {{/if}}
+                            {{/if}}
+                        </tr>
+                        {{#if (checkRuteLevel ../../level ../../distrDate)}}
+                        <tr class="columnDynamic fontsmall">
+                            <td colspan="4" class="columnDynamic">Antallsopplysninger for utvalget‎:‎</td>
+                            {{#if showHousehold}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalH0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                               {{numberFormat totalH1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                               {{numberFormat totalH2}}
+                            </td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            {{/if}}
+                            {{#if (checkDistrDate ../../distrDate)}} 
+                            {{#if showHousehold}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalHD1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                 {{numberFormat totalHD2}}
+                            </td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalVD1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                 {{numberFormat totalVD2}}
+                            </td>
+                            {{/if}}
+                            {{/if}}
+                        </tr>
+                         {{/if}}
+                        <tr></tr>
+                        {{#each Reoler}} 
+                         {{#if (checkPostalCode CssClass)}}
+                            <tr><td style="height:10px"></td></tr> 
+                         {{/if}}                    
+                            <tr class="{{CssClass}} fontsmall">
+                                
+                                <td colspan="4" class="flykerow-name">{{name}}</td>
+                                {{#if ../showHousehold}}
+                                <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                {{/if}}
+                                {{#if ../showBusiness}}
+                                <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                {{/if}}
+                                {{#if (checkDistrDate ../../../distrDate)}} 
+                                {{#if ../showHousehold}}
+                                <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>
+                                {{/if}} 
+                                {{#if ../showBusiness}}  
+                                <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                {{/if}} 
+                                {{/if}}                        
+                            </tr>
+                            {{#if (checkFlykeLevel ../../../uptoLevel)}}
+                                {{#if children}}
+                                    {{#each children}}
+                                    <tr class="{{CssClass}} fontsmall">
+                                        
+                                        <td colspan="4" class="kommunerow-name">{{name}}</td>
+                                        {{#if ../../showHousehold}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                        <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                        <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                        <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                        <td class="UtvalgListNameAmount"d>{{numberFormat V2}}</td> 
+                                        {{/if}}
+                                        {{#if (checkDistrDate ../../../../distrDate)}} 
+                                        {{#if ../../showHousehold}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                        <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>  
+                                        {{/if}}
+                                        {{#if ../../showBusiness}}  
+                                        <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                        <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                        {{/if}}  
+                                        {{/if}}                           
+                                    </tr>
+                                        {{#if (checkKommuneLevel ../../../../uptoLevel)}}
+                                            {{#if children}}
+                                                {{#each children}}
+                                                    <tr class="{{CssClass}} fontsmall">
+                                                    
+                                                    <td colspan="4" class="teamrow-name">{{name}}</td>
+                                                    {{#if ../../../showHousehold}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                                    {{/if}}
+                                                    {{#if ../../../showBusiness}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                                    {{/if}}
+                                                    {{#if (checkDistrDate ../../../../../distrDate)}} 
+                                                    {{#if ../../../showHousehold}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td> 
+                                                    {{/if}} 
+                                                    {{#if ../../../showBusiness}}  
+                                                    <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                                    <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                                    {{/if}}   
+                                                    {{/if}}                         
+                                                    </tr>
+                                                    {{#if (checkTeamLevel ../../../../../uptoLevel)}}
+                                                        {{#if children}}
+                                                        {{#each children}}
+                                                            <tr class="{{CssClass}} fontsmall">
+                                                                
+                                                                <td colspan="4" class="ruterow-name">{{name}}</td>
+                                                                {{#if ../../../../showHousehold}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                                                {{/if}}
+                                                                {{#if (checkDistrDate ../../../../../../distrDate)}} 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>
+                                                                {{/if}}  
+                                                                {{#if ../../../../showBusiness}}  
+                                                                <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                                                <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                                                {{/if}}  
+                                                                {{/if}}                          
+                                                            </tr>
+                                                        {{/each}}
+                                                        {{/if}}
+                                                    {{/if}}
+                                                {{/each}}
+                                                {{/if}}
+                                            {{/if}}
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </table>            
+                {{/each}}
+            {{/each}} 
+
+        {{else}}
+
+
+                <div class="HeaderText">
+            
+                <table class="Header-table">
+                    <tr class="header-row fontbig">
+                       <th class="s_2"><h4>Liste/Utvalg</h4></th>
+                        <th><h4>&nbsp;&nbsp;Forhandlerpåtrykk</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Sone 0</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Sone 1</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Sone 2</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Totalt</h4></th> 
+                        {{#if (checkDistrDate distrDate)}} 
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Dag 1</h4></th>
+                        <th class="w08 UtvalgListNameAmount nowrap"><h4>Dag 2</h4></th>                
+                        {{/if}} 
+                    </tr>
+
+                     {{!-- <tr class="UtvalgListName"><td colspan="3"><h3>{{reportName}}</h3></td></tr>  --}}
+                    {{#each items}} 
+
+                    <tr class="UtvalgListName fontbig">
+                    <td class="s_2"><h3>{{name}}</h3></td>
+                    <td>&nbsp;&nbsp;{{forhandlerpartyk}}</td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone0}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone1}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat zone2}}</h4></td>
+                    <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat (totalSum zone0 zone1 zone2)}}</h4></td>
+                    {{#if (checkDistrDate ../distrDate)}} 
+                        <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat dag1}}</h4></td>
+                        <td class="UtvalgListNameAmount fontbig"><h4>{{numberFormat dag2}}</h4></td>                   
+                    {{/if}}
+                    </tr>
+                    {{/each}} 
+                </table>            
+            </div>        
+
+            <div style='page-break-before: always;'></div>    
+                {{#each items}} 
+                    <div style="page-break-before: always;"></div>                
+                    <hr></hr>
+                    <div class="DetailsText">
+                    <table class="report-details-table">
+                        <tr>
+                            <td>{{name}}</td>
+                             {{#if showHousehold}}
+                            <td>Husholdninger totalt: {{numberFormat HouseHolds}}</td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td>Virksomheter totalt: {{numberFormat Business}}</td>
+                            {{/if}}
+                        </tr>
+                    </table>
+                    </div>
+                    <hr></hr>
+
+                    
+                    <div class="imageDiv">
+                         <img class="MapImg" alt="mapImage" src= "data:image/png;base64, {{imagedata}}"  width="550px" height="400px" />
+                        
+                    </div>
+                    <br></br>
+                    <table class="ruteDetails-table">
+                        <tr>
+                            <th colspan="4"></th>
+                            {{#if showHousehold}}
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 0
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Sone 2
+                            </th>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 0
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Sone 2
+                            </th>
+                            {{/if}}
+                            {{#if (checkDistrDate ../distrDate)}} 
+                            {{#if showHousehold}}
+                            <th class="UtvalgListNameAmount">
+                                HH Dag 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                HH Dag 2
+                            </th>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <th class="UtvalgListNameAmount">
+                                VH Dag 1
+                            </th>
+                            <th class="UtvalgListNameAmount">
+                                VH Dag 2
+                            </th>
+                            {{/if}}
+                            {{/if}}
+                        </tr>
+                        {{#if (checkRuteLevel ../level ../distrDate)}}
+                        <tr class="columnDynamic fontsmall">
+                            <td colspan="4" class="columnDynamic">Antallsopplysninger for utvalget‎:‎</td>
+                            {{#if showHousehold}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalH0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                               {{numberFormat totalH1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                               {{numberFormat totalH2}}
+                            </td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalV0}}
+                            </td>
+                            {{/if}}
+                            {{#if (checkDistrDate ../distrDate)}} 
+                            {{#if showHousehold}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalHD1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                 {{numberFormat totalHD2}}
+                            </td>
+                            {{/if}}
+                            {{#if showBusiness}}
+                            <td class="UtvalgListNameAmount">
+                                {{numberFormat totalVD1}}
+                            </td>
+                            <td class="UtvalgListNameAmount">
+                                 {{numberFormat totalVD2}}
+                            </td>
+                            {{/if}}
+                            {{/if}}
+                        </tr>
+                         {{/if}}
+                        <tr></tr>
+                        {{#each Reoler}}
+                        {{#if (checkPostalCode CssClass)}}
+                            <tr><td style="height:10px"></td></tr> 
+                         {{/if}}
+                                             
+                            <tr class="{{CssClass}} fontsmall">
+                                
+                                <td colspan="4" class="flykerow-name">{{name}}</td>
+                                {{#if ../showHousehold}}
+                                <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                {{/if}}
+                                {{#if ../showBusiness}}
+                                <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                {{/if}}
+                                {{#if (checkDistrDate ../../distrDate)}} 
+                                {{#if ../showHousehold}}
+                                <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>
+                                {{/if}} 
+                                {{#if ../showBusiness}}  
+                                <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                {{/if}} 
+                                {{/if}}                        
+                            </tr>
+                            {{#if (checkFlykeLevel ../../uptoLevel)}}
+                                {{#if children}}
+                                    {{#each children}}
+                                    <tr class="{{CssClass}} fontsmall">
+                                        
+                                        <td colspan="4" class="kommunerow-name">{{name}}</td>
+                                        {{#if ../../showHousehold}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                        <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                        <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                        {{/if}}
+                                        {{#if ../../showBusiness}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                        <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                        <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                        {{/if}}
+                                        {{#if (checkDistrDate ../../../distrDate)}} 
+                                        {{#if ../../showHousehold}}
+                                        <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                        <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>
+                                        {{/if}}  
+                                        {{#if ../../showBusiness}}  
+                                        <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                        <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                        {{/if}}  
+                                        {{/if}}                           
+                                    </tr>
+                                        {{#if (checkKommuneLevel ../../../uptoLevel)}}
+                                            {{#if children}}
+                                                {{#each children}}
+                                                    <tr class="{{CssClass}} fontsmall">
+                                                    
+                                                    <td colspan="4" class="teamrow-name">{{name}}</td>
+                                                    {{#if ../../../showHousehold}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                                    <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                                     {{/if}}
+                                                    {{#if ../../../showBusiness}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                                    {{/if}}
+                                                    {{#if (checkDistrDate ../../../../distrDate)}} 
+                                                    {{#if ../../../showHousehold}}
+                                                    <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                                    <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td> 
+                                                    {{/if}} 
+                                                    {{#if ../../../showBusiness}}  
+                                                    <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                                    <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                                    {{/if}}   
+                                                    {{/if}}                         
+                                                    </tr>
+                                                    {{#if (checkTeamLevel ../../../../uptoLevel)}}
+                                                        {{#if children}}
+                                                        {{#each children}}
+                                                            <tr class="{{CssClass}} fontsmall">
+                                                                
+                                                                <td colspan="4" class="ruterow-name">{{name}}</td>
+                                                                {{#if ../../../../showHousehold}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H0}}</td>
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H1}}</td>
+                                                                <td class="UtvalgListNameAmount">{{numberFormat H2}}</td>
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V0}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V1}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat V2}}</td> 
+                                                                {{/if}}
+                                                                {{#if (checkDistrDate ../../../../../distrDate)}} 
+                                                                {{#if ../../../../showHousehold}}
+                                                                <td class="UtvalgListNameAmount">{{numberFormat HHD1}}</td> 
+                                                                <td class="UtvalgListNameAmount">{{numberFormat HHD2}}</td>  
+                                                                {{/if}}
+                                                                {{#if ../../../../showBusiness}}  
+                                                                <td class="UtvalgListNameAmount">{{numberFormat VHD1}}</td>  
+                                                                <td class="UtvalgListNameAmount">{{numberFormat VHD2}}</td>  
+                                                                {{/if}}  
+                                                                {{/if}}                          
+                                                            </tr>
+                                                        {{/each}}
+                                                        {{/if}}
+                                                    {{/if}}
+                                                {{/each}}
+                                                {{/if}}
+                                            {{/if}}
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </table>            
+                {{/each}}
+        {{/if}}
+    </body>
+</html>

@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <style>
+          * {
+              box-sizing: border-box;
+          }
+
+          html, body {
+              margin: 0px;
+              padding: 0px;
+          }
+
+          .main {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              width: 100%;
+              height: 100%;
+          }
+          .header .page{
+              float: right;
+              font-size: small;
+              padding-right:10px;
+          }
+
+          .header {
+              width: 100%;
+              padding-top: 20px;
+              padding-bottom:10px;
+              border-bottom: 1px solid black;
+              text-align: center;
+          }
+
+          .footer {
+              width: 100%;
+              padding-bottom: 20px;
+              padding-top:5px;
+              border-top: 1px solid black;
+              text-align: center;
+          }
+        </style>
+    </head>
+    <body>
+        {{#each $pdf.pages}}
+          {{#if @index}}
+            <div style="page-break-before: always;"></div>
+          {{/if}}
+          
+          <main class="main">
+            {{#if (isChild @index)}}
+            <header class="header">
+                 {{#if (checkDistrDate distrDate)}}
+                    <span class="desc">Utvalgs Distribusjonssekvens rapport detaljer</span>
+                {{else}}
+                    <span class="desc">Utvalgsrapport detaljer</span>
+                {{/if}}
+               <span class="page">Side {{getPageNumber @index}} av {{getTotalPages ../$pdf.pages}}</span>                           
+            </header>
+            <footer class="footer">                
+            </footer>
+            {{/if}}
+            
+          </main>
+          
+        {{/each}}
+    </body>
+</html>
